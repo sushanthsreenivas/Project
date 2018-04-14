@@ -1,3 +1,5 @@
+
+
 <%@ include file="header.jsp"%>
 <div id="all">
 
@@ -135,19 +137,19 @@
 													<!-- /.text -->
 
 													<div class="ribbon sale">
-														<!--                      <div class="theribbon">SALE</div> -->
+														
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
 
 													<div class="ribbon new">
-														<!--                                    <div class="theribbon">NEW</div>  -->
+													
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
 
 													<div class="ribbon gift">
-														<!--                               <div class="theribbon">GIFT</div> -->
+													
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
@@ -320,19 +322,19 @@
 													<!-- /.text -->
 
 													<div class="ribbon sale">
-														<!--                                   <div class="theribbon">SALE</div>  -->
+
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
 
 													<div class="ribbon new">
-														<!--                                    <div class="theribbon">NEW</div> -->
+
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
 
 													<div class="ribbon gift">
-														<!--                                   <div class="theribbon">GIFT</div>  -->
+
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
@@ -371,74 +373,54 @@
 
 											</div>
 										</div>
-
 									</div>
 									<!-- /.product-slider -->
 								</div>
 								<!-- /.container -->
-
 							</div>
 						</table>
-						<!-- /#hot -->
-
-						<!-- *** HOT END *** -->
-
-						<!-- *** GET INSPIRED ***
-
-
-                        </div>
-                        <!-- /.table-responsive -->
-
-
-
-						<!--                    </div>
-                </div>
-            
-            <!-- /.container -->
-						<div class="table-responsive">
-							<table class="table">
-								<div id="hot">
-									<div class="box">
-										<div class="container">
-											<div class="col-md-8">
-												<h2>Manage Your Product Here</h2>
-											</div>
+					</div>
+					<!-- /.container -->
+					<div class="table-responsive">
+						<table class="table">
+							<div id="hot">
+								<div class="box">
+									<div class="container">
+										<div class="col-md-8">
+											<h2>Manage Your Product Here</h2>
 										</div>
 									</div>
 								</div>
-
-
-
-
-								<form>
-
-
+								<form action="productupdate.do" method="post">
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="category">Category</label> <input type="text"
-													class="form-control" id="category">
+												<label for="product_name">Product ID</label> <input
+													type="text" class="form-control" id="productId"
+													name="productId">
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="product_name">Product Name</label> <input
-													type="text" class="form-control" id="Pname">
+												<label for="category">Category</label> <input type="text"
+													class="form-control" id="category" name="category">
 											</div>
 										</div>
+
 									</div>
 									<!-- /.row -->
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="description">Description</label> <input
-													type="text" class="form-control" id="description">
+													type="text" class="form-control" name="description"
+													id="description">
 											</div>
 										</div>
 										<div class="col-sm-6 col-md-3">
 											<div class="form-group">
 												<label for="photo">Photo</label> <select
-													class="form-control" id="photo"></select>
+													class="form-control" name="photo" id="photo"></select>
 											</div>
 										</div>
 									</div>
@@ -446,7 +428,8 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="min_bid_price">Minimum Bid price</label> <input
-													type="text" class="form-control" id="min_bid_price">
+													type="text" class="form-control" name="minBidPrice"
+													id="minBidPrice">
 											</div>
 										</div>
 									</div>
@@ -459,19 +442,15 @@
 
 									</div>
 								</form>
-							</table>
-						</div>
-
-						<!-- /.table-responsive -->
-
-
+							</div>
+						</table>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>
 </div>
+
 <!-- /#content -->
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

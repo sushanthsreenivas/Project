@@ -26,10 +26,10 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<li class="active"><a href="bid.jsp"><i
+							<li class="active"><a href="bid_add.jsp"><i
 									class="fa fa-list"></i>Bid</a></li>
 
-							<li><a href="bid_add.jsp"><i class="fa fa-list"></i>
+							<li><a href="bid_update.jsp"><i class="fa fa-list"></i>
 									Manage Bid</a></li>
 
 							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>
@@ -38,9 +38,7 @@
 					</div>
 
 				</div>
-				<!-- /.col-md-3 -->
 			</div>
-			<!-- *** CUSTOMER MENU END *** -->
 			<div class="col-md-9">
 
 				<ul class="breadcrumb">
@@ -241,7 +239,7 @@
 													<!-- /.text -->
 
 													<div class="ribbon new">
-														<!--                                   <div class="theribbon">NEW</div>  -->
+													
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
@@ -318,19 +316,19 @@
 													<!-- /.text -->
 
 													<div class="ribbon sale">
-														<!--                                   <div class="theribbon">SALE</div>  -->
+														
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
 
 													<div class="ribbon new">
-														<!--                                    <div class="theribbon">NEW</div> -->
+														
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
 
 													<div class="ribbon gift">
-														<!--                                   <div class="theribbon">GIFT</div>  -->
+														
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
@@ -378,19 +376,7 @@
 					</div>
 					<!-- /#hot -->
 
-					<!-- *** HOT END *** -->
-
-					<!-- *** GET INSPIRED ***
-
-
-                        </div>
-                        <!-- /.table-responsive -->
-
-
-
-					<!--                    </div>
-                </div>
-            
+				
             <!-- /.container -->
 					<div class="table-responsive">
 						<table class="table">
@@ -475,13 +461,13 @@
 													<!-- /.ribbon -->
 
 													<div class="ribbon new">
-														<!--                                    <div class="theribbon">NEW</div>  -->
+
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
 
 													<div class="ribbon gift">
-														<!--                                   <div class="theribbon">GIFT</div> -->
+														
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->

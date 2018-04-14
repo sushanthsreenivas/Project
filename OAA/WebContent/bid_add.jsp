@@ -15,8 +15,7 @@
 			</div>
 
 			<div class="col-md-3">
-				<!-- *** CUSTOMER MENU ***
- _________________________________________________________ -->
+				
 				<div class="panel panel-default sidebar-menu">
 
 					<div class="panel-heading">
@@ -26,9 +25,9 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<li><a href="bid.jsp"><i class="fa fa-list"></i>Bid</a></li>
+							<li><a href="bid_add.jsp"><i class="fa fa-list"></i>Bid</a></li>
 
-							<li class="active"><a href="bid_add.jsp"><i
+							<li class="active"><a href="bid_update.jsp"><i
 									class="fa fa-list"></i> Manage Bid</a></li>
 
 							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>
@@ -37,9 +36,7 @@
 					</div>
 
 				</div>
-				<!-- /.col-md-3 -->
 			</div>
-			<!-- *** CUSTOMER MENU END *** -->
 			<div class="col-md-9">
 
 				<ul class="breadcrumb">
@@ -423,7 +420,7 @@
 
 									<div class="col-sm-12 text-center">
 										<button type="submit" class="btn btn-primary">
-											<i class="fa fa-save"></i> Save Changes
+											<i class="fa fa-save"></i> Save
 										</button>
 									</div>
 								</form>

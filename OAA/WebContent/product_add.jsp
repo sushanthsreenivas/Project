@@ -369,7 +369,8 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="product_name">Product Name</label> <input
-													type="text" class="form-control" id="productName" name="productName">
+													type="text" class="form-control" id="productName"
+													name="productName">
 											</div>
 										</div>
 										<div class="col-sm-6">
@@ -385,32 +386,35 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="description">Description</label> <input
-													type="text" class="form-control" id="description" name="description">
+													type="text" class="form-control" id="description"
+													name="description">
 											</div>
 										</div>
-										<!-- 	<div class="col-sm-6 col-md-3">
+										<div class="col-sm-6 ">
 											<div class="form-group">
-												<label for="photo">Photo</label> <select
-													class="form-control" id="photo"></select>
+												<label for="photo">Photo</label> <input type="file"
+													class="form-control" id="image" name="image"
+													style="border: none" />
+
+
 											</div>
 										</div>
-									</div> -->
-										<div class="row">
-											<div class="col-sm-6">
-												<div class="form-group">
-													<label for="minBidprice">Minimum Bid price</label> <input
-														type="text" class="form-control" id="minBidPrice" name="minBidPrice">
-												</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="minBidprice">Minimum Bid price</label> <input
+													type="text" class="form-control" id="minBidPrice"
+													name="minBidPrice">
 											</div>
 										</div>
-										<!-- /.row -->
+									</div>
+									<!-- /.row -->
 
-										<div class="col-sm-12 text-center">
-											<button type="submit" class="btn btn-primary">
-												<i class="fa fa-save"></i> Add Product
-											</button>
-
-										</div>
+									<div class="col-sm-12 text-center">
+										<button type="submit" class="btn btn-primary">
+											<i class="fa fa-save"></i> Add Product
+										</button>
 									</div>
 								</form>
 							</div>

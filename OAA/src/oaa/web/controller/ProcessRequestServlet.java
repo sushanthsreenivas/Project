@@ -53,7 +53,6 @@ public class ProcessRequestServlet extends HttpServlet {
 			if (result != null) {
 				request.setAttribute("ub", userBean);
 				HttpSession session = request.getSession(true);
-
 				session.setMaxInactiveInterval(60 * 60 * 24 * 7);
 				String user_id = result[0];
 				session.setAttribute("user_id", user_id);
