@@ -8,9 +8,12 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import javax.imageio.stream.ImageInputStream;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.print.DocFlavor.INPUT_STREAM;
 import javax.sql.DataSource;
 
 import org.apache.struts.action.ActionForm;
@@ -23,7 +26,7 @@ public class ProductBean extends ActionForm {
 	private String description;
 	private int minBidPrice;
 	private int productId;
-	private FormFile photo;
+	private FormFile image;
 	private Date date;
 
 	Context context = null;
@@ -71,12 +74,12 @@ public class ProductBean extends ActionForm {
 		this.productId = productId;
 	}
 
-	public FormFile getPhoto() {
-		return photo;
+	public FormFile getImage() {
+		return image;
 	}
 
-	public void setPhoto(FormFile photo) {
-		this.photo = photo;
+	public void setImage(FormFile image) {
+		this.image = image;
 	}
 
 	/*
@@ -131,6 +134,8 @@ public class ProductBean extends ActionForm {
 			context = new InitialContext();
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
 
+			
+			
 			connection = ds.getConnection();
 			ps = connection.prepareStatement("insert into product values(null,?,?,?,?,?,'E',?,?)");
 
@@ -139,8 +144,9 @@ public class ProductBean extends ActionForm {
 			ps.setInt(3, user_id);
 			ps.setString(4, getDescription());
 			ps.setInt(5, getMinBidPrice());
+			//ps.set(6,getImage());
 			Date sqlDate = new Date(new java.util.Date().getTime());
-			ps.setDate(6, sqlDate);
+			ps.setDate(7, sqlDate);
 
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {

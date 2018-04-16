@@ -24,7 +24,7 @@ public class ProductAction extends Action {
 
 		ProductBean productBean  = (ProductBean) form;
 
-		FormFile file = productBean.getPhoto();
+		FormFile file = productBean.getImage();
 
 		// Get the servers upload directory real path name
 		String filePath = getServlet().getServletContext().getRealPath("/") + "upload";
@@ -34,7 +34,7 @@ public class ProductAction extends Action {
 			folder.mkdir();
 		}
 
-		System.out.println(file);
+		//System.out.println(file);
 		String fileName = file.getFileName();
 
 		if (!("").equals(fileName)) {
@@ -50,7 +50,7 @@ public class ProductAction extends Action {
 			}
 			request.setAttribute("uploadedFilePath", newFile.getAbsoluteFile());
 			request.setAttribute("uploadedFileName", newFile.getName());
-			productBean.setPhoto(file);
+			productBean.setImage(file);
 		}
 		// TODO Auto-generated method stub
 		if (form instanceof ProductBean) {

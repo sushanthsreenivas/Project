@@ -1,4 +1,5 @@
 <%@ include file="header.jsp"%>
+<%@taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
 <div id="all">
 	<div id="content">
 		<div class="container">
@@ -364,19 +365,19 @@
 										</div>
 									</div>
 								</div>
-								<form action="productAdd.do" method="post">
+								<html:form action="productAdd.do"  enctype="multipart/form-data">
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="product_name">Product Name</label> <input
-													type="text" class="form-control" id="productName"
-													name="productName">
+												<label for="product_name">Product Name</label> <html:text
+													styleClass="form-control" styleId="productName"
+													property="productName"/>
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="category">Category</label> <input type="text"
-													class="form-control" id="category" name="category">
+												<label for="category">Category</label> <html:text
+													styleClass="form-control" styleId="category" property="category"/>
 											</div>
 										</div>
 
@@ -385,15 +386,14 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="description">Description</label> <input
-													type="text" class="form-control" id="description"
-													name="description">
+												<label for="description">Description</label><html:text styleClass="form-control" styleId="description"
+													property="description"/>
 											</div>
 										</div>
 										<div class="col-sm-6 ">
 											<div class="form-group">
-												<label for="photo">Photo</label> <input type="file"
-													class="form-control" id="photo" name="photo"
+												<label for="photo">Photo</label> <html:file
+													styleClass="form-control" styleId="photo" property="image"
 													style="border: none" />
 
 
@@ -403,9 +403,8 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="minBidprice">Minimum Bid price</label> <input
-													type="text" class="form-control" id="minBidPrice"
-													name="minBidPrice">
+												<label for="minBidprice">Minimum Bid price</label> <html:text styleClass="form-control" styleId="minBidPrice"
+													property="minBidPrice"/>
 											</div>
 										</div>
 									</div>
@@ -416,7 +415,7 @@
 											<i class="fa fa-save"></i> Add Product
 										</button>
 									</div>
-								</form>
+								</html:form>
 							</div>
 						</table>
 					</div>
