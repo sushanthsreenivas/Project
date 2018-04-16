@@ -1,6 +1,7 @@
 package oaa.web.model;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -58,11 +59,13 @@ public class BidingBean extends ActionForm {
 
 			connection = ds.getConnection();
 
-			ps = connection.prepareStatement("insert into auction_master values(null,?,?,null,null,?,'E')");
+			ps = connection.prepareStatement("insert into auction_master values(null,?,?,?,null,?,'E')");
 			ps.setString(1, getProductName());
 			ps.setInt(2, user_id);
 			ps.setInt(3, getBidingPrice());
-		
+			Date sqlDate = new Date(new java.util.Date().getTime());
+			System.out.println(sqlDate);
+			ps.setDate(4, sqlDate);
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
 				System.out.println("entered");//

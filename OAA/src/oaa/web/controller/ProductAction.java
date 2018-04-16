@@ -34,6 +34,7 @@ public class ProductAction extends Action {
 			folder.mkdir();
 		}
 
+		System.out.println(file);
 		String fileName = file.getFileName();
 
 		if (!("").equals(fileName)) {

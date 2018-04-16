@@ -254,7 +254,7 @@
 													<!-- /.text -->
 
 													<div class="ribbon gift">
-														<!--                                   <div class="theribbon">GIFT</div>  -->
+														
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
@@ -393,7 +393,7 @@
 										<div class="col-sm-6 ">
 											<div class="form-group">
 												<label for="photo">Photo</label> <input type="file"
-													class="form-control" id="image" name="image"
+													class="form-control" id="photo" name="photo"
 													style="border: none" />
 
 

@@ -3,10 +3,6 @@
  */
 package oaa.web.model;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -15,13 +11,9 @@ import java.sql.SQLException;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.servlet.http.HttpServletRequest;
 import javax.sql.DataSource;
 
-import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
-import org.apache.struts.action.ActionMapping;
-import org.apache.struts.action.ActionMessage;
 import org.apache.struts.upload.FormFile;
 
 public class ProductBean extends ActionForm {
@@ -31,7 +23,7 @@ public class ProductBean extends ActionForm {
 	private String description;
 	private int minBidPrice;
 	private int productId;
-	private FormFile image;
+	private FormFile photo;
 	private Date date;
 
 	Context context = null;
@@ -80,11 +72,11 @@ public class ProductBean extends ActionForm {
 	}
 
 	public FormFile getPhoto() {
-		return image;
+		return photo;
 	}
 
-	public void setPhoto(FormFile image) {
-		this.image = image;
+	public void setPhoto(FormFile photo) {
+		this.photo = photo;
 	}
 
 	/*
@@ -140,13 +132,15 @@ public class ProductBean extends ActionForm {
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
 
 			connection = ds.getConnection();
-			ps = connection.prepareStatement("insert into product values(null,?,?,?,?,?,'E',?,null)");
+			ps = connection.prepareStatement("insert into product values(null,?,?,?,?,?,'E',?,?)");
 
 			ps.setString(1, getProductName());
 			ps.setString(2, getCategory());
 			ps.setInt(3, user_id);
 			ps.setString(4, getDescription());
 			ps.setInt(5, getMinBidPrice());
+			Date sqlDate = new Date(new java.util.Date().getTime());
+			ps.setDate(6, sqlDate);
 
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
