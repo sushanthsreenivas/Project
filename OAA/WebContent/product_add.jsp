@@ -1,4 +1,5 @@
 <%@ include file="header.jsp"%>
+<%@taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
 <div id="all">
 	<div id="content">
 		<div class="container">
@@ -18,12 +19,12 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<li class="active"><a href="product_add.jsp"><i
+							<li class="active"><a href="addproduct.do"><i
 									class="fa fa-list"></i> Add Products</a></li>
 
-							<li><a href="product_update.jsp"><i class="fa fa-list"></i>
+							<li><a href="updateproduct.do"><i class="fa fa-list"></i>
 									Manage Products</a></li>
-							<li><a href="product_remove.jsp"><i class="fa fa-list"></i>
+							<li><a href="removeproduct.do"><i class="fa fa-list"></i>
 									Remove Products</a></li>
 							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>
 									Logout</a></li>
@@ -254,7 +255,7 @@
 													<!-- /.text -->
 
 													<div class="ribbon gift">
-														
+
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
@@ -364,19 +365,20 @@
 										</div>
 									</div>
 								</div>
-								<form action="productAdd.do" method="post">
+								<html:form action="productAdd.do" method="post">
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="product_name">Product Name</label> <input
-													type="text" class="form-control" id="productName"
-													name="productName">
+												<label for="product_name">Product Name</label>
+												<html:text styleClass="form-control" styleId="productName"
+													property="productName" />
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="category">Category</label> <input type="text"
-													class="form-control" id="category" name="category">
+												<label for="category">Category</label>
+												<html:text styleClass="form-control" styleId="category"
+													property="category" />
 											</div>
 										</div>
 
@@ -385,16 +387,16 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="description">Description</label> <input
-													type="text" class="form-control" id="description"
-													name="description">
+												<label for="description">Description</label>
+												<html:text styleClass="form-control" styleId="description"
+													property="description" />
 											</div>
 										</div>
 										<div class="col-sm-6 ">
 											<div class="form-group">
-												<label for="photo">Photo</label> <input type="file"
-													class="form-control" id="photo" name="photo"
-													style="border: none" />
+												<label for="photo">Photo</label>
+												<html:file styleClass="form-control" styleId="photo"
+													property="image" style="border: none" />
 
 
 											</div>
@@ -403,9 +405,9 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="minBidprice">Minimum Bid price</label> <input
-													type="text" class="form-control" id="minBidPrice"
-													name="minBidPrice">
+												<label for="minBidprice">Minimum Bid price</label>
+												<html:text styleClass="form-control" styleId="minBidPrice"
+													property="minBidPrice" />
 											</div>
 										</div>
 									</div>
@@ -416,7 +418,7 @@
 											<i class="fa fa-save"></i> Add Product
 										</button>
 									</div>
-								</form>
+								</html:form>
 							</div>
 						</table>
 					</div>

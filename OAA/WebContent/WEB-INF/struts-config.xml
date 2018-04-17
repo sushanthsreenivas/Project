@@ -11,13 +11,13 @@
 		<form-bean name="URB" type="oaa.web.model.UserRegBean"></form-bean>
 
 		<form-bean name="PB" type="oaa.web.model.ProductBean"></form-bean>
-		
+
 		<form-bean name="PU" type="oaa.web.model.ProductBean"></form-bean>
-		
+
 		<form-bean name="PR" type="oaa.web.model.ProductBean"></form-bean>
-		
+
 		<form-bean name="bid" type="oaa.web.model.BidingBean"></form-bean>
-				
+
 		<form-bean name="BU" type="oaa.web.model.BidingBean"></form-bean>
 	</form-beans>
 
@@ -31,6 +31,17 @@
 
 	<action-mappings>
 		<action path="/regist" forward="/registration.jsp" />
+		<action path="/addproduct" forward="/product_add.jsp" />
+		<action path="/updateproduct" forward="/product_update.jsp" />
+		<action path="/removeproduct" forward="/product_remove.jsp" />
+		<action path="/updatebid" forward="/bid_update.jsp" />
+		<action path="/addbid" forward="/bid_add.jsp" />
+		<action path="/myproducts" forward="/myproducts.jsp" />
+		<action path="/mybiding" forward="/mybiding.jsp" />
+
+
+
+
 
 		<action path="/processRegistration" name="URB"
 			type="oaa.web.controller.RegistrationAction" input="/registration.jsp"
@@ -39,39 +50,38 @@
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
-	
+
 		<action path="/productAdd" name="PB"
 			type="oaa.web.controller.ProductAction" input="/product_add.jsp"
 			scope="request" validate="true">
 			<forward name="success" path="/addsuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
-	
-	
+
+
 		<action path="/productupdate" name="PU"
 			type="oaa.web.controller.ProductUpdateAction" input="/product_update.jsp"
-			scope="request" validate="true" >
+			scope="request" validate="true">
 			<forward name="success" path="/addsuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
-	
-	
+
+
 		<action path="/productremove" name="PR"
 			type="oaa.web.controller.ProductRemoveAction" input="/product_remove.jsp"
 			scope="request">
 			<forward name="success" path="/addsuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
-	
-	
-		<action path="/bidadd" name="bid"
-			type="oaa.web.controller.BidingAction" input="/bid_add.jsp"
-			scope="request">
+
+
+		<action path="/bidadd" name="bid" type="oaa.web.controller.BidingAction"
+			input="/bid_add.jsp" scope="request">
 			<forward name="success" path="/addsuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
-	
-	
+
+
 		<action path="/bidupdate" name="BU"
 			type="oaa.web.controller.BidingUpdateAction" input="/bid_update.jsp"
 			scope="request">
@@ -102,7 +112,7 @@
 		if xml parser should validate the Tiles configuration file. true : validate. 
 		DTD should be specified in file header (default) false : no validation Paths 
 		found in Tiles definitions are relative to the main context. -->
-		
+
 	<plug-in className="org.apache.struts.tiles.TilesPlugin">
 		<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
 		<set-property property="moduleAware" value="true" />
@@ -111,7 +121,7 @@
 	<!-- ========================= Validator plugin ================================= -->
 	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
 		<set-property property="pathnames"
-			value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"  />
+			value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
 	</plug-in>
 
 </struts-config>

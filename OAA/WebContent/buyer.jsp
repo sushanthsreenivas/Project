@@ -26,7 +26,7 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<li><a href="mybiding.jsp"><i class="fa fa-list"></i> My
+							<li><a href="mybiding.do"><i class="fa fa-list"></i> My
 									Bidings</a></li>
 
 							<li><a href="buyer_account.jsp"><i class="fa fa-user"></i>

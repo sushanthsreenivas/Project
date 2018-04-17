@@ -26,10 +26,10 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<li class="active"><a href="bid_add.jsp"><i
+							<li class="active"><a href="addbid.do"><i
 									class="fa fa-list"></i>Bid</a></li>
 
-							<li><a href="bid_update.jsp"><i class="fa fa-list"></i>
+							<li><a href="updatebid.do"><i class="fa fa-list"></i>
 									Manage Bid</a></li>
 
 							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>

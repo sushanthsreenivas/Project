@@ -23,7 +23,7 @@ public class ProductBean extends ActionForm {
 	private String description;
 	private int minBidPrice;
 	private int productId;
-	private FormFile photo;
+	private FormFile image;
 	private Date date;
 
 	Context context = null;
@@ -63,6 +63,14 @@ public class ProductBean extends ActionForm {
 		this.minBidPrice = minBidPrice;
 	}
 
+	public FormFile getImage() {
+		return image;
+	}
+
+	public void setImage(FormFile image) {
+		this.image = image;
+	}
+
 	public int getProductId() {
 		return productId;
 	}
@@ -71,14 +79,7 @@ public class ProductBean extends ActionForm {
 		this.productId = productId;
 	}
 
-	public FormFile getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(FormFile photo) {
-		this.photo = photo;
-	}
-
+	
 	/*
 	 * @Override public ActionErrors validate(ActionMapping mapping,
 	 * HttpServletRequest request) { ActionErrors errors = new ActionErrors();
@@ -191,6 +192,7 @@ public class ProductBean extends ActionForm {
 			ps.setString(3, getDescription());
 			ps.setInt(4, getProductId());
 			ps.setInt(5, user_id);
+			ps.setBlob(6, arg1);
 
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {

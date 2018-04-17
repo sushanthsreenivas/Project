@@ -28,12 +28,12 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<li><a href="product_add.jsp"><i class="fa fa-list"></i>
+							<li><a href="addproduct.do"><i class="fa fa-list"></i>
 									Add Products</a></li>
 
-							<li class="active"><a href="product_update.jsp"><i
+							<li class="active"><a href="updateproduct.do"><i
 									class="fa fa-list"></i> Manage Products</a></li>
-							<li><a href="product_remove.jsp"><i class="fa fa-list"></i>
+							<li><a href="removeproduct.do"><i class="fa fa-list"></i>
 									Remove Products</a></li>
 							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>
 									Logout</a></li>
