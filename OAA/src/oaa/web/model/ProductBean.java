@@ -1,19 +1,23 @@
 /**
+
  * 
  */
 package oaa.web.model;
 
+import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.imageio.stream.ImageInputStream;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.print.DocFlavor.INPUT_STREAM;
 import javax.sql.DataSource;
 
 import org.apache.struts.action.ActionForm;
@@ -127,24 +131,31 @@ public class ProductBean extends ActionForm {
 	 * return errors; }
 	 */
 
-	public boolean addProduct(int user_id) throws SQLException {
+	public boolean addProduct(int user_id) {
 
 		try {
 
 			context = new InitialContext();
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
 
-			
-			
+			byte[] fileData = null;
+			ByteArrayInputStream fileBA = null;
+
+			fileData = image.getFileData();
+
+			fileBA = new ByteArrayInputStream(fileData);
+
 			connection = ds.getConnection();
 			ps = connection.prepareStatement("insert into product values(null,?,?,?,?,?,'E',?,?)");
+
+			// set parameters
 
 			ps.setString(1, getProductName());
 			ps.setString(2, getCategory());
 			ps.setInt(3, user_id);
 			ps.setString(4, getDescription());
 			ps.setInt(5, getMinBidPrice());
-			//ps.set(6,getImage());
+			ps.setBinaryStream(6, fileBA);
 			Date sqlDate = new Date(new java.util.Date().getTime());
 			ps.setDate(7, sqlDate);
 
@@ -154,6 +165,12 @@ public class ProductBean extends ActionForm {
 				return true;
 			}
 		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
@@ -274,4 +291,31 @@ public class ProductBean extends ActionForm {
 		return false;
 	}
 
+	public void displayimage() {
+
+		try {
+
+			context = new InitialContext();
+			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
+
+			connection = ds.getConnection();
+
+			String sql = "SELECT photo FROM products";
+
+			PreparedStatement ps = connection.prepareStatement(sql);
+
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				Blob photo = rs.getBlob("photo");
+				byte data[] = photo.getBytes(1, (int) photo.length());
+
+			
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
 }

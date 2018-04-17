@@ -15,16 +15,13 @@
 					<div class="panel-heading">
 						<h3 class="panel-title">Farmer section</h3>
 					</div>
-
 					<div class="panel-body">
-
 						<ul class="nav nav-pills nav-stacked">
-							<li class="active"><a href="product_add.jsp"><i
+							<li class="active"><a href="add.do"><i
 									class="fa fa-list"></i> Add Products</a></li>
-
-							<li><a href="product_update.jsp"><i class="fa fa-list"></i>
+							<li><a href="update.do"><i class="fa fa-list"></i>
 									Manage Products</a></li>
-							<li><a href="product_remove.jsp"><i class="fa fa-list"></i>
+							<li><a href="remove.do"><i class="fa fa-list"></i>
 									Remove Products</a></li>
 							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>
 									Logout</a></li>
@@ -43,7 +40,15 @@
 				<div class="box">
 					<h1>Product Details</h1>
 					<hr>
-					<div class="table-responsive">
+
+					<table>
+						<c:forEach items="${pictureList}" var="picture">
+							<tr>
+								<td>${picture.imageData}</td>
+							</tr>
+						</c:forEach>
+					</table>
+					<!-- <div class="table-responsive">
 						<table class="table">
 							<div id="hot">
 								<div class="box">
@@ -81,9 +86,9 @@
 														</h3>
 														<p class="price">₹143.00</p>
 													</div>
-													<!-- /.text -->
+													/.text
 												</div>
-												<!-- /.product -->
+												/.product
 											</div>
 											<div class="item">
 												<div class="product">
@@ -113,7 +118,7 @@
 															₹143.00
 														</p>
 													</div>
-													<!-- /.text -->
+													/.text
 
 													<div class="ribbon sale">
 
@@ -122,15 +127,15 @@
 													<div class="ribbon new">
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 
 													<div class="ribbon gift">
 
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 												</div>
-												<!-- /.product -->
+												/.product
 											</div>
 
 											<div class="item">
@@ -158,9 +163,9 @@
 														</h3>
 														<p class="price">₹143.00</p>
 													</div>
-													<!-- /.text -->
+													/.text
 												</div>
-												<!-- /.product -->
+												/.product
 											</div>
 
 											<div class="item">
@@ -188,9 +193,9 @@
 														</h3>
 														<p class="price">₹143.00</p>
 													</div>
-													<!-- /.text -->
+													/.text
 												</div>
-												<!-- /.product -->
+												/.product
 											</div>
 
 											<div class="item">
@@ -218,14 +223,14 @@
 														</h3>
 														<p class="price">₹143.00</p>
 													</div>
-													<!-- /.text -->
+													/.text
 
 													<div class="ribbon new">
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 												</div>
-												<!-- /.product -->
+												/.product
 											</div>
 											<div class="item">
 												<div class="product">
@@ -252,18 +257,18 @@
 														</h3>
 														<p class="price">₹143.00</p>
 													</div>
-													<!-- /.text -->
+													/.text
 
 													<div class="ribbon gift">
-														
+
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 
 												</div>
-												<!-- /.product -->
+												/.product
 											</div>
-											<!-- /.col-md-4 -->
+											/.col-md-4
 
 											<div class="item">
 												<div class="product">
@@ -293,25 +298,25 @@
 															₹143.00
 														</p>
 													</div>
-													<!-- /.text -->
+													/.text
 
 													<div class="ribbon sale">
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 
 													<div class="ribbon new">
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 
 													<div class="ribbon gift">
 
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 												</div>
-												<!-- /.product -->
+												/.product
 											</div>
 
 											<div class="item">
@@ -339,21 +344,21 @@
 														</h3>
 														<p class="price">₹143.00</p>
 													</div>
-													<!-- /.text -->
+													/.text
 												</div>
-												<!-- /.product -->
+												/.product
 
 											</div>
 										</div>
 
 									</div>
-									<!-- /.product-slider -->
+									/.product-slider
 								</div>
-								<!-- /.container -->
+								/.container
 							</div>
-							<!-- /#hot -->
+							/#hot
 						</table>
-					</div>
+					</div> -->
 					<!-- /.container -->
 					<div class="table-responsive">
 						<table class="table">
@@ -365,19 +370,20 @@
 										</div>
 									</div>
 								</div>
-								<html:form action="productAdd.do"  enctype="multipart/form-data">
+								<html:form action="productAdd.do" enctype="multipart/form-data">
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="product_name">Product Name</label> <html:text
-													styleClass="form-control" styleId="productName"
-													property="productName"/>
+												<label for="product_name">Product Name</label>
+												<html:text styleClass="form-control" styleId="productName"
+													property="productName" />
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="category">Category</label> <html:text
-													styleClass="form-control" styleId="category" property="category"/>
+												<label for="category">Category</label>
+												<html:text styleClass="form-control" styleId="category"
+													property="category" />
 											</div>
 										</div>
 
@@ -386,25 +392,25 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="description">Description</label><html:text styleClass="form-control" styleId="description"
-													property="description"/>
+												<label for="description">Description</label>
+												<html:text styleClass="form-control" styleId="description"
+													property="description" />
 											</div>
 										</div>
 										<div class="col-sm-6 ">
 											<div class="form-group">
-												<label for="photo">Photo</label> <html:file
-													styleClass="form-control" styleId="photo" property="image"
-													style="border: none" />
-
-
+												<label for="photo">Photo</label>
+												<html:file styleClass="form-control" styleId="photo"
+													property="image" style="border: none" />
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="minBidprice">Minimum Bid price</label> <html:text styleClass="form-control" styleId="minBidPrice"
-													property="minBidPrice"/>
+												<label for="minBidprice">Minimum Bid price</label>
+												<html:text styleClass="form-control" styleId="minBidPrice"
+													property="minBidPrice" />
 											</div>
 										</div>
 									</div>

@@ -63,19 +63,23 @@ public class ProductAction extends Action {
 			String userid = (String) session.getAttribute("user_id");
 			int user_id = Integer.parseInt(userid);
 
-			try {
-				status = pb.addProduct(user_id);
-
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-
-				e.printStackTrace();
-				return mapping.findForward(FALIURE);
-			}
+			status = pb.addProduct(user_id);
 			if (status == true) {
 				return mapping.findForward(SUCCESS);
 			}
 		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		return mapping.findForward(FALIURE);
 	}
 }
