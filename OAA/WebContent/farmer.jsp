@@ -26,7 +26,7 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<li><a href="myproducts.jsp"><i class="fa fa-list"></i>
+							<li><a href="myproducts.do"><i class="fa fa-list"></i>
 									My Products</a></li>
 
 							<li><a href="farmer_account.jsp"><i class="fa fa-user"></i>

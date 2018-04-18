@@ -56,7 +56,7 @@
 				<ul class="menu">
 					<li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
 					</li>
-					<li><a href="regist.do">Register</a></li>
+					<li><a href="registration.jsp">Register</a></li>
 					<li><a href="contact.jsp">Contact</a></li>
 					<!--                     <li><a href="#">Recently viewed</a>
                     </li>	 -->

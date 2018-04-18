@@ -26,12 +26,12 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<li><a href="add.do"><i class="fa fa-list"></i>
+							<li><a href="addproduct.do"><i class="fa fa-list"></i>
 									Add Products</a></li>
 
-							<li><a href="update.do"><i class="fa fa-list"></i>
+							<li><a href="updateproduct.do"><i class="fa fa-list"></i>
 									Manage Products</a></li>
-							<li class="active"><a href="remove.do"><i
+							<li class="active"><a href="removeproduct.do"><i
 									class="fa fa-list"></i> Remove Products</a></li>
 							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>
 									Logout</a></li>
@@ -408,8 +408,8 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="product_name">Product Id</label> <input
-													type="text" class="form-control" id="productId" 
-													 name="productId">
+													type="text" class="form-control" id="productId"
+													name="productId">
 											</div>
 										</div>
 										<!-- </div>

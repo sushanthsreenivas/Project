@@ -9,9 +9,7 @@
 
 	<form-beans>
 		<form-bean name="URB" type="oaa.web.model.UserRegBean"></form-bean>
-
 		<form-bean name="PB" type="oaa.web.model.ProductBean"></form-bean>
-
 		<form-bean name="BU" type="oaa.web.model.BidingBean"></form-bean>
 	</form-beans>
 
@@ -24,13 +22,14 @@
 	</global-forwards>
 
 	<action-mappings>
-		<action path="/regist" forward="/registration.jsp" />
-		<action path="/add" forward="/product_add.jsp"></action>
-		<action path="/update" forward="/product_update.jsp"></action>
-		<action path="/remove" forward="/product_remove.jsp"></action>
+		<!-- <action path="/regist" forward="/registration.jsp" /> -->
+		<action path="/addproduct" forward="/product_add.jsp"></action>
+		<action path="/updateproduct" forward="/product_update.jsp"></action>
+		<action path="/removeproduct" forward="/product_remove.jsp"></action>
 		<action path="/addbid" forward="/bid_add.jsp"></action>
 		<action path="/updatebid" forward="/bid_update.jsp"></action>
-
+		<action path="/myproducts" forward="/myproducts.jsp"></action>
+		<action path="/mybiding" forward="/mybiding.jsp"></action>
 
 		<action path="/processRegistration" name="URB"
 			type="oaa.web.controller.RegistrationAction" input="/registration.jsp"
@@ -48,15 +47,21 @@
 		</action>
 
 
-		<action path="/productupdate" name="PU"
+		<action path="/productupdate" name="PB"
 			type="oaa.web.controller.ProductUpdateAction" input="/product_update.jsp"
 			scope="request" validate="true">
 			<forward name="success" path="/addsuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
+		<action path="/productretrive" name="PB"
+			type="oaa.web.controller.ProductretriveAction" input="/product_add.jsp"
+			scope="request" validate="true">
+			<forward name="success" path="/addsuccess.jsp" />
+			<forward name="failure" path="/dberror.jsp" />
+		</action>
 
-		<action path="/productremove" name="PR"
+		<action path="/productremove" name="PB"
 			type="oaa.web.controller.ProductRemoveAction" input="/product_remove.jsp"
 			scope="request">
 			<forward name="success" path="/addsuccess.jsp" />
