@@ -1,13 +1,20 @@
 /**
+
  * 
  */
 package oaa.web.model;
 
+import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -63,14 +70,6 @@ public class ProductBean extends ActionForm {
 		this.minBidPrice = minBidPrice;
 	}
 
-	public FormFile getImage() {
-		return image;
-	}
-
-	public void setImage(FormFile image) {
-		this.image = image;
-	}
-
 	public int getProductId() {
 		return productId;
 	}
@@ -79,7 +78,14 @@ public class ProductBean extends ActionForm {
 		this.productId = productId;
 	}
 
-	
+	public FormFile getImage() {
+		return image;
+	}
+
+	public void setImage(FormFile image) {
+		this.image = image;
+	}
+
 	/*
 	 * @Override public ActionErrors validate(ActionMapping mapping,
 	 * HttpServletRequest request) { ActionErrors errors = new ActionErrors();
@@ -125,23 +131,33 @@ public class ProductBean extends ActionForm {
 	 * return errors; }
 	 */
 
-	public boolean addProduct(int user_id) throws SQLException {
+	public boolean addProduct(int user_id) {
 
 		try {
 
 			context = new InitialContext();
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
 
+			byte[] fileData = null;
+			ByteArrayInputStream fileBA = null;
+
+			fileData = image.getFileData();
+
+			fileBA = new ByteArrayInputStream(fileData);
+
 			connection = ds.getConnection();
 			ps = connection.prepareStatement("insert into product values(null,?,?,?,?,?,'E',?,?)");
+
+			// set parameters
 
 			ps.setString(1, getProductName());
 			ps.setString(2, getCategory());
 			ps.setInt(3, user_id);
 			ps.setString(4, getDescription());
 			ps.setInt(5, getMinBidPrice());
+			ps.setBinaryStream(6, fileBA);
 			Date sqlDate = new Date(new java.util.Date().getTime());
-			ps.setDate(6, sqlDate);
+			ps.setDate(7, sqlDate);
 
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
@@ -149,6 +165,12 @@ public class ProductBean extends ActionForm {
 				return true;
 			}
 		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
@@ -176,23 +198,31 @@ public class ProductBean extends ActionForm {
 		return false;
 	}
 
-	public boolean updateProduct(int user_id) throws SQLException {
+	public boolean updateProduct(int user_id) {
 
 		try {
 			context = new InitialContext();
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
+			byte[] fileData = null;
+			ByteArrayInputStream fileBA = null;
+
+			fileData = image.getFileData();
+
+			fileBA = new ByteArrayInputStream(fileData);
 
 			connection = ds.getConnection();
 
 			ps = connection.prepareStatement(
-					"UPDATE product SET min_bid_price=?, category_id=?,description=?  WHERE product_id=?  and user_id=?");
+					"UPDATE product SET min_bid_price=?, category_id=?,description=?,photo=?,Date=?  WHERE product_id=?  and user_id=?");
 
 			ps.setInt(1, getMinBidPrice());
 			ps.setString(2, getCategory());
 			ps.setString(3, getDescription());
-			ps.setInt(4, getProductId());
-			ps.setInt(5, user_id);
-			ps.setBlob(6, arg1);
+			ps.setBinaryStream(4, fileBA);
+			Date sqlDate = new Date(new java.util.Date().getTime());
+			ps.setDate(5, sqlDate);
+			ps.setInt(6, getProductId());
+			ps.setInt(7, user_id);
 
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
@@ -202,7 +232,14 @@ public class ProductBean extends ActionForm {
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} finally {
+
 			try {
 				if (context != null) {
 					context.close();
@@ -270,4 +307,29 @@ public class ProductBean extends ActionForm {
 		return false;
 	}
 
+	public void displayImage() {
+
+		try {
+
+			context = new InitialContext();
+			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
+
+			connection = ds.getConnection();
+
+			String sql = "SELECT photo FROM products";
+
+			PreparedStatement ps = connection.prepareStatement(sql);
+
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				Blob ph = rs.getBlob("photo");
+				System.out.println(rs.getBlob("photo"));
+				byte data[] = ph.getBytes(1, (int) ph.length());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
 }

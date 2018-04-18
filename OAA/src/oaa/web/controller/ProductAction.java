@@ -34,7 +34,7 @@ public class ProductAction extends Action {
 			folder.mkdir();
 		}
 
-	//	System.out.println(file);
+		//System.out.println(file);
 		String fileName = file.getFileName();
 
 		if (!("").equals(fileName)) {
@@ -62,20 +62,13 @@ public class ProductAction extends Action {
 			System.out.println(session.getAttribute("user_id"));
 			String userid = (String) session.getAttribute("user_id");
 			int user_id = Integer.parseInt(userid);
-
-			try {
-				status = pb.addProduct(user_id);
-
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-
-				e.printStackTrace();
-				return mapping.findForward(FALIURE);
-			}
+			status = pb.addProduct(user_id);
 			if (status == true) {
 				return mapping.findForward(SUCCESS);
 			}
 		}
+		
+		
 		return mapping.findForward(FALIURE);
 	}
 }
