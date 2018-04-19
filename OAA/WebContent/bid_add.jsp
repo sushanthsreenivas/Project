@@ -15,7 +15,7 @@
 			</div>
 
 			<div class="col-md-3">
-				
+
 				<div class="panel panel-default sidebar-menu">
 
 					<div class="panel-heading">
@@ -389,19 +389,13 @@
 										</div>
 									</div>
 								</div>
-								<form action="bidadd.do" method="post">
+
+								<form action="bidupdate.do" method="post">
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="category">Category</label> <input type="text"
-													class="form-control" id="category">
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label for="product_name">Product Name</label> <input
-													type="text" class="form-control" id="Pname"
-													name="productName">
+												<label for="category">Auction Id</label> <input type="text"
+													class="form-control" id="auctionid" name="auctionid">
 											</div>
 										</div>
 									</div>

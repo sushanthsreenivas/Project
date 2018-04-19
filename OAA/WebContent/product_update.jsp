@@ -1,7 +1,5 @@
-
-
 <%@ include file="header.jsp"%>
-<div id="all">
+<%@taglib uri="/WEB-INF/struts-html.tld" prefix="html"%><div id="all">
 
 	<div id="content">
 		<div class="container">
@@ -28,8 +26,8 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<li><a href="addproduct.do"><i class="fa fa-list"></i>
-									Add Products</a></li>
+							<li><a href="addproduct.do"><i class="fa fa-list"></i> Add
+									Products</a></li>
 
 							<li class="active"><a href="updateproduct.do"><i
 									class="fa fa-list"></i> Manage Products</a></li>
@@ -104,8 +102,6 @@
 												</div>
 												<!-- /.product -->
 											</div>
-
-
 											<div class="item">
 												<div class="product">
 													<div class="flip-container">
@@ -137,19 +133,19 @@
 													<!-- /.text -->
 
 													<div class="ribbon sale">
-														
+
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
 
 													<div class="ribbon new">
-													
+
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
 
 													<div class="ribbon gift">
-													
+
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
@@ -391,19 +387,21 @@
 										</div>
 									</div>
 								</div>
-								<form action="productupdate.do" method="post">
+								<html:form action="productupdate.do"
+									enctype="multipart/form-data">
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="product_name">Product ID</label> <input
-													type="text" class="form-control" id="productId"
-													name="productId">
+												<label for="product_name">Product Id</label>
+												<html:text styleClass="form-control" styleId="productName"
+													property="productId" />
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="category">Category</label> <input type="text"
-													class="form-control" id="category" name="category">
+												<label for="category">Category  Id</label>
+												<html:text styleClass="form-control" styleId="category"
+													property="category" />
 											</div>
 										</div>
 
@@ -412,24 +410,25 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="description">Description</label> <input
-													type="text" class="form-control" name="description"
-													id="description">
+												<label for="description">Description</label>
+												<html:text styleClass="form-control" styleId="description"
+													property="description" />
 											</div>
 										</div>
-										<div class="col-sm-6 col-md-3">
+										<div class="col-sm-6 ">
 											<div class="form-group">
-												<label for="photo">Photo</label> <select
-													class="form-control" name="photo" id="photo"></select>
+												<label for="photo">Photo</label>
+												<html:file styleClass="form-control" styleId="photo"
+													property="image" style="border: none" />
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="min_bid_price">Minimum Bid price</label> <input
-													type="text" class="form-control" name="minBidPrice"
-													id="minBidPrice">
+												<label for="minBidprice">Minimum Bid price</label>
+												<html:text styleClass="form-control" styleId="minBidPrice"
+													property="minBidPrice" />
 											</div>
 										</div>
 									</div>
@@ -437,11 +436,10 @@
 
 									<div class="col-sm-12 text-center">
 										<button type="submit" class="btn btn-primary">
-											<i class="fa fa-save"></i> Save Changes
+											<i class="fa fa-save"></i> Add Product
 										</button>
-
 									</div>
-								</form>
+								</html:form>
 							</div>
 						</table>
 					</div>

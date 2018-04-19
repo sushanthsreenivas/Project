@@ -367,7 +367,7 @@
 								<!-- /.container -->
 
 							</div>
-							
+
 						</table>
 					</div>
 					<!-- /.table-responsive -->
@@ -392,33 +392,26 @@
 													class="form-control" id="auctionid" name="auctionid">
 											</div>
 										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label for="product_name">Product Name</label> <input
-													type="text" class="form-control" id="productNname"
-													name="productName">
+
+										<!-- /.row -->
+
+										<div class="row">
+
+											<div class="col-sm-6">
+												<div class="form-group">
+													<label for="min_bid_price">Your Biding price</label> <input
+														type="text" class="form-control" id="min_bid_price"
+														name="bidingPrice">
+												</div>
 											</div>
 										</div>
-									</div>
-									<!-- /.row -->
+										<!-- /.row -->
 
-									<div class="row">
-
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label for="min_bid_price">Your Biding price</label> <input
-													type="text" class="form-control" id="min_bid_price"
-													name="bidingPrice">
-											</div>
+										<div class="col-sm-12 text-center">
+											<button type="submit" class="btn btn-primary">
+												<i class="fa fa-save"></i> Save changaes
+											</button>
 										</div>
-									</div>
-									<!-- /.row -->
-
-									<div class="col-sm-12 text-center">
-										<button type="submit" class="btn btn-primary">
-											<i class="fa fa-save"></i> Save changaes
-										</button>
-									</div>
 								</form>
 						</table>
 					</div>

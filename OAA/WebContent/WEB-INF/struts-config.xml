@@ -10,7 +10,7 @@
 	<form-beans>
 		<form-bean name="URB" type="oaa.web.model.UserRegBean"></form-bean>
 		<form-bean name="PB" type="oaa.web.model.ProductBean"></form-bean>
-		<form-bean name="BU" type="oaa.web.model.BidingBean"></form-bean>
+		<form-bean name="bid" type="oaa.web.model.BidingBean"></form-bean>
 	</form-beans>
 
 	<global-exceptions>
