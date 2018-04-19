@@ -392,14 +392,14 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="product_name">Product Name</label>
+												<label for="product_name">ProductId</label>
 												<html:text styleClass="form-control" styleId="productName"
 													property="productId" />
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="category">Category</label>
+												<label for="category">CategoryIdS</label>
 												<html:text styleClass="form-control" styleId="category"
 													property="category" />
 											</div>
@@ -436,7 +436,7 @@
 
 									<div class="col-sm-12 text-center">
 										<button type="submit" class="btn btn-primary">
-											<i class="fa fa-save"></i> Add Product
+											<i class="fa fa-save"></i> Update Product
 										</button>
 									</div>
 								</html:form>

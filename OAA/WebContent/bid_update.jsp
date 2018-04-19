@@ -1,4 +1,5 @@
 <%@ include file="header.jsp"%>
+<%@taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
 <div id="all">
 
 	<div id="content">
@@ -384,42 +385,29 @@
 										</div>
 									</div>
 								</div>
-								<form action="bidupdate.do" method="post">
+									<html:form action="/bidupdate.do" enctype="multipart/form-data">
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="category">Auction Id</label> <input type="text"
-													class="form-control" id="auctionid" name="auctionid">
+												<label for="auctionId">auctionId</label>
+												<html:text styleClass="form-control" styleId="auctionid"
+													property="auctionid" />
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="product_name">Product Name</label> <input
-													type="text" class="form-control" id="productNname"
-													name="productName">
+												<label for="Bid Price">Bid price</label>
+												<html:text styleClass="form-control" styleId="bidprice"
+													property="bidprice" />
 											</div>
 										</div>
 									</div>
-									<!-- /.row -->
-
-									<div class="row">
-
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label for="min_bid_price">Your Biding price</label> <input
-													type="text" class="form-control" id="min_bid_price"
-													name="bidingPrice">
-											</div>
-										</div>
-									</div>
-									<!-- /.row -->
-
 									<div class="col-sm-12 text-center">
 										<button type="submit" class="btn btn-primary">
-											<i class="fa fa-save"></i> Save changaes
+											<i class="fa fa-save"></i> Bid Change
 										</button>
 									</div>
-								</form>
+								</html:form>
 						</table>
 					</div>
 					<!-- /.table-responsive -->

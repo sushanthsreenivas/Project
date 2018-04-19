@@ -1,4 +1,5 @@
 <%@ include file="header.jsp"%>
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
 <div id="all">
 
 	<div id="content">
@@ -15,7 +16,7 @@
 			</div>
 
 			<div class="col-md-3">
-				
+
 				<div class="panel panel-default sidebar-menu">
 
 					<div class="panel-heading">
@@ -381,7 +382,6 @@
 					<div class="table-responsive">
 						<table class="table">
 							<div id="hot">
-
 								<div class="box">
 									<div class="container">
 										<div class="col-md-8">
@@ -389,41 +389,29 @@
 										</div>
 									</div>
 								</div>
-								<form action="bidadd.do" method="post">
+								<html:form action="bidadd.do" enctype="multipart/form-data">
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="category">Category</label> <input type="text"
-													class="form-control" id="category">
+												<label for="auction id">auctionId</label>
+												<html:text styleClass="form-control" styleId="auctionid"
+													property="auctionid" />
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="product_name">Product Name</label> <input
-													type="text" class="form-control" id="Pname"
-													name="productName">
+												<label for="bid price">Bid price</label>
+												<html:text styleClass="form-control" styleId="bid"
+													property="bidprice" />
 											</div>
 										</div>
 									</div>
-									<!-- /.row -->
-
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label for="min_bid_price">Your Biding price</label> <input
-													type="text" class="form-control" id="min_bid_price"
-													name="bidingPrice">
-											</div>
-										</div>
-									</div>
-									<!-- /.row -->
-
 									<div class="col-sm-12 text-center">
 										<button type="submit" class="btn btn-primary">
-											<i class="fa fa-save"></i> Save
+											<i class="fa fa-save"></i> Bid
 										</button>
 									</div>
-								</form>
+								</html:form>
 						</table>
 					</div>
 					<!-- /.table-responsive -->

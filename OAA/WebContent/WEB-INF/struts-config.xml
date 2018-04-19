@@ -10,7 +10,7 @@
 	<form-beans>
 		<form-bean name="URB" type="oaa.web.model.UserRegBean"></form-bean>
 		<form-bean name="PB" type="oaa.web.model.ProductBean"></form-bean>
-		<form-bean name="BU" type="oaa.web.model.BidingBean"></form-bean>
+		<form-bean name="bid" type="oaa.web.model.BidingBean"></form-bean>
 	</form-beans>
 
 	<global-exceptions>
@@ -76,9 +76,9 @@
 		</action>
 
 
-		<action path="/bidupdate" name="BU"
-			type="oaa.web.controller.BidingUpdateAction" input="/bid_update.jsp"
-			scope="request">
+		
+		<action path="/bidupdate" name="bid" type="oaa.web.controller.BidingUpdateAction"
+			input="/bid_update.jsp" scope="request">
 			<forward name="success" path="/addsuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>

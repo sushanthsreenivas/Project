@@ -24,15 +24,13 @@ public class BidingAction extends Action {
 
 			BidingBean biding = (BidingBean) form;
 			boolean status = false;
-			HttpSession session = request.getSession();
+			HttpSession session = request.getSession(false);
 			System.out.println(session.getAttribute("user_id"));
 			String userid = (String) session.getAttribute("user_id");
 			int user_id = Integer.parseInt(userid);
 
 			try {
-
 				status = biding.addBid(user_id);
-
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
