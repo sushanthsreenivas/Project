@@ -26,6 +26,7 @@ public class BidingBean extends ActionForm {
 	 * private int bidingPrice;
 	 */
 
+
 	private int bidprice;
 
 
@@ -39,6 +40,7 @@ public class BidingBean extends ActionForm {
 	public void setAuctionid(int auctionid) {
 		this.auctionid = auctionid;
 	}
+
 
 	/*
 	 * public String getCategory() { return category; }
@@ -55,6 +57,9 @@ public class BidingBean extends ActionForm {
 	 * public void setBidingPrice(int bidingPrice) { this.bidingPrice =
 	 * bidingPrice; }
 	 */
+
+	
+	
 
 
 	
@@ -76,13 +81,14 @@ public class BidingBean extends ActionForm {
 
 			connection = ds.getConnection();
 
-			ps = connection.prepareStatement("insert into auction_transaction values(null,?,?,?,?)");
+			ps = connection.prepareStatement("insert into auction_transaction values(null,?,?,?,now())");
 			ps.setInt(1, getAuctionid());
 			ps.setInt(2, user_id);
 			ps.setInt(3, getBidprice());
-			Date sqlDate = new Date(new java.util.Date().getTime());
-			System.out.println(sqlDate);
-			ps.setDate(4, sqlDate);
+			/*
+			 * Date sqlDate = new Date(new java.util.Date().getTime());
+			 * System.out.println(sqlDate); ps.setDate(4, sqlDate);
+			 */
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
 				System.out.println("entered");//
@@ -187,13 +193,15 @@ public class BidingBean extends ActionForm {
 			connection = ds.getConnection();
 
 			ps = connection.prepareStatement(
-					"UPDATE auction_transcation join users users.user_id=auction_transaction.user_id join auction_master on auction_master.auction_id=auction_transaction.auction_id SET bid_prize =? Date=? where userid=? and bid_id=?  ");
+					"UPDATE auction_transaction join users on users.user_id=auction_transaction.user_id join "
+							+ "auction_master on auction_master.auction_id=auction_transaction.auction_id"
+							+ " SET auction_transaction.bid_prize =?, Date=now() where auction_transaction.user_id=? and auction_transaction.auction_id=?");
 			ps.setInt(1, getBidprice());
-			Date sqlDate = new Date(new java.util.Date().getTime());
-			System.out.println(sqlDate);
-			ps.setDate(2, sqlDate);
-			ps.setInt(3, user_id);
-			ps.setInt(4, getAuctionid());
+			// Date sqlDate = new Date(new java.util.Date().getTime());
+			// System.out.println(sqlDate);
+			// ps.setDate(, sqlDate);
+			ps.setInt(2, user_id);
+			ps.setInt(3, getAuctionid());
 
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
