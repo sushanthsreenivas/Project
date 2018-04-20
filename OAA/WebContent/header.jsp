@@ -43,8 +43,6 @@
 
 <body>
 
-	<!-- *** TOPBAR ***
- _________________________________________________________ -->
 	<div id="top">
 		<div class="container">
 			<div class="col-md-6 offer" data-animate="fadeInDown">
@@ -122,9 +120,7 @@
 			<div class="navbar-header">
 
 				<a class="navbar-brand home" href="index.html"
-					data-animate-hover="bounce"> <!--<img src="img1s/logo.png" alt="OAA" class="hidden-xs">
-                    <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">OAA - go to homepage</span> -->
-				</a>
+					data-animate-hover="bounce">OAA - go to homepage </a>
 				<div class="navbar-buttons">
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
 						data-target="#navigation">
@@ -162,11 +158,6 @@
 
 			<div class="navbar-buttons">
 
-				<!--               <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
-                </div>
-                <!--/.nav-collapse -->
-
 				<div class="navbar-collapse collapse right" id="search-not-mobile">
 					<button type="button" class="btn navbar-btn btn-primary"
 						data-toggle="collapse" data-target="#search">
@@ -197,12 +188,6 @@
 		</div>
 		<!-- /.container -->
 	</div>
-	<!-- /#navbar -->
-
-	<!-- *** NAVBAR END *** -->
-
-
-
 
 	<!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
