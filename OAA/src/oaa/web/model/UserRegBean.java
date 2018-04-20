@@ -2,6 +2,7 @@
  * 
  */
 package oaa.web.model;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -106,7 +107,7 @@ public class UserRegBean extends ActionForm {
 	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
 		ActionErrors errors = new ActionErrors();
 
-		if (getRole() == null){
+		if (getRole() == null) {
 			errors.add("roleerrmsg", new ActionMessage("error.role.required"));
 		}
 
@@ -125,7 +126,7 @@ public class UserRegBean extends ActionForm {
 		if (getPasswd() == null || getPasswd().length() < 6) {
 			errors.add("passwderrmsg", new ActionMessage("error.passwd.required"));
 		}
-		
+
 		if (getMobileno() == null || getMobileno().length() < 10) {
 			errors.add("mobilenoerrmsg", new ActionMessage("error.mobileno.required"));
 
@@ -149,9 +150,9 @@ public class UserRegBean extends ActionForm {
 
 		return errors;
 	}
-	
-	public boolean registerUser()throws SQLException{
-		////////////
+
+	public boolean registerUser() throws SQLException {
+
 		Context context = null;
 		Connection connection = null;
 		PreparedStatement ps = null;
@@ -160,32 +161,28 @@ public class UserRegBean extends ActionForm {
 		try {
 			context = new InitialContext();
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
-
 			connection = ds.getConnection();
 
 			ps = connection.prepareStatement("insert into users values(null,?,?,?,?,?,?,'E',?,?,?,?)");
-			
-				ps.setString(1,getEmail_id());
-				ps.setString(2,getFirstname());
-				ps.setString(3, getLastname());
-				ps.setString(4, getPasswd());
-				ps.setString(5,getRole());
-				ps.setString(6,getMobileno());		
-				ps.setString(7,getAddress());
-				ps.setString(8,getCity());
-				ps.setString(9,getState());
-				ps.setString(10,getPincode());
 
+			ps.setString(1, getEmail_id());
+			ps.setString(2, getFirstname());
+			ps.setString(3, getLastname());
+			ps.setString(4, getPasswd());
+			ps.setString(5, getRole());
+			ps.setString(6, getMobileno());
+			ps.setString(7, getAddress());
+			ps.setString(8, getCity());
+			ps.setString(9, getState());
+			ps.setString(10, getPincode());
 
-				int rowsEffected = ps.executeUpdate();
-				if (rowsEffected > 0) {
-				
-					return true;
-					
-				}
-			
-		
-				
+			int rowsEffected = ps.executeUpdate();
+			if (rowsEffected > 0) {
+
+				return true;
+
+			}
+
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -204,7 +201,7 @@ public class UserRegBean extends ActionForm {
 					rs.close();
 				}
 			} catch (NamingException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

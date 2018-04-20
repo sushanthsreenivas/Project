@@ -21,7 +21,7 @@ public class ProductAction extends Action {
 
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		ProductBean productBean  = (ProductBean) form;
+		ProductBean productBean = (ProductBean) form;
 
 		FormFile file = productBean.getImage();
 
@@ -32,8 +32,6 @@ public class ProductAction extends Action {
 		if (!folder.exists()) {
 			folder.mkdir();
 		}
-
-		//System.out.println(file);
 		String fileName = file.getFileName();
 
 		if (!("").equals(fileName)) {
@@ -58,7 +56,6 @@ public class ProductAction extends Action {
 			boolean status = false;
 
 			HttpSession session = request.getSession(false);
-			System.out.println(session.getAttribute("user_id"));
 			String userid = (String) session.getAttribute("user_id");
 			int user_id = Integer.parseInt(userid);
 			status = pb.addProduct(user_id);
@@ -66,8 +63,7 @@ public class ProductAction extends Action {
 				return mapping.findForward(SUCCESS);
 			}
 		}
-		
-		
+
 		return mapping.findForward(FALIURE);
 	}
 }

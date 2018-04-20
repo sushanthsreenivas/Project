@@ -30,8 +30,8 @@ public class ProcessRequestServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
 	}
@@ -40,8 +40,8 @@ public class ProcessRequestServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String email_id = request.getParameter("email");
 		String passwd = request.getParameter("passwd");
@@ -59,23 +59,16 @@ public class ProcessRequestServlet extends HttpServlet {
 
 				String role = result[1];
 				if (role.equals("Farmer")) {
-					request.getRequestDispatcher("/farmer.jsp").forward(
-							request, response);
+					request.getRequestDispatcher("/farmer.jsp").forward(request, response);
 				} else if (role.equals("Customer")) {
-					request.getRequestDispatcher("/buyer.jsp").forward(request,
-							response);
+					request.getRequestDispatcher("/buyer.jsp").forward(request, response);
 				} else {
-					request.getRequestDispatcher("/InvaidUser.jsp").forward(
-							request, response);
+					request.getRequestDispatcher("/InvaidUser.jsp").forward(request, response);
 				}
 
 			} else {
-				request.getRequestDispatcher("?flag=true").forward(request,
-						response);
+				request.getRequestDispatcher("?flag=true").forward(request, response);
 			}
-
 		}
-
-	} // doPost close
-
-}// class close 
+	}
+}

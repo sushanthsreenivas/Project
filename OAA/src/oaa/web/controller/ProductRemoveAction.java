@@ -32,8 +32,8 @@ public class ProductRemoveAction extends Action {
 			String userid = (String) session.getAttribute("user_id");
 			int user_id = Integer.parseInt(userid);
 			try {
-					status = pb.RemoveProduct(user_id);
-				
+				status = pb.RemoveProduct(user_id);
+
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 

@@ -12,7 +12,6 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import oaa.web.model.BidingBean;
-import oaa.web.model.ProductBean;
 
 public class BidingUpdateAction extends Action {
 

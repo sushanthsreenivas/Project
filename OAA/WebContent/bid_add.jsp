@@ -411,13 +411,15 @@
 												</div>
 											</div>
 										</div>
+									</div>
+									<div class="col-sm-12 text-center">
+										<button type="submit" class="btn btn-primary">
+											<i class="fa fa-save"></i> Bid
+										</button>
+									</div>
 
-										<div class="col-sm-12 text-center">
-											<button type="submit" class="btn btn-primary">
-												<i class="fa fa-save"></i> Bid
-											</button>
-										</div>
 								</html:form>
+							</div>
 						</table>
 					</div>
 					<!-- /.table-responsive -->
