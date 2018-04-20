@@ -385,22 +385,16 @@
 										</div>
 									</div>
 								</div>
-<<<<<<< HEAD
+
 								<html:form action="bidupdate.do" enctype="multipart/form-data">
-=======
-									<html:form action="/bidupdate.do" enctype="multipart/form-data">
->>>>>>> refs/remotes/origin/master
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-<<<<<<< HEAD
+
 												<label for="category">Auction Id</label>
 												<html:text styleClass="form-control" styleId="auctionid"
 													property="auctionid" />
-=======
-												<label for="auctionId">auctionId</label>
-												<html:text styleClass="form-control" styleId="auctionid"
-													property="auctionid" />
+
 											</div>
 										</div>
 										<div class="col-sm-6">
@@ -408,11 +402,11 @@
 												<label for="Bid Price">Bid price</label>
 												<html:text styleClass="form-control" styleId="bidprice"
 													property="bidprice" />
->>>>>>> refs/remotes/origin/master
+
 											</div>
 										</div>
 									</div>
-<<<<<<< HEAD
+
 									<!-- /.row -->
 
 									<div class="row">
@@ -427,15 +421,12 @@
 									</div>
 									<!-- /.row -->
 
-=======
->>>>>>> refs/remotes/origin/master
+
 									<div class="col-sm-12 text-center">
 										<button type="submit" class="btn btn-primary">
-<<<<<<< HEAD
+
 											<i class="fa fa-save"></i> Save
-=======
-											<i class="fa fa-save"></i> Bid Change
->>>>>>> refs/remotes/origin/master
+
 										</button>
 									</div>
 								</html:form>
