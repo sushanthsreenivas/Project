@@ -232,7 +232,7 @@
 													<div class="text">
 														<h3>
 															<a href="detail.html">Apple</a>
-														</h3> 
+														</h3>
 														<p class="price">₹143.00</p>
 													</div>
 													<!-- /.text -->
@@ -390,12 +390,9 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-<<<<<<< HEAD
-												<label for="auction Id">AuctionId</label>
-=======
 
-												<label for="category">Auction Id</label>
->>>>>>> branch 'master' of https://github.com/aaoaap2018/Project.git
+												<label for="auction Id">AuctionId</label>
+
 												<html:text styleClass="form-control" styleId="auctionid"
 													property="auctionid" />
 
@@ -413,7 +410,7 @@
 
 									<!-- /.row -->
 
-									
+
 									<!-- /.row -->
 
 

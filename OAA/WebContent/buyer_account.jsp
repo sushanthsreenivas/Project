@@ -106,7 +106,7 @@
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
-									<label for="Address">address</label> <input type="text"
+									<label for="Address">Address</label> <input type="text"
 										class="form-control" id="address" name="address">
 								</div>
 							</div>

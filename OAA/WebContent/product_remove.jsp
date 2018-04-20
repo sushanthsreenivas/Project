@@ -243,7 +243,7 @@
 													<!-- /.text -->
 
 													<div class="ribbon new">
-														<!--                                   <div class="theribbon">NEW</div>  -->
+
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
@@ -279,7 +279,7 @@
 													<!-- /.text -->
 
 													<div class="ribbon gift">
-														<!--                                   <div class="theribbon">GIFT</div>  -->
+
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
@@ -320,19 +320,19 @@
 													<!-- /.text -->
 
 													<div class="ribbon sale">
-														<!--                                   <div class="theribbon">SALE</div>  -->
+
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
 
 													<div class="ribbon new">
-														<!--                                    <div class="theribbon">NEW</div> -->
+
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
 
 													<div class="ribbon gift">
-														<!--                                   <div class="theribbon">GIFT</div>  -->
+
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->

@@ -146,7 +146,7 @@
 				<ul class="nav navbar-nav navbar-left">
 					<li class="active"><a href="index.html">Home</a></li>
 					<li><a href="auction1.html" class="dropdown-toggle"
-						data-hover="dropdown" data-delay="200"  >Auction <b></b></a></li>
+						data-hover="dropdown" data-delay="200">Auction <b></b></a></li>
 
 					<li class="dropdown yamm-fw"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown"
@@ -199,24 +199,6 @@
 	<!-- *** NAVBAR END *** -->
 
 	<div>
-
-
-
-
-
-
-
-
-
-		<pre>
-	 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-	 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	 /////////////////////////////////
-	 ***********WELCOME***************
-	 /////////////////////////////////
-	 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ </pre>
-
 
 
 
