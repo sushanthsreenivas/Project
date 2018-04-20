@@ -1,4 +1,5 @@
 <%@ include file="header.jsp"%>
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
 <div id="all">
 
 	<div id="content">
@@ -390,12 +391,13 @@
 									</div>
 								</div>
 
-								<form action="bidupdate.do" method="post">
+								<html:form action="bidadd.do" enctype="multipart/form-data">
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="category">Auction Id</label> <input type="text"
-													class="form-control" id="auctionid" name="auctionid">
+												<label for="category">Auction Id</label>
+												<html:text styleClass="form-control" styleId="auctionid"
+													property="auctionid" />
 											</div>
 										</div>
 									</div>
@@ -403,10 +405,11 @@
 
 									<div class="row">
 										<div class="col-sm-6">
+											
 											<div class="form-group">
-												<label for="min_bid_price">Your Biding price</label> <input
-													type="text" class="form-control" id="min_bid_price"
-													name="bidingPrice">
+												<label for="min_bid_price">Your Biding price</label>
+												<html:text styleClass="form-control" styleId="min_bid_price"
+													property="bidingPrice" />
 											</div>
 										</div>
 									</div>
@@ -417,7 +420,7 @@
 											<i class="fa fa-save"></i> Save
 										</button>
 									</div>
-								</form>
+								</html:form>
 						</table>
 					</div>
 					<!-- /.table-responsive -->

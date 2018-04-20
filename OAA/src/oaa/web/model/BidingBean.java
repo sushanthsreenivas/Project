@@ -24,7 +24,15 @@ public class BidingBean extends ActionForm {
 	private String productName;
 
 	private int bidingPrice;
-	
+	private int auctionid;
+
+	public int getAuctionid() {
+		return auctionid;
+	}
+
+	public void setAuctionid(int auctionid) {
+		this.auctionid = auctionid;
+	}
 
 	public String getCategory() {
 		return category;
@@ -59,8 +67,8 @@ public class BidingBean extends ActionForm {
 
 			connection = ds.getConnection();
 
-			ps = connection.prepareStatement("insert into auction_master values(null,?,?,?,null,?,'E')");
-			ps.setString(1, getProductName());
+			ps = connection.prepareStatement("insert into auction_transaction values(null,?,?,?,?)");
+			ps.setInt(1, getAuctionid());
 			ps.setInt(2, user_id);
 			ps.setInt(3, getBidingPrice());
 			Date sqlDate = new Date(new java.util.Date().getTime());
