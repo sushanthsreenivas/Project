@@ -389,14 +389,14 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="auctionId">auctionId</label>
+												<label for="auction Id">AuctionId</label>
 												<html:text styleClass="form-control" styleId="auctionid"
 													property="auctionid" />
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="Bid Price">Bid price</label>
+												<label for="Bid Price">Bid Price</label>
 												<html:text styleClass="form-control" styleId="bidprice"
 													property="bidprice" />
 											</div>

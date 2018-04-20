@@ -146,7 +146,7 @@ public class ProductBean extends ActionForm {
 			fileBA = new ByteArrayInputStream(fileData);
 
 			connection = ds.getConnection();
-			ps = connection.prepareStatement("insert into product values(null,?,?,?,?,?,'E',?,?)");
+			ps = connection.prepareStatement("insert into product values(null,?,?,?,?,?,'E',?,now())");
 
 			// set parameters
 
@@ -157,8 +157,8 @@ public class ProductBean extends ActionForm {
 			ps.setString(4, getDescription());
 			ps.setInt(5, getMinBidPrice());
 			ps.setBinaryStream(6, fileBA);
-			Date sqlDate = new Date(new java.util.Date().getTime());
-			ps.setDate(7, sqlDate);
+		/*	Date sqlDate = new Date(new java.util.Date().getTime());
+			ps.setDate(7, sqlDate);*/
 
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
@@ -214,16 +214,16 @@ public class ProductBean extends ActionForm {
 			connection = ds.getConnection();
 
 			ps = connection.prepareStatement(
-					"UPDATE product SET min_bid_price=?, category_id=?,description=?,photo=?,Date=?  WHERE product_id=?  and user_id=?");
+					"UPDATE product SET min_bid_price=?, category_id=?,description=?,photo=?,Date=now()  WHERE product_id=?  and user_id=?");
 
 			ps.setInt(1, getMinBidPrice());
 			ps.setString(2, getCategory());
 			ps.setString(3, getDescription());
 			ps.setBinaryStream(4, fileBA);
-			Date sqlDate = new Date(new java.util.Date().getTime());
-			ps.setDate(5, sqlDate);
-			ps.setInt(6, getProductId());
-			ps.setInt(7, user_id);
+		/*	Date sqlDate = new Date(new java.util.Date().getTime());
+			ps.setDate(5, sqlDate);*/
+			ps.setInt(5, getProductId());
+			ps.setInt(6, user_id);
 
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {

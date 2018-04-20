@@ -314,7 +314,8 @@
 									</div>
 									<!-- item tag end -->
 								</div>
-								<!-- /.product-slider -->
+							</div>
+							<!-- /.product-slider -->
 						</table>
 						<!-- /.table-responsive -->
 					</div>
