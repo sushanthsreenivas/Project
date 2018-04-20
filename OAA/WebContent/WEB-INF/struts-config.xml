@@ -79,6 +79,7 @@
 		<action path="/bidupdate" name="bid"
 			type="oaa.web.controller.BidingUpdateAction" input="/bid_update.jsp"
 			scope="request">
+
 			<forward name="success" path="/addsuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>

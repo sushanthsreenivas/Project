@@ -382,7 +382,6 @@
 					<div class="table-responsive">
 						<table class="table">
 							<div id="hot">
-
 								<div class="box">
 									<div class="container">
 										<div class="col-md-8">
@@ -390,17 +389,34 @@
 										</div>
 									</div>
 								</div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/master
 								<html:form action="bidadd.do" enctype="multipart/form-data">
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
+<<<<<<< HEAD
 												<label for="category">Auction Id</label>
+												<html:text styleClass="form-control" styleId="auctionid"
+													property="auctionid" />
+=======
+												<label for="auction id">auctionId</label>
 												<html:text styleClass="form-control" styleId="auctionid"
 													property="auctionid" />
 											</div>
 										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="bid price">Bid price</label>
+												<html:text styleClass="form-control" styleId="bid"
+													property="bidprice" />
+>>>>>>> refs/remotes/origin/master
+											</div>
+										</div>
 									</div>
+<<<<<<< HEAD
 									<!-- /.row -->
 
 									<div class="row">
@@ -415,9 +431,11 @@
 									</div>
 									<!-- /.row -->
 
+=======
+>>>>>>> refs/remotes/origin/master
 									<div class="col-sm-12 text-center">
 										<button type="submit" class="btn btn-primary">
-											<i class="fa fa-save"></i> Save
+											<i class="fa fa-save"></i> Bid
 										</button>
 									</div>
 								</html:form>

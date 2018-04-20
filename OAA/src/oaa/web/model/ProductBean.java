@@ -151,8 +151,10 @@ public class ProductBean extends ActionForm {
 			// set parameters
 
 			ps.setString(1, getProductName());
+
 			ps.setString(3, getCategory());
 			ps.setInt(2, user_id);
+
 			ps.setString(4, getDescription());
 			ps.setInt(5, getMinBidPrice());
 			ps.setBinaryStream(6, fileBA);
@@ -332,4 +334,8 @@ public class ProductBean extends ActionForm {
 		}
 
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> refs/remotes/origin/master

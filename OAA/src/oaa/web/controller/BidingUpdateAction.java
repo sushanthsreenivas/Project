@@ -26,19 +26,20 @@ public class BidingUpdateAction extends Action {
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		// TODO Auto-generated method stub
-		if (form instanceof ProductBean) {
+		if (form instanceof BidingBean) {
 
-			BidingBean biding= (BidingBean) form;
+			BidingBean biding = (BidingBean) form;
 			boolean status = false;
 			HttpSession session = request.getSession();
+			System.out.println(session.getAttribute("user_id"));
 			String userid = (String) session.getAttribute("user_id");
 			int user_id = Integer.parseInt(userid);
-			try {
-				status = biding.updateBid(user_id);
 
+			try {
+				status = biding.addBid(user_id);
+				
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
-
 				e.printStackTrace();
 				return mapping.findForward(FALIURE);
 			}

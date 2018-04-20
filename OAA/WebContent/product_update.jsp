@@ -392,14 +392,22 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
+<<<<<<< HEAD
 												<label for="product_name">Product Id</label>
+=======
+												<label for="product_name">ProductId</label>
+>>>>>>> refs/remotes/origin/master
 												<html:text styleClass="form-control" styleId="productName"
 													property="productId" />
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
+<<<<<<< HEAD
 												<label for="category">Category  Id</label>
+=======
+												<label for="category">CategoryIdS</label>
+>>>>>>> refs/remotes/origin/master
 												<html:text styleClass="form-control" styleId="category"
 													property="category" />
 											</div>
@@ -436,7 +444,11 @@
 
 									<div class="col-sm-12 text-center">
 										<button type="submit" class="btn btn-primary">
+<<<<<<< HEAD
 											<i class="fa fa-save"></i> Add Product
+=======
+											<i class="fa fa-save"></i> Update Product
+>>>>>>> refs/remotes/origin/master
 										</button>
 									</div>
 								</html:form>
