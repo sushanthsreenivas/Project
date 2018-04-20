@@ -409,16 +409,7 @@
 
 									<!-- /.row -->
 
-									<div class="row">
-										<div class="col-sm-6">
-
-											<div class="form-group">
-												<label for="min_bid_price">Your Biding price</label>
-												<html:text styleClass="form-control" styleId="min_bid_price"
-													property="bidingPrice" />
-											</div>
-										</div>
-									</div>
+									
 									<!-- /.row -->
 
 
