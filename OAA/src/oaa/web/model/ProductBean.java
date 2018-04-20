@@ -334,8 +334,6 @@ public class ProductBean extends ActionForm {
 		}
 
 	}
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> refs/remotes/origin/master
+
