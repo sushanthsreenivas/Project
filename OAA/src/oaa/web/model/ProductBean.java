@@ -151,8 +151,9 @@ public class ProductBean extends ActionForm {
 			// set parameters
 
 			ps.setString(1, getProductName());
-			ps.setInt(2, user_id);
+
 			ps.setString(3, getCategory());
+			ps.setInt(2, user_id);
 
 			ps.setString(4, getDescription());
 			ps.setInt(5, getMinBidPrice());
@@ -333,4 +334,6 @@ public class ProductBean extends ActionForm {
 		}
 
 	}
+
 }
+

@@ -26,6 +26,22 @@ public class BidingBean extends ActionForm {
 	 * private int bidingPrice;
 	 */
 
+
+	private int bidprice;
+
+
+	private int bidingPrice;
+	private int auctionid;
+
+	public int getAuctionid() {
+		return auctionid;
+	}
+
+	public void setAuctionid(int auctionid) {
+		this.auctionid = auctionid;
+	}
+
+
 	/*
 	 * public String getCategory() { return category; }
 	 * 
@@ -42,17 +58,11 @@ public class BidingBean extends ActionForm {
 	 * bidingPrice; }
 	 */
 
-	private int auctionid;
+	
+	
 
-	private int bidprice;
 
-	public int getAuctionid() {
-		return auctionid;
-	}
-
-	public void setAuctionid(int auctionid) {
-		this.auctionid = auctionid;
-	}
+	
 
 	public int getBidprice() {
 		return bidprice;
