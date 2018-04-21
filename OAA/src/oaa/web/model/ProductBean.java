@@ -262,7 +262,8 @@ public class ProductBean extends ActionForm {
 		return false;
 	}
 
-	public List<Product> retriveProduct(int user_id) {
+	public List<Product> listProducts(int user_id) {
+
 		List<Product> productList = new ArrayList<Product>();
 		try {
 
@@ -271,15 +272,16 @@ public class ProductBean extends ActionForm {
 			OutputStream oImage;
 			Product product = null;
 
-			String sql = "SELECT * FROM products where user_id=? ";
+			String sql = "SELECT product_id,product_name,category_id,description,min_bid_price,photo,Date FROM products where user_id=? and status=?";
 
 			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, user_id);
+			ps.setString(2, "E");
 
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
 
-				product = new Product();
 				/*
 				 * Retrieve one employee details and store it in employee object
 				 * product.productId = rs.getInt("product_id");
@@ -291,16 +293,9 @@ public class ProductBean extends ActionForm {
 				 * rs.getBoolean("status"); product.photo = rs.getBlob("photo");
 				 * product.Date = rs.getDate("Date");
 				 */
-				rs.getInt("product_id");
-				rs.getString("product_name");
-				rs.getInt("user_id");
-				rs.getInt("category_id");
-				rs.getString("description");
-				rs.getInt("min_bid_price");
-				rs.getBoolean("status");
-				rs.getBlob("photo");
-				rs.getDate("Date");
 
+				product = new Product(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getInt(5),
+						rs.getBlob(6), rs.getDate(7));
 				// add each employee to the list
 				productList.add(product);
 

@@ -31,7 +31,7 @@ public class RetriveAction extends Action {
 			String userid = (String) session.getAttribute("user_id");
 			int user_id = Integer.parseInt(userid);
 
-			retrive.retriveProduct(user_id);
+			retrive.listProducts(user_id);
 		}
 
 		return null;
