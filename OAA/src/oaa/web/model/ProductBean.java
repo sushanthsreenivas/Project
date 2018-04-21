@@ -6,13 +6,16 @@ package oaa.web.model;
 
 import java.io.ByteArrayInputStream;
 
-
 import java.io.IOException;
+import java.io.OutputStream;
 import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -259,30 +262,53 @@ public class ProductBean extends ActionForm {
 		return false;
 	}
 
-	public void displayImage() {
-
+	public List<Product> retriveProduct(int user_id) {
+		List<Product> productList = new ArrayList<Product>();
 		try {
 
 			context = new InitialContext();
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
+			OutputStream oImage;
+			Product product = null;
 
-			connection = ds.getConnection();
-
-			String sql = "SELECT photo FROM products";
+			String sql = "SELECT * FROM products where user_id=? ";
 
 			PreparedStatement ps = connection.prepareStatement(sql);
 
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
-				Blob ph = rs.getBlob("photo");
-				System.out.println(rs.getBlob("photo"));
-				byte data[] = ph.getBytes(1, (int) ph.length());
+
+				product = new Product();
+				/*
+				 * Retrieve one employee details and store it in employee object
+				 * product.productId = rs.getInt("product_id");
+				 * product.productName = rs.getString("product_name");
+				 * product.userId = rs.getInt("user_id"); product.categoryId =
+				 * rs.getInt("category_id"); product.description =
+				 * rs.getString("description"); product.minBidPrice =
+				 * rs.getInt("min_bid_price"); product.status =
+				 * rs.getBoolean("status"); product.photo = rs.getBlob("photo");
+				 * product.Date = rs.getDate("Date");
+				 */
+				rs.getInt("product_id");
+				rs.getString("product_name");
+				rs.getInt("user_id");
+				rs.getInt("category_id");
+				rs.getString("description");
+				rs.getInt("min_bid_price");
+				rs.getBoolean("status");
+				rs.getBlob("photo");
+				rs.getDate("Date");
+
+				// add each employee to the list
+				productList.add(product);
+
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
+		return productList;
 	}
 
 }

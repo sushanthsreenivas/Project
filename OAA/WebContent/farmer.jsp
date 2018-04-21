@@ -1,4 +1,4 @@
-<%@ include file="header.jsp"%>
+<%@ include file="headermodify.jsp"%>
 <div id="all">
 
 	<div id="content">
