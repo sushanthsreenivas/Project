@@ -150,13 +150,15 @@ public class UserRegBean extends ActionForm {
 
 		return errors;
 	}
-
+ 
 	public boolean registerUser() throws SQLException {
 
 		Context context = null;
 		Connection connection = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
+		
+		
 
 		try {
 			context = new InitialContext();

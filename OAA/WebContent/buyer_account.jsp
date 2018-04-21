@@ -48,7 +48,7 @@
 
 					<h3>Change password</h3>
 
-					<form>
+					<form >
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">

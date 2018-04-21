@@ -120,7 +120,7 @@
 			<div class="navbar-header">
 
 				<a class="navbar-brand home" href="index.html"
-					data-animate-hover="bounce">OAA - go to homepage </a>
+					data-animate-hover="bounce"></a>
 				<div class="navbar-buttons">
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
 						data-target="#navigation">
