@@ -28,7 +28,6 @@ public class ProductRemoveAction extends Action {
 			ProductBean pb = (ProductBean) form;
 			boolean status = false;
 			HttpSession session = request.getSession(false);
-			System.out.println(session.getAttribute("user_id"));
 			String userid = (String) session.getAttribute("user_id");
 			int user_id = Integer.parseInt(userid);
 			try {

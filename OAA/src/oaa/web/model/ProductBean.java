@@ -24,6 +24,8 @@ import javax.sql.DataSource;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.upload.FormFile;
 import oaa.web.controller.*;
+import oaa.web.entities.Product;
+
 public class ProductBean extends ActionForm {
 
 	private String category;
@@ -112,8 +114,8 @@ public class ProductBean extends ActionForm {
 			ByteArrayInputStream fileBA = null;
 
 			fileData = image.getFileData();
-			connection =connection();
-			if(connection!=null){
+			connection = connection();
+			if (connection != null) {
 				System.out.println(connection);
 			}
 
@@ -180,7 +182,7 @@ public class ProductBean extends ActionForm {
 
 			fileBA = new ByteArrayInputStream(fileData);
 
-			connection =connection();
+			connection = connection();
 
 			ps = connection.prepareStatement(
 					"UPDATE product SET min_bid_price=?, category_id=?,description=?,photo=?,Date=now()  WHERE product_id=?  and user_id=?");
@@ -194,7 +196,7 @@ public class ProductBean extends ActionForm {
 
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
-				System.out.println("entered");
+
 				return true;
 			}
 		} catch (SQLException e) {
@@ -231,7 +233,8 @@ public class ProductBean extends ActionForm {
 
 	public boolean RemoveProduct(int user_id) throws SQLException {
 
-		try {	connection =connection();
+		try {
+			connection = connection();
 			ps = connection.prepareStatement("delete from product where user_id=? and product_id=?");
 			ps.setInt(1, user_id);
 			ps.setInt(2, getProductId());
@@ -265,15 +268,15 @@ public class ProductBean extends ActionForm {
 		return false;
 	}
 
-	public List<Product> listProducts(int user_id) {
+	public List<Product> getListProducts(int user_id) {
 
 		List<Product> productList = new ArrayList<Product>();
 		try {
 
 			OutputStream oImage;
 			Product product = null;
-			connection =connection();
-			String sql = "SELECT product_id,product_name,category_id,description,min_bid_price,photo,Date FROM products where user_id=? and status=?";
+			connection = connection();
+			String sql = "SELECT product_id,product_name,category_id,description,min_bid_price,photo,Date FROM product where user_id=? and status=?";
 
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setInt(1, user_id);
@@ -282,18 +285,6 @@ public class ProductBean extends ActionForm {
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
-
-				/*
-				 * Retrieve one employee details and store it in employee object
-				 * product.productId = rs.getInt("product_id");
-				 * product.productName = rs.getString("product_name");
-				 * product.userId = rs.getInt("user_id"); product.categoryId =
-				 * rs.getInt("category_id"); product.description =
-				 * rs.getString("description"); product.minBidPrice =
-				 * rs.getInt("min_bid_price"); product.status =
-				 * rs.getBoolean("status"); product.photo = rs.getBlob("photo");
-				 * product.Date = rs.getDate("Date");
-				 */
 
 				product = new Product(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getInt(5),
 						rs.getBlob(6), rs.getDate(7));

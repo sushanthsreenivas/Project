@@ -8,14 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%-- <c:forEach var="product" items="${}">
-		<tr>
-			<td><c:out value="${}" /></td>
-			<td><c:out value="${}" /></td>
-			<td><c:out value="${}" /></td>
-			<td><c:out value="${}" /></td>
-		</tr>
-	</c:forEach> --%>
-
+	
 </body>
 </html>

@@ -52,7 +52,51 @@
 					<h1>Biding Details</h1>
 
 					<hr>
+					<!-- /.container -->
+					<div class="table-responsive">
+						<table class="table">
+							<div id="hot">
+								<div class="box">
+									<div class="container">
+										<div class="col-md-8">
+											<h2>Manage your Bidings Here</h2>
+										</div>
+									</div>
+								</div>
 
+								<html:form action="bidadd.do" enctype="multipart/form-data">
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="category">Auction Id</label>
+												<html:text styleClass="form-control" styleId="auctionid"
+													property="auctionid" />
+
+
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="form-group">
+													<label for="bid price">Bid price</label>
+													<html:text styleClass="form-control" styleId="bid"
+														property="bidprice" />
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-12 text-center">
+										<button type="submit" class="btn btn-primary">
+											<i class="fa fa-save"></i> Bid
+										</button>
+									</div>
+
+								</html:form>
+							</div>
+						</table>
+					</div>
+					<!-- /.table-responsive -->
 					<div class="table-responsive">
 						<table class="table">
 							<div id="hot">
@@ -378,51 +422,7 @@
 					</div>
 					<!-- /.table-responsive -->
 
-					<!-- /.container -->
-					<div class="table-responsive">
-						<table class="table">
-							<div id="hot">
-								<div class="box">
-									<div class="container">
-										<div class="col-md-8">
-											<h2>Manage your Bidings Here</h2>
-										</div>
-									</div>
-								</div>
 
-								<html:form action="bidadd.do" enctype="multipart/form-data">
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label for="category">Auction Id</label>
-												<html:text styleClass="form-control" styleId="auctionid"
-													property="auctionid" />
-
-
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-6">
-												<div class="form-group">
-													<label for="bid price">Bid price</label>
-													<html:text styleClass="form-control" styleId="bid"
-														property="bidprice" />
-
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-12 text-center">
-										<button type="submit" class="btn btn-primary">
-											<i class="fa fa-save"></i> Bid
-										</button>
-									</div>
-
-								</html:form>
-							</div>
-						</table>
-					</div>
-					<!-- /.table-responsive -->
 				</div>
 			</div>
 		</div>

@@ -25,11 +25,10 @@ public class RetriveAction extends Action {
 			ProductBean retrive = (ProductBean) form;
 			boolean status = false;
 			HttpSession session = request.getSession(false);
-			System.out.println(session.getAttribute("user_id"));
 			String userid = (String) session.getAttribute("user_id");
 			int user_id = Integer.parseInt(userid);
 
-			retrive.listProducts(user_id);
+			retrive.getListProducts(user_id);
 		}
 
 		return null;

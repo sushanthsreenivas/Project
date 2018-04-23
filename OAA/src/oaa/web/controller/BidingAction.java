@@ -11,7 +11,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 public class BidingAction extends Action {
-	private static final String FALIURE = "failure";
+	private static final String FAILURE = "failure";
 	private static final String SUCCESS = "success";
 
 	@Override
@@ -25,7 +25,6 @@ public class BidingAction extends Action {
 			BidingBean biding = (BidingBean) form;
 			boolean status = false;
 			HttpSession session = request.getSession(false);
-			System.out.println(session.getAttribute("user_id"));
 			String userid = (String) session.getAttribute("user_id");
 			int user_id = Integer.parseInt(userid);
 
@@ -34,14 +33,14 @@ public class BidingAction extends Action {
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-				return mapping.findForward(FALIURE);
+				return mapping.findForward(FAILURE);
 			}
 			if (status == true) {
 				return mapping.findForward(SUCCESS);
 			}
 		}
 
-		return mapping.findForward(FALIURE);
+		return mapping.findForward(FAILURE);
 	}
 
 }

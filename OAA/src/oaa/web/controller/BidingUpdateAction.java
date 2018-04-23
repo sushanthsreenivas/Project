@@ -30,7 +30,7 @@ public class BidingUpdateAction extends Action {
 			BidingBean biding = (BidingBean) form;
 			boolean status = false;
 			HttpSession session = request.getSession();
-			System.out.println(session.getAttribute("user_id"));
+			
 			String userid = (String) session.getAttribute("user_id");
 			int user_id = Integer.parseInt(userid);
 

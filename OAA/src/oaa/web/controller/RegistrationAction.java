@@ -4,6 +4,7 @@
 package oaa.web.controller;
 
 import java.sql.SQLException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.Action;
@@ -14,8 +15,7 @@ import org.apache.struts.action.ActionMapping;
 import oaa.web.model.UserRegBean;
 
 public class RegistrationAction extends Action {
-
-	private static final String FALIURE = "failure";
+	private static final String FAILURE = "failure";
 	private static final String SUCCESS = "success";
 
 	@Override
@@ -31,14 +31,14 @@ public class RegistrationAction extends Action {
 			} catch (SQLException e) {
 
 				e.printStackTrace();
-				return mapping.findForward(FALIURE);
+				return mapping.findForward(FAILURE);
 			}
 			if (status == true) {
 				return mapping.findForward(SUCCESS);
 			}
 		}
 
-		return mapping.findForward(FALIURE);
+		return mapping.findForward(FAILURE);
 
 	}
 

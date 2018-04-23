@@ -1,4 +1,4 @@
-package oaa.web.model;
+package oaa.web.entities;
 
 import java.util.Date;
 import java.sql.Blob;
@@ -24,6 +24,7 @@ public class Product {
 		this.minBidPrice = minBidPrice;
 		this.photo = photo;
 		this.Date = Date;
+		
 	}
 
 	public int getProductId() {

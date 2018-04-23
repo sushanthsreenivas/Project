@@ -57,6 +57,70 @@
 					<h1>Product Details</h1>
 
 					<hr>
+					<div class="table-responsive">
+							<table class="table">
+								<div id="hot">
+									<div class="box">
+										<div class="container">
+											<div class="col-md-8">
+												<h2>Remove Your Product Here</h2>
+											</div>
+										</div>
+									</div>
+
+									<form action="productremove.do" method="post">
+
+
+										<!-- <div class="row">
+											<div class="col-sm-6">
+												<div class="form-group">
+													<label for="category">Category</label> <input type="text"
+														class="form-control" id="category">
+												</div>
+											</div> -->
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="product_name">Product Id</label> <input
+													type="text" class="form-control" id="productId"
+													name="productId">
+											</div>
+										</div>
+										<!-- </div>
+										/.row
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="form-group">
+													<label for="description">Description</label> <input
+														type="text" class="form-control" id="description">
+												</div>
+											</div>
+											<div class="col-sm-6 col-md-3">
+												<div class="form-group">
+													<label for="photo">Photo</label> <select
+														class="form-control" id="photo"></select>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="form-group">
+													<label for="min_bid_price">Minimum Bid price</label> <input
+														type="text" class="form-control" id="min_bid_price">
+												</div>
+											</div>
+										</div>
+										/.row
+-->
+										<div class="col-sm-12 text-center">
+											<button type="submit" class="btn btn-primary">
+												<i class="fa fa-save"></i> Remove Product
+											</button>
+
+										</div>
+									</form>
+								</div>
+							</table>
+						</div>
 
 					<div class="table-responsive">
 						<table class="table">
@@ -384,70 +448,7 @@
 
 
 						<!-- /.container -->
-						<div class="table-responsive">
-							<table class="table">
-								<div id="hot">
-									<div class="box">
-										<div class="container">
-											<div class="col-md-8">
-												<h2>Remove Your Product Here</h2>
-											</div>
-										</div>
-									</div>
-
-									<form action="productremove.do" method="post">
-
-
-										<!-- <div class="row">
-											<div class="col-sm-6">
-												<div class="form-group">
-													<label for="category">Category</label> <input type="text"
-														class="form-control" id="category">
-												</div>
-											</div> -->
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label for="product_name">Product Id</label> <input
-													type="text" class="form-control" id="productId"
-													name="productId">
-											</div>
-										</div>
-										<!-- </div>
-										/.row
-										<div class="row">
-											<div class="col-sm-6">
-												<div class="form-group">
-													<label for="description">Description</label> <input
-														type="text" class="form-control" id="description">
-												</div>
-											</div>
-											<div class="col-sm-6 col-md-3">
-												<div class="form-group">
-													<label for="photo">Photo</label> <select
-														class="form-control" id="photo"></select>
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-6">
-												<div class="form-group">
-													<label for="min_bid_price">Minimum Bid price</label> <input
-														type="text" class="form-control" id="min_bid_price">
-												</div>
-											</div>
-										</div>
-										/.row
--->
-										<div class="col-sm-12 text-center">
-											<button type="submit" class="btn btn-primary">
-												<i class="fa fa-save"></i> Remove Product
-											</button>
-
-										</div>
-									</form>
-								</div>
-							</table>
-						</div>
+						
 					</div>
 				</div>
 			</div>

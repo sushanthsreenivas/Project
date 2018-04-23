@@ -28,20 +28,29 @@
 		<action path="/removeproduct" forward="/product_remove.jsp"></action>
 		<action path="/addbid" forward="/bid_add.jsp"></action>
 		<action path="/updatebid" forward="/bid_update.jsp"></action>
-		
-		
-		
+
+
+
 		<action path="/mybiding" forward="/mybiding.jsp"></action>
+		
 
 		<action path="/processRegistration" name="URB"
 			type="oaa.web.controller.RegistrationAction" input="/registration.jsp"
 			scope="request">
-			<forward  name="success" path="/thanks.jsp" />
+			<forward name="success" path="/thanks.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
-		<action path="/myproducts" forward="/myproducts.jsp"></action>
+		
 
+		<action path="/myproducts" name="PB"
+			type="oaa.web.controller.MyProductAction" input="/myproducts.jsp"  
+			scope="request" validate="true">
+			<forward name="success" path="/myproducts.jsp" />
+			<forward name="failure" path="/dberror.jsp" />
+		</action>
+		
+		
 		<action path="/productAdd" name="PB"
 			type="oaa.web.controller.ProductAction" input="/product_add.jsp"
 			scope="request" validate="true">
@@ -86,8 +95,8 @@
 			<forward name="success" path="/addsuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
-		
-		
+
+
 	</action-mappings>
 
 

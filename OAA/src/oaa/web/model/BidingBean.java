@@ -68,7 +68,7 @@ public class BidingBean extends ActionForm {
 
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
-				System.out.println("entered");//
+
 				return true;
 			}
 		} finally {
@@ -110,7 +110,7 @@ public class BidingBean extends ActionForm {
 
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
-				System.out.println("entered");
+
 				return true;
 			}
 		} catch (SQLException e) {

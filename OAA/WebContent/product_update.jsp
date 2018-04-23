@@ -57,6 +57,74 @@
 					<h1>Product Details</h1>
 
 					<hr>
+					<div class="table-responsive">
+						<table class="table">
+							<div id="hot">
+								<div class="box">
+									<div class="container">
+										<div class="col-md-8">
+											<h2>Manage Your Product Here</h2>
+										</div>
+									</div>
+								</div>
+								<html:form action="productupdate.do"
+									enctype="multipart/form-data">
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+
+												<label for="product_name">Product Id</label>
+												<html:text styleClass="form-control" styleId="productName"
+													property="productId" />
+											</div>
+										</div>
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="category">Category Id</label>
+
+												<html:text styleClass="form-control" styleId="category"
+													property="category" />
+											</div>
+										</div>
+
+									</div>
+									<!-- /.row -->
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="description">Description</label>
+												<html:text styleClass="form-control" styleId="description"
+													property="description" />
+											</div>
+										</div>
+										<div class="col-sm-6 ">
+											<div class="form-group">
+												<label for="photo">Photo</label>
+												<html:file styleClass="form-control" styleId="photo"
+													property="image" style="border: none" />
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="form-group">
+												<label for="minBidprice">Minimum Bid price</label>
+												<html:text styleClass="form-control" styleId="minBidPrice"
+													property="minBidPrice" />
+											</div>
+										</div>
+									</div>
+									<!-- /.row -->
+
+									<div class="col-sm-12 text-center">
+										<button type="submit" class="btn btn-primary">
+											<i class="fa fa-save">Update Product</i>
+										</button>
+									</div>
+								</html:form>
+							</div>
+						</table>
+					</div>
 
 					<div class="table-responsive">
 						<table class="table">
@@ -377,74 +445,7 @@
 						</table>
 					</div>
 					<!-- /.container -->
-					<div class="table-responsive">
-						<table class="table">
-							<div id="hot">
-								<div class="box">
-									<div class="container">
-										<div class="col-md-8">
-											<h2>Manage Your Product Here</h2>
-										</div>
-									</div>
-								</div>
-								<html:form action="productupdate.do"
-									enctype="multipart/form-data">
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-
-												<label for="product_name">Product Id</label>
-												<html:text styleClass="form-control" styleId="productName"
-													property="productId" />
-											</div>
-										</div>
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label for="category">Category Id</label>
-
-												<html:text styleClass="form-control" styleId="category"
-													property="category" />
-											</div>
-										</div>
-
-									</div>
-									<!-- /.row -->
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label for="description">Description</label>
-												<html:text styleClass="form-control" styleId="description"
-													property="description" />
-											</div>
-										</div>
-										<div class="col-sm-6 ">
-											<div class="form-group">
-												<label for="photo">Photo</label>
-												<html:file styleClass="form-control" styleId="photo"
-													property="image" style="border: none" />
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												<label for="minBidprice">Minimum Bid price</label>
-												<html:text styleClass="form-control" styleId="minBidPrice"
-													property="minBidPrice" />
-											</div>
-										</div>
-									</div>
-									<!-- /.row -->
-
-									<div class="col-sm-12 text-center">
-										<button type="submit" class="btn btn-primary">
-											<i class="fa fa-save">Update Product</i>
-										</button>
-									</div>
-								</html:form>
-							</div>
-						</table>
-					</div>
+					
 				</div>
 			</div>
 		</div>
