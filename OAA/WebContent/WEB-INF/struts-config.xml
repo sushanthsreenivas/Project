@@ -34,7 +34,7 @@
 		<action path="/processRegistration" name="URB"
 			type="oaa.web.controller.RegistrationAction" input="/registration.jsp"
 			scope="request">
-			<forward name="success" path="/thanks.jsp" />
+			<forward  name="success" path="/thanks.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
