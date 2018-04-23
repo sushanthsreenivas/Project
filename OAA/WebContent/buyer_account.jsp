@@ -48,7 +48,7 @@
 
 					<h3>Change password</h3>
 
-					<form >
+					<form name="form" method="post" action="" onsubmit="return validateForm()">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
@@ -168,5 +168,7 @@
 <script src="js/bootstrap-hover-dropdown.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/front.js"></script>
+<script type="text/javascript" src="js/resetpassword.js" ></script>
+
 
 <%@ include file="footer.jsp"%>
