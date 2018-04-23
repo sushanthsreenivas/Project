@@ -1,16 +1,6 @@
 function validateForm() {
-	if (document.getElementById('firstname').value == "") {
-		   alert("Please Enter First Name ");
-		return false;
-	}
-	if (document.getElementById('lasttname').value == "") {
-		   alert("Please Enter Last Name ");
-		return false;
-	}
-}
-	
-	
-	/*var lastname = document.getElementById("lasttname").value;
+	var firstname = document.getElementById("firstname").value;
+	var lastname = document.getElementById("lasttname").value;
 	var address = document.getElementById("address").value;
 	var city = document.getElementById("city").value;
 	var state = document.getElementById("state").value;
@@ -68,6 +58,6 @@ function validateForm() {
 		alert("Please enter a valid e-mail address.");
 		email.focus();
 		return false;
-	}*/
+	}
 
-
+}
