@@ -14,8 +14,8 @@ import org.apache.struts.action.ActionMapping;
 import oaa.web.model.ProductBean;
 
 public class ProductRemoveAction extends Action {
-	private static final String FALIURE = "success";
-	private static final String SUCCESS = "failure";
+	private static final String FALIURE = "failure";
+	private static final String SUCCESS = "success";
 
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form,

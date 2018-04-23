@@ -16,8 +16,8 @@ import oaa.web.model.BidingBean;
 public class BidingUpdateAction extends Action {
 
 	
-	private static final String FALIURE = "success";
-	private static final String SUCCESS = "failure";
+	private static final String FALIURE = "failure";
+	private static final String SUCCESS = "success";
 
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
@@ -36,6 +36,7 @@ public class BidingUpdateAction extends Action {
 
 			try {
 				status = biding.updateBid(user_id);
+				System.out.println(status);
 				
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

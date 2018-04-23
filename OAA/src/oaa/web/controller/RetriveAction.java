@@ -1,7 +1,5 @@
 package oaa.web.controller;
 
-import java.sql.SQLException;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -16,8 +14,8 @@ import oaa.web.model.ProductBean;
 
 public class RetriveAction extends Action {
 
-	private static final String FALIURE = "success";
-	private static final String SUCCESS = "failure";
+	private static final String FALIURE = "failure";
+	private static final String SUCCESS = "success";
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 

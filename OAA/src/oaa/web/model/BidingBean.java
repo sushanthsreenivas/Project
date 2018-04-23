@@ -38,15 +38,29 @@ public class BidingBean extends ActionForm {
 		this.bidprice = bidprice;
 	}
 
+	public Connection connection() {
+
+		try {
+			context = new InitialContext();
+			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
+			connection = ds.getConnection();
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return connection;
+
+	}
+
 	public boolean addBid(int user_id) throws SQLException {
 
 		try {
 
-			context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
-
-			connection = ds.getConnection();
-
+			connection = connection();
 			ps = connection.prepareStatement("insert into auction_transaction values(null,?,?,?,now())");
 			ps.setInt(1, getAuctionid());
 			ps.setInt(2, user_id);
@@ -57,9 +71,6 @@ public class BidingBean extends ActionForm {
 				System.out.println("entered");//
 				return true;
 			}
-		} catch (NamingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} finally {
 			try {
 				if (context != null) {
@@ -88,11 +99,7 @@ public class BidingBean extends ActionForm {
 	public boolean updateBid(int user_id) throws SQLException {
 
 		try {
-			context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
-
-			connection = ds.getConnection();
-
+			connection = connection();
 			ps = connection.prepareStatement(
 					"UPDATE auction_transaction join users on users.user_id=auction_transaction.user_id join "
 							+ "auction_master on auction_master.auction_id=auction_transaction.auction_id"
@@ -106,9 +113,6 @@ public class BidingBean extends ActionForm {
 				System.out.println("entered");
 				return true;
 			}
-		} catch (NamingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

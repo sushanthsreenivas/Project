@@ -15,8 +15,8 @@ import oaa.web.model.UserRegBean;
 
 public class RegistrationAction extends Action {
 
-	private static final String SUCCESS = "success";
 	private static final String FALIURE = "failure";
+	private static final String SUCCESS = "success";
 
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,

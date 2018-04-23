@@ -11,8 +11,8 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 public class BidingAction extends Action {
-	private static final String FALIURE = "success";
-	private static final String SUCCESS = "failure";
+	private static final String FALIURE = "failure";
+	private static final String SUCCESS = "success";
 
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form,

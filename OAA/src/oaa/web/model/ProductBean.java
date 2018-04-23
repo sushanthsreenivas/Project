@@ -23,7 +23,7 @@ import javax.sql.DataSource;
 
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.upload.FormFile;
-
+import oaa.web.controller.*;
 public class ProductBean extends ActionForm {
 
 	private String category;
@@ -86,21 +86,39 @@ public class ProductBean extends ActionForm {
 		this.image = image;
 	}
 
+	public Connection connection() {
+
+		try {
+			context = new InitialContext();
+			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
+			connection = ds.getConnection();
+		} catch (NamingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return connection;
+
+	}
+
 	public boolean addProduct(int user_id) {
 
 		try {
-
-			context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
 
 			byte[] fileData = null;
 			ByteArrayInputStream fileBA = null;
 
 			fileData = image.getFileData();
+			connection =connection();
+			if(connection!=null){
+				System.out.println(connection);
+			}
 
 			fileBA = new ByteArrayInputStream(fileData);
 
-			connection = ds.getConnection();
 			ps = connection.prepareStatement("insert into product values(null,?,?,?,?,?,'E',?,now())");
 
 			ps.setString(1, getProductName());
@@ -121,9 +139,6 @@ public class ProductBean extends ActionForm {
 				System.out.println("entered");
 				return true;
 			}
-		} catch (NamingException e) {
-
-			e.printStackTrace();
 		} catch (SQLException e) {
 
 			e.printStackTrace();
@@ -158,8 +173,6 @@ public class ProductBean extends ActionForm {
 	public boolean updateProduct(int user_id) {
 
 		try {
-			context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
 			byte[] fileData = null;
 			ByteArrayInputStream fileBA = null;
 
@@ -167,7 +180,7 @@ public class ProductBean extends ActionForm {
 
 			fileBA = new ByteArrayInputStream(fileData);
 
-			connection = ds.getConnection();
+			connection =connection();
 
 			ps = connection.prepareStatement(
 					"UPDATE product SET min_bid_price=?, category_id=?,description=?,photo=?,Date=now()  WHERE product_id=?  and user_id=?");
@@ -184,9 +197,6 @@ public class ProductBean extends ActionForm {
 				System.out.println("entered");
 				return true;
 			}
-		} catch (NamingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -221,11 +231,7 @@ public class ProductBean extends ActionForm {
 
 	public boolean RemoveProduct(int user_id) throws SQLException {
 
-		try {
-			context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
-
-			connection = ds.getConnection();
+		try {	connection =connection();
 			ps = connection.prepareStatement("delete from product where user_id=? and product_id=?");
 			ps.setInt(1, user_id);
 			ps.setInt(2, getProductId());
@@ -234,9 +240,6 @@ public class ProductBean extends ActionForm {
 				System.out.println("entered");
 				return true;
 			}
-		} catch (NamingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		} finally {
 			try {
 				if (context != null) {
@@ -267,11 +270,9 @@ public class ProductBean extends ActionForm {
 		List<Product> productList = new ArrayList<Product>();
 		try {
 
-			context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
 			OutputStream oImage;
 			Product product = null;
-
+			connection =connection();
 			String sql = "SELECT product_id,product_name,category_id,description,min_bid_price,photo,Date FROM products where user_id=? and status=?";
 
 			PreparedStatement ps = connection.prepareStatement(sql);

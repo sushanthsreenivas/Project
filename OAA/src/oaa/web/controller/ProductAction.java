@@ -13,8 +13,8 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.upload.FormFile;
 
 public class ProductAction extends Action {
-	private static final String FALIURE = "success";
-	private static final String SUCCESS = "failure";
+	private static final String FALIURE = "failure";
+	private static final String SUCCESS = "success";
 
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
