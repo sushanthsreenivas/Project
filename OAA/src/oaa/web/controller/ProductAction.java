@@ -59,8 +59,11 @@ public class ProductAction extends Action {
 			String userid = (String) session.getAttribute("user_id");
 			int user_id = Integer.parseInt(userid);
 			status = pb.addProduct(user_id);
+			
 			if (status == true) {
+				System.out.println(status);
 				return mapping.findForward(SUCCESS);
+				
 			}
 		}
 
