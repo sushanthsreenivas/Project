@@ -78,8 +78,8 @@
 		</action>
 
 
-		<action path="/bidadd" name="bid" type="oaa.web.controller.BidingAction"
-			input="/bid_add.jsp" scope="request">
+		<action path="/auction" name="bid" type="oaa.web.controller.RetriveAuctionAction"
+			input="/mybiding.jsp" scope="request">
 			<forward name="success" path="/addsuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>

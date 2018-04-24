@@ -6,18 +6,19 @@ public class Auction {
 
 	private int auctionId;
 	private int productId;
-
+	private int userId;
 	private Date startDate;
 
 	private Date endDate;
 
 	private int bidPrice;
 
-	public Auction(int auctionId, int productId, Date startDate, Date endDate, int bidPrice) {
+	public Auction(int auctionId, int productId, int userId, Date startDate, Date endDate, int bidPrice) {
 
 		// TODO Auto-generated constructor stub
 		this.auctionId = auctionId;
 		this.productId = productId;
+		this.userId=userId;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.bidPrice = bidPrice;

@@ -1,4 +1,5 @@
 <%@ include file="header.jsp"%>
+
 <div id="all">
 
 	<div id="content">
@@ -69,25 +70,27 @@
 								<div class="container">
 									<div class="col-md-8">
 										<div class="product-slider">
+										<%int index=-1; %>
 											<c:forEach items="${sessionScope.productList}" var="product">
 												<div class="item">
 													<div class="product">
 														<div class="flip-container">
 															<div class="flipper">
 																<div class="front">
-																	<a href="detail.html"> <img src="${product.photo}"
-																		alt="" class="img-responsive">
+																
+ 																	<a href="detail.html"> <img src="image?index=<%=(++index)%>"  
+ 																		alt="No Image" class="img-responsive"></img> 
 																	</a>
 																</div>
 																<div class="back">
-																	<a href="detail.html"> <img src="${product.photo}"
-																		alt="" class="img-responsive">
+																	<a href="detail.html"> <img src="image?index=<%=index%>"
+																		alt="No Image" class="img-responsive">
 																	</a>
 																</div>
 															</div>
 														</div>
 														<a href="detail.html" class="invisible"> <img
-															src="${product.photo}" alt="" class="img-responsive">
+															src="image?index=<%=index%>" alt="" class="img-responsive">
 														</a>
 														<div class="text">
 															<h3>
