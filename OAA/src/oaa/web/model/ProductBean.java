@@ -6,9 +6,9 @@ package oaa.web.model;
 
 import java.io.ByteArrayInputStream;
 
+
 import java.io.IOException;
 import java.io.OutputStream;
-import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,7 +23,6 @@ import javax.sql.DataSource;
 
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.upload.FormFile;
-import oaa.web.controller.*;
 import oaa.web.entities.Product;
 
 public class ProductBean extends ActionForm {
@@ -285,6 +284,8 @@ public class ProductBean extends ActionForm {
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
+				
+								
 
 				product = new Product(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getInt(5),
 						rs.getBlob(6), rs.getDate(7));
