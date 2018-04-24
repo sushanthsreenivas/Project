@@ -11,7 +11,6 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import oaa.web.entities.Auction;
-import oaa.web.entities.Product;
 import oaa.web.model.BidingBean;
 
 public class RetriveAuctionAction {
@@ -31,8 +30,8 @@ public class RetriveAuctionAction {
 			String userid = (String) session.getAttribute("user_id");
 			int user_id = Integer.parseInt(userid);
 
-			Collection<Auction> productList = auction.getListAuction(user_id);
-			session.setAttribute("productList", productList);
+			Collection<Auction> auctionList = auction.getListAuction(user_id);
+			session.setAttribute("AuctionList", auctionList);
 
 		}
 		return mapping.findForward(SUCCESS);

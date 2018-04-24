@@ -32,7 +32,7 @@
 
 
 		<action path="/mybiding" forward="/mybiding.jsp"></action>
-		
+
 
 		<action path="/processRegistration" name="URB"
 			type="oaa.web.controller.RegistrationAction" input="/registration.jsp"
@@ -41,16 +41,16 @@
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
-		
+
 
 		<action path="/myproducts" name="PB"
-			type="oaa.web.controller.MyProductAction" input="/myproducts.jsp"  
+			type="oaa.web.controller.MyProductAction" input="/myproducts.jsp"
 			scope="request" validate="true">
 			<forward name="success" path="/myproducts.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
-		
-		
+
+
 		<action path="/productAdd" name="PB"
 			type="oaa.web.controller.ProductAction" input="/product_add.jsp"
 			scope="request" validate="true">
@@ -66,13 +66,10 @@
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
-	<!-- 	<action path="/productretrive" name="PB"
-			type="oaa.web.controller.ProductretriveAction" input="/product_add.jsp"
-			scope="request" validate="true">
-			<forward name="success" path="/addsuccess.jsp" />
-			<forward name="failure" path="/dberror.jsp" />
-		</action>
- -->
+		<!-- <action path="/productretrive" name="PB" type="oaa.web.controller.ProductretriveAction" 
+			input="/product_add.jsp" scope="request" validate="true"> <forward name="success" 
+			path="/addsuccess.jsp" /> <forward name="failure" path="/dberror.jsp" /> 
+			</action> -->
 		<action path="/productremove" name="PB"
 			type="oaa.web.controller.ProductRemoveAction" input="/product_remove.jsp"
 			scope="request">
@@ -87,6 +84,11 @@
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
+		<action path="/bidadd" name="bid" type="oaa.web.controller.BidingAction"
+			input="/bid_add.jsp" scope="request">
+			<forward name="success" path="/addsuccess.jsp" />
+			<forward name="failure" path="/dberror.jsp" />
+		</action>
 
 		<action path="/bidupdate" name="bid"
 			type="oaa.web.controller.BidingUpdateAction" input="/bid_update.jsp"

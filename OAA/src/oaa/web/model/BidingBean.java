@@ -1,10 +1,13 @@
 package oaa.web.model;
 
+import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -148,7 +151,32 @@ public class BidingBean extends ActionForm {
 
 	public Collection<Auction> getListAuction(int user_id) {
 		// TODO Auto-generated method stub
-		return null;
-	}
 
+		Collection<Auction> auctionList = new ArrayList<Auction>();
+		try {
+
+			OutputStream oImage;
+			Auction auction = null;
+			connection = connection();
+			String sql = "SELECT auction_id,product_id,start_date,end_date,bid_prize FROM auction_master where user_id=? and status=?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, user_id);
+			ps.setString(2, "E");
+
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				
+								
+
+				auction = new Auction(rs.getInt(1), rs.getInt(2), rs.getDate(3), rs.getDate(4), rs.getInt(5));
+				// add each employee to the list
+				auctionList.add(auction);
+
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return auctionList;
+	}
 }
