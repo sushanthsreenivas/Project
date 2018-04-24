@@ -12,7 +12,7 @@ import org.apache.struts.action.ActionMapping;
 import oaa.web.model.BidingBean;
 import oaa.web.model.ProductBean;
 
-public class RetriveAction extends Action {
+public class RetriveProductAction extends Action {
 
 	private static final String FALIURE = "failure";
 	private static final String SUCCESS = "success";

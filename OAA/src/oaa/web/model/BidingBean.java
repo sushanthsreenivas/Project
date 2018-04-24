@@ -4,12 +4,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Collection;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import org.apache.struts.action.ActionForm;
+
+import oaa.web.entities.Auction;
+import oaa.web.entities.Product;
 
 public class BidingBean extends ActionForm {
 
@@ -139,6 +144,11 @@ public class BidingBean extends ActionForm {
 			}
 		}
 		return false;
+	}
+
+	public Collection<Auction> getListAuction(int user_id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

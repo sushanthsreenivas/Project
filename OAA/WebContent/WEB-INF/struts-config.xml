@@ -66,13 +66,13 @@
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
-		<action path="/productretrive" name="PB"
+	<!-- 	<action path="/productretrive" name="PB"
 			type="oaa.web.controller.ProductretriveAction" input="/product_add.jsp"
 			scope="request" validate="true">
 			<forward name="success" path="/addsuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
-
+ -->
 		<action path="/productremove" name="PB"
 			type="oaa.web.controller.ProductRemoveAction" input="/product_remove.jsp"
 			scope="request">
