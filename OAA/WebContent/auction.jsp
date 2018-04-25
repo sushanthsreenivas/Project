@@ -27,17 +27,19 @@
 								<div class="container">
 									<div class="col-md-10">
 										<div class="product-slider">
+										<%int index=-1;%>
+										<c:forEach items="${sessionScope.AuctionList}" var="auction">
 											<div class="item">
 												<div class="product">
 													<div class="flip-container">
 														<div class="flipper">
 															<div class="front">
-																<a href="detail.html"> <img src="img/product1.jpg"
+																<a href="detail.html"> <img src="image?type=auction&index=<%=(++index)%>"
 																	alt="" class="img-responsive">
 																</a>
 															</div>
 															<div class="back">
-																<a href="detail.html"> <img src="img/product1.jpg"
+																<a href="detail.html"> <img src="image?type=auction&index=<%=(index)%>"
 																	alt="" class="img-responsive">
 																</a>
 															</div>
@@ -48,7 +50,7 @@
 													</a>
 													<div class="text">
 														<h3>
-															<a href="detail.html">Beans</a>
+															<a href="detail.html">${auction.productName}</a>
 														</h3>
 														<p class="price">₹143.00</p>
 													</div>
@@ -56,6 +58,7 @@
 												</div>
 												<!-- /.product -->
 											</div>
+											</c:forEach>
 										<!-- 	<div class="item">
 												<div class="product">
 													<div class="flip-container">

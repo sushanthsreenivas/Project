@@ -81,13 +81,13 @@
 																<div class="front">
 
 																	<a href="detail.html"> <img
-																		src="image?index=<%=(++index)%>" alt="No Image"
+																		src="image?type=product&index=<%=(++index)%>" alt="No Image"
 																		class="img-responsive"></img>
 																	</a>
 																</div>
 																<div class="back">
 																	<a href="detail.html"> <img
-																		src="image?index=<%=index%>" alt="No Image"
+																		src="image?type=product&index=<%=index%>" alt="No Image"
 																		class="img-responsive">
 																	</a>
 																</div>

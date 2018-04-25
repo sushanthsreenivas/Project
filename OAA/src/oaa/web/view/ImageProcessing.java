@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
+import oaa.web.entities.Auction;
 import oaa.web.entities.Product;
 
 @WebServlet("/image")
@@ -42,31 +43,55 @@ public class ImageProcessing extends HttpServlet {
 			throws ServletException, IOException {
 		response.setHeader("Cache-Control", "nostore");
 		int index = Integer.parseInt(request.getParameter("index"));
+		String type = request.getParameter("type");
 
 		HttpSession session = request.getSession(false);
 		if (session != null) {
-			ArrayList<Product> products = (ArrayList<Product>) session.getAttribute("productList");
-			Product product = products.get(index);
-			Blob photo = product.getPhoto();
-			if (photo != null) {
-				ServletOutputStream oImage = null;
-				try {
-					byte barray[] = photo.getBytes(1, (int) photo.length());
-					response.setContentType("image/jpeg");
+			if (type.equals("product")) {
+				ArrayList<Product> products = (ArrayList<Product>) session.getAttribute("productList");
+				Product product = products.get(index);
+				Blob photo = product.getPhoto();
+				if (photo != null) {
+					ServletOutputStream oImage = null;
+					try {
+						byte barray[] = photo.getBytes(1, (int) photo.length());
+						response.setContentType("image/jpeg");
 
-					oImage = response.getOutputStream();
-					oImage.write(barray);
-					oImage.flush();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} finally {
-					if (oImage != null) {
-						oImage.close();
+						oImage = response.getOutputStream();
+						oImage.write(barray);
+						oImage.flush();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} finally {
+						if (oImage != null) {
+							oImage.close();
+						}
+					}
+				}
+			} else if (type.equals("auction")) {
+				ArrayList<Auction> auctions = (ArrayList<Auction>) session.getAttribute("AuctionList");
+				Auction auction = auctions.get(index);
+				Blob photo = auction.getPhoto();
+				if (photo != null) {
+					ServletOutputStream oImage = null;
+					try {
+						byte barray[] = photo.getBytes(1, (int) photo.length());
+						response.setContentType("image/jpeg");
+
+						oImage = response.getOutputStream();
+						oImage.write(barray);
+						oImage.flush();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} finally {
+						if (oImage != null) {
+							oImage.close();
+						}
 					}
 				}
 			}
-
 		}
 
 	}
