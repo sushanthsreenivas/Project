@@ -6,16 +6,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import oaa.web.entities.Auction;
-import oaa.web.model.AuctionBean;
 import oaa.web.model.BidingBean;
 
-public class RetriveAuctionAction  extends Action{
+public class BidingAuctionAction {
 
 	private static final String FAILURE = "failure";
 	private static final String SUCCESS = "success";
@@ -24,20 +22,20 @@ public class RetriveAuctionAction  extends Action{
 
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		if (form instanceof AuctionBean) {
+		if (form instanceof BidingBean) {
 
-			AuctionBean auction = (AuctionBean) form;
-			HttpSession session = request.getSession(false);
-/*
+			BidingBean auction = (BidingBean) form;
+
 			HttpSession session = request.getSession(false);
 			String userid = (String) session.getAttribute("user_id");
 			int user_id = Integer.parseInt(userid);
-*/
-			Collection<Auction> auctionList = auction.getListAuction();
+
+			Collection<Auction> auctionList = auction.getListAuction(user_id);
 			session.setAttribute("AuctionList", auctionList);
 
 		}
 		return mapping.findForward(SUCCESS);
 
 	}
+
 }
