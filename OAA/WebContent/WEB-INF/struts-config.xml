@@ -79,6 +79,11 @@
 			<forward name="success" path="/product_add.jsp" />
 		</action>
 
+		<action path="/updateproduct" name="CB"
+			type="oaa.web.controller.CategoryAction" scope="session">
+			<forward name="success" path="/product_update.jsp" />
+		</action>
+
 		<action path="/productAdd" name="PB"
 			type="oaa.web.controller.ProductAction" input="/product_add.jsp"
 			scope="request" validate="true">
