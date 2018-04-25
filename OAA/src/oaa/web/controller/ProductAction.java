@@ -37,7 +37,7 @@ public class ProductAction extends Action {
 
 		if (!("").equals(fileName)) {
 
-			System.out.println("Server path:" + filePath);
+			
 			File newFile = new File(filePath, fileName);
 
 			if (!newFile.exists()) {
@@ -59,6 +59,7 @@ public class ProductAction extends Action {
 			HttpSession session = request.getSession(false);
 			String userid = (String) session.getAttribute("user_id");
 			int user_id = Integer.parseInt(userid);
+			
 			status = pb.addProduct(user_id);
 			if (status == true) {
 				return mapping.findForward(SUCCESS);

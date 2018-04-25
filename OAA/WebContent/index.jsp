@@ -113,7 +113,7 @@
 								<h3>
 									<a href="detail.html">Beans</a>
 								</h3>
-								<p class="price">₹143.00</p>
+								<p class="price">&#8377;143.00</p>
 							</div>
 							<!-- /.text -->
 						</div>
@@ -144,8 +144,8 @@
 									<a href="detail.html">Tomato</a>
 								</h3>
 								<p class="price">
-									<del>₹280</del>
-									₹143.00
+									<!--<del>&#8377;280</del>-->
+									&#8377;143.00
 								</p>
 							</div>
 							<!-- /.text -->
@@ -191,7 +191,7 @@
 								<h3>
 									<a href="detail.html">Cherry</a>
 								</h3>
-								<p class="price">₹143.00</p>
+								<p class="price">&#8377;143.00</p>
 							</div>
 							<!-- /.text -->
 						</div>
@@ -221,7 +221,7 @@
 								<h3>
 									<a href="detail.html">Carrot</a>
 								</h3>
-								<p class="price">₹143.00</p>
+								<p class="price">&#8377;143.00</p>
 							</div>
 							<!-- /.text -->
 						</div>
@@ -251,7 +251,7 @@
 								<h3>
 									<a href="detail.html">Apple</a>
 								</h3>
-								<p class="price">₹143.00</p>
+								<p class="price">&#8377;143.00</p>
 							</div>
 							<!-- /.text -->
 
@@ -286,7 +286,7 @@
 								<h3>
 									<a href="detail.html">Banana</a>
 								</h3>
-								<p class="price">₹143.00</p>
+								<p class="price">&#8377;143.00</p>
 							</div>
 							<!-- /.text -->
 
@@ -325,8 +325,8 @@
 									<a href="detail.html">Maize</a>
 								</h3>
 								<p class="price">
-									<del>₹280</del>
-									₹143.00
+									<!-- <del>&#8377;280</del> -->
+									&#8377;143.00
 								</p>
 							</div>
 							<!-- /.text -->
@@ -372,7 +372,7 @@
 								<h3>
 									<a href="detail.html">Red Lentils</a>
 								</h3>
-								<p class="price">₹143.00</p>
+								<p class="price">&#8377;143.00</p>
 							</div>
 							<!-- /.text -->
 						</div>
