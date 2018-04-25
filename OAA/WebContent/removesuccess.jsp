@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Product Updated Successfully
+Product Removed Successfully
 </body>
 </html>
