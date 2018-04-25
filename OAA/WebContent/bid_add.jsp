@@ -9,7 +9,7 @@
 
 				<ul class="breadcrumb">
 					<li><a href="#">Home</a></li>
-					<li><a href="#">Login</a></li>
+
 					<li>Buyer</li>
 				</ul>
 
@@ -26,7 +26,7 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<li><a href="addbid.do"><i class="fa fa-list"></i>Bid</a></li>
+							<li class="active"><a href="addbid.do"><i class="fa fa-list"></i>Bid</a></li>
 
 							<li class="active"><a href="updatebid.do"><i
 									class="fa fa-list"></i> Manage Bid</a></li>
@@ -41,7 +41,7 @@
 			<div class="col-md-9">
 
 				<ul class="breadcrumb">
-					<li><a href="#">Home</a></li>
+					<li><a href="buyer.jsp">Home</a></li>
 					<li>My Bidings</li>
 				</ul>
 
