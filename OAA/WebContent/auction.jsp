@@ -53,7 +53,7 @@
 															<h3>
 																<a href="detail.html">${auction.productName}</a>
 															</h3>
-															<p class="price">₹143.00</p>
+															<p class="price">&#8377;143.00</p>
 														</div>
 														<!-- /.text -->
 													</div>
@@ -110,7 +110,7 @@
 														<h3>
 															<a href="detail.html">Beans</a>
 														</h3>
-														<p class="price">₹143.00</p>
+														<p class="price">&#8377;143.00</p>
 													</div>
 													<!-- /.text -->
 												</div>
