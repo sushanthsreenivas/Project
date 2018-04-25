@@ -10,7 +10,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import oaa.web.model.MyAccountBean;
+import oaa.web.model.AccountBean;
 
 public class PersonalDetailsAction extends Action {
 	private static final String FALIURE = "failure";
@@ -21,8 +21,8 @@ public class PersonalDetailsAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
-		if (form instanceof MyAccountBean) {
-			MyAccountBean mab = (MyAccountBean) form;
+		if (form instanceof AccountBean) {
+			AccountBean mab = (AccountBean) form;
 			boolean status = false;
 			try {
 				status = mab.updatedetails();

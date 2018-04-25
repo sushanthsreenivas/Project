@@ -11,6 +11,7 @@
 		<form-bean name="URB" type="oaa.web.model.UserRegBean"></form-bean>
 		<form-bean name="PB" type="oaa.web.model.ProductBean"></form-bean>
 		<form-bean name="bid" type="oaa.web.model.BidingBean"></form-bean>
+		<form-bean name="AB" type="oaa.web.model.AccountBean"></form-bean>
 	</form-beans>
 
 	<global-exceptions>
@@ -28,6 +29,7 @@
 		<action path="/removeproduct" forward="/product_remove.jsp"></action>
 		<action path="/addbid" forward="/bid_add.jsp"></action>
 		<action path="/updatebid" forward="/bid_update.jsp"></action>
+		<action path="/farmeraccount" forward="/farmer_account.jsp"></action>
 
 
 
@@ -42,13 +44,13 @@
 		</action>
 
 <!-- 	<action path="/buyerAccount" name="MA"
-			type="oaa.web.controller.MyAccountAction" input="/buyer_account.jsp"
+			type="oaa.web.controller.AccountAction" input="/buyer_account.jsp"
 			scope="request">
 			<forward name="success" path="/updatesuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action> -->
-		<action path="/farmerAccount" name="MA"
-			type="oaa.web.controller.MyAccountAction" input="/farmer_account.jsp"
+		<action path="/farmeraccount" name="AB"
+			type="oaa.web.controller.AccountAction" input="/farmer_account.jsp"
 			scope="request">
 			<forward name="success" path="/updatesuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />

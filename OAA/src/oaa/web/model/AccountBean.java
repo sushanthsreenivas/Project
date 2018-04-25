@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 
 import org.apache.struts.action.ActionForm;
 
-public class MyAccountBean extends ActionForm {
+public class AccountBean extends ActionForm {
 	private String password_old, password1, password2;
 	private String firstname, lastname, address, city, state, country;
 	private String mobileno, email;
