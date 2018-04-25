@@ -1,4 +1,4 @@
-<%@ include file="headermodify.jsp"%>
+<%@ include file="header.jsp"%>
 <div id="all">
 
 	<div id="content">
@@ -7,45 +7,50 @@
 			<div class="col-md-12">
 
 				<ul class="breadcrumb">
-					<li><a href="home.do">Home</a></li>
-
-					<li>Farmer</li>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Login</a></li>
+					<li>Buyer</li>
 				</ul>
 
 			</div>
 
 			<div class="col-md-3">
-				<!-- *** Farmer MENU ***
+				<!-- *** CUSTOMER MENU ***
  _________________________________________________________ -->
 				<div class="panel panel-default sidebar-menu">
 
 					<div class="panel-heading">
-						<h3 class="panel-title">Farmer section</h3>
+						<h3 class="panel-title">Buyer section</h3>
 					</div>
 
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<li><a href="myproducts.do"><i class="fa fa-list"></i>
-									My Products</a></li>
+							<li class="active"><a href="addbid.do"><i
+									class="fa fa-list"></i>Bid</a></li>
 
-							<li><a href="farmer_account.jsp"><i class="fa fa-user"></i>
-									My account</a></li>
+							<li><a href="updatebid.do"><i class="fa fa-list"></i>
+									Manage Bid</a></li>
+
 							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>
 									Logout</a></li>
 						</ul>
 					</div>
 
 				</div>
-				<!-- /.col-md-3 -->
-
-				<!-- *** Farmer MENU END *** -->
 			</div>
+			<div class="col-md-9">
 
+				<ul class="breadcrumb">
+					<li><a href="#">Home</a></li>
+					<li>My Bidings</li>
+				</ul>
+
+			</div>
 
 			<div class="col-md-9" id="customer-order">
 				<div class="box">
-					<h1>Auction Details</h1>
+					<h1>Biding Details</h1>
 
 					<hr>
 
@@ -56,7 +61,7 @@
 								<div class="box">
 									<div class="container">
 										<div class="col-md-8">
-											<h2>Ongoing Auctions</h2>
+											<h2>Ongoing Bidings</h2>
 										</div>
 									</div>
 								</div>
@@ -87,7 +92,7 @@
 														<h3>
 															<a href="detail.html">Beans</a>
 														</h3>
-														<p class="price">&#8377;143.00</p>
+														<p class="price">₹143.00</p>
 													</div>
 													<!-- /.text -->
 												</div>
@@ -119,26 +124,26 @@
 															<a href="detail.html">Tomato</a>
 														</h3>
 														<p class="price">
-															<!-- <del>&#8377;280</del> -->
-															&#8377;143.00
+															<del>₹280</del>
+															₹143.00
 														</p>
 													</div>
 													<!-- /.text -->
 
 													<div class="ribbon sale">
-
+														<!--                      <div class="theribbon">SALE</div> -->
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
 
 													<div class="ribbon new">
-
+														<!--                                    <div class="theribbon">NEW</div>  -->
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
 
 													<div class="ribbon gift">
-
+														<!--                               <div class="theribbon">GIFT</div> -->
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
@@ -169,7 +174,7 @@
 														<h3>
 															<a href="detail.html">Cherry</a>
 														</h3>
-														<p class="price">&#8377;143.00</p>
+														<p class="price">₹143.00</p>
 													</div>
 													<!-- /.text -->
 												</div>
@@ -199,7 +204,7 @@
 														<h3>
 															<a href="detail.html">Carrot</a>
 														</h3>
-														<p class="price">&#8377;143.00</p>
+														<p class="price">₹143.00</p>
 													</div>
 													<!-- /.text -->
 												</div>
@@ -229,7 +234,7 @@
 														<h3>
 															<a href="detail.html">Apple</a>
 														</h3>
-														<p class="price">&#8377;143.00</p>
+														<p class="price">₹143.00</p>
 													</div>
 													<!-- /.text -->
 
@@ -265,12 +270,12 @@
 														<h3>
 															<a href="detail.html">Banana</a>
 														</h3>
-														<p class="price">&#8377;143.00</p>
+														<p class="price">₹143.00</p>
 													</div>
 													<!-- /.text -->
 
 													<div class="ribbon gift">
-
+														<!--                                   <div class="theribbon">GIFT</div>  -->
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
@@ -304,8 +309,8 @@
 															<a href="detail.html">Maize</a>
 														</h3>
 														<p class="price">
-															<!-- <del>&#8377;280</del> -->
-															&#8377;143.00
+															<del>₹280</del>
+															₹143.00
 														</p>
 													</div>
 													<!-- /.text -->
@@ -354,7 +359,7 @@
 														<h3>
 															<a href="detail.html">Red Lentils</a>
 														</h3>
-														<p class="price">&#8377;143.00</p>
+														<p class="price">₹143.00</p>
 													</div>
 													<!-- /.text -->
 												</div>
@@ -367,25 +372,20 @@
 									<!-- /.product-slider -->
 								</div>
 								<!-- /.container -->
-
-							</div>
 						</table>
 					</div>
 					<!-- /#hot -->
 
-					<!-- *** HOT END *** -->
 
-					<!-- *** GET INSPIRED ***
-
-           
-            <!-- /.container -->
+					<!-- /.container -->
 					<div class="table-responsive">
 						<table class="table">
 							<div id="hot">
+
 								<div class="box">
 									<div class="container">
 										<div class="col-md-8">
-											<h2>Recent Auctions</h2>
+											<h2>Recent Bidings</h2>
 										</div>
 									</div>
 								</div>
@@ -416,12 +416,14 @@
 														<h3>
 															<a href="detail.html">Beans</a>
 														</h3>
-														<p class="price">&#8377;143.00</p>
+														<p class="price">₹143.00</p>
 													</div>
 													<!-- /.text -->
 												</div>
 												<!-- /.product -->
 											</div>
+
+
 											<div class="item">
 												<div class="product">
 													<div class="flip-container">
@@ -446,14 +448,14 @@
 															<a href="detail.html">Tomato</a>
 														</h3>
 														<p class="price">
-															<!-- <del>&#8377;280</del> -->
-															&#8377;143.00
+															<del>₹280</del>
+															₹143.00
 														</p>
 													</div>
 													<!-- /.text -->
 
 													<div class="ribbon sale">
-
+														<!--                                    <div class="theribbon">SALE</div> -->
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
@@ -496,7 +498,7 @@
 														<h3>
 															<a href="detail.html">Cherry</a>
 														</h3>
-														<p class="price">&#8377;143.00</p>
+														<p class="price">₹143.00</p>
 													</div>
 													<!-- /.text -->
 												</div>
@@ -526,7 +528,7 @@
 														<h3>
 															<a href="detail.html">Carrot</a>
 														</h3>
-														<p class="price">&#8377;143.00</p>
+														<p class="price">₹143.00</p>
 													</div>
 													<!-- /.text -->
 												</div>
@@ -556,12 +558,12 @@
 														<h3>
 															<a href="detail.html">Apple</a>
 														</h3>
-														<p class="price">&#8377;143.00</p>
+														<p class="price">₹143.00</p>
 													</div>
 													<!-- /.text -->
 
 													<div class="ribbon new">
-
+														<!--                                   <div class="theribbon">NEW</div>  -->
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
@@ -592,12 +594,12 @@
 														<h3>
 															<a href="detail.html">Banana</a>
 														</h3>
-														<p class="price">&#8377;143.00</p>
+														<p class="price">₹143.00</p>
 													</div>
 													<!-- /.text -->
 
 													<div class="ribbon gift">
-
+														<!--                                   <div class="theribbon">GIFT</div>  -->
 														<div class="ribbon-background"></div>
 													</div>
 													<!-- /.ribbon -->
@@ -631,8 +633,8 @@
 															<a href="detail.html">Maize</a>
 														</h3>
 														<p class="price">
-															<!-- <del>&#8377;280</del> -->
-															&#8377;143.00
+															<del>₹280</del>
+															₹143.00
 														</p>
 													</div>
 													<!-- /.text -->
@@ -681,7 +683,7 @@
 														<h3>
 															<a href="detail.html">Red Lentils</a>
 														</h3>
-														<p class="price">&#8377;143.00</p>
+														<p class="price">₹143.00</p>
 													</div>
 													<!-- /.text -->
 												</div>
@@ -693,13 +695,8 @@
 									<!-- /.product-slider -->
 								</div>
 								<!-- /.container -->
+
 							</div>
-
-							<!-- /#hot -->
-
-							<!-- *** HOT END *** -->
-
-							<!-- *** GET INSPIRED ***-->
 
 						</table>
 					</div>
@@ -707,16 +704,13 @@
 					<!-- /.table-responsive -->
 
 
-
 				</div>
 			</div>
-
 		</div>
 	</div>
+
 </div>
 <!-- /#content -->
-
-
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.cookie.js"></script>
@@ -725,6 +719,5 @@
 <script src="js/bootstrap-hover-dropdown.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/front.js"></script>
-
 
 <%@ include file="footer.jsp"%>

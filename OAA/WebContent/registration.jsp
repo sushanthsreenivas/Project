@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
 
-<%@ include file = "header.jsp" %>
+<%@ include file="header.jsp"%>
 
- <div id="all">
+<div id="all">
 
 	<div id="content">
 		<div class="container">
@@ -40,10 +40,10 @@
 							<div class="col-md-8">
 								<div class="form-group">
 									<label for="role">Role</label><span style="margin-left: 50px;"></span><input
-														type="radio" id="role" name="role" value="Farmer"
-										 required>
+										type="radio" id="role" name="role" value="farmer" required>
 									Farmer <span style="margin-left: 90px"></span><input
-										type="radio" id="role" name="role" value="Customer">Customer	<html:errors property="roleerrmsg"/>
+										type="radio" id="role" name="role" value="buyer">Buyer
+									<html:errors property="roleerrmsg" />
 								</div>
 							</div>
 						</div>
@@ -52,7 +52,8 @@
 								<div class="form-group">
 									<label for="name">First name</label> <input type="text"
 										class="form-control" id="fname" required name="firstname"
-										value="kavya">	<html:errors property="firstnameerrmsg"/>
+										value="kavya">
+									<html:errors property="firstnameerrmsg" />
 								</div>
 							</div>
 						</div>
@@ -60,7 +61,9 @@
 							<div class="col-md-8">
 								<div class="form-group">
 									<label for="name">Last name</label> <input type="text"
-										class="form-control" id="lname" required name="lastname" value="kavya">	<html:errors property="lastnameerrmsg"/>
+										class="form-control" id="lname" required name="lastname"
+										value="kavya">
+									<html:errors property="lastnameerrmsg" />
 								</div>
 							</div>
 						</div>
@@ -68,7 +71,9 @@
 							<div class="col-md-8">
 								<div class="form-group">
 									<label for="email">Email</label> <input type="email"
-										class="form-control" id="email" name="email_id" required value="kavya@gmail.com">		<html:errors property="emailiderrmsg"/>
+										class="form-control" id="email" name="email_id" required
+										value="kavya@gmail.com">
+									<html:errors property="emailiderrmsg" />
 								</div>
 							</div>
 						</div>
@@ -76,7 +81,9 @@
 							<div class="col-md-8">
 								<div class="form-group">
 									<label for="password">Password</label> <input type="password"
-										class="form-control" id="password" name="passwd" required value="kavyapatil">	<html:errors property="passwderrmsg"/>
+										class="form-control" id="password" name="passwd" required
+										value="kavyapatil">
+									<html:errors property="passwderrmsg" />
 								</div>
 							</div>
 						</div>
@@ -85,7 +92,7 @@
 								<div class="form-group">
 									<label for="password">Confirm Password</label> <input
 										type="password" class="form-control" id="cpassword"
-										name="cpasswd" required  value="kavyapatil"> 									
+										name="cpasswd" required value="kavyapatil">
 								</div>
 							</div>
 						</div>
@@ -95,7 +102,9 @@
 								<div class="form-group">
 									<label for="mobile">Mobile</label> <input type="tel"
 										class="form-control" size="10" pattern="^\d{10}$" id="Mno"
-										name="mobileno" placeholder="10-digits" required value="9876543211">				<html:errors property="mobilenoerrmsg"/>
+										name="mobileno" placeholder="10-digits" required
+										value="9876543211">
+									<html:errors property="mobilenoerrmsg" />
 								</div>
 							</div>
 
@@ -106,7 +115,9 @@
 							<div class="col-md-8">
 								<div class="form-group">
 									<label for="name">Address</label> <input type="text"
-										class="form-control" id="Address" required name="address" value="bangalore">	<html:errors property="addresserrmsg"/>
+										class="form-control" id="Address" required name="address"
+										value="bangalore">
+									<html:errors property="addresserrmsg" />
 								</div>
 							</div>
 
@@ -115,7 +126,9 @@
 							<div class="col-md-8">
 								<div class="form-group">
 									<label for="name">City</label> <input type="text"
-										class="form-control" id="city" required name="city" value="bangalore">		<html:errors property="cityerrmsg"/>
+										class="form-control" id="city" required name="city"
+										value="bangalore">
+									<html:errors property="cityerrmsg" />
 								</div>
 							</div>
 						</div>
@@ -124,7 +137,9 @@
 							<div class="col-md-8">
 								<div class="form-group">
 									<label for="name">State</label> <input type="text"
-										class="form-control" id="state" required name="state" value="karnataka">		<html:errors property="stateerrmsg"/>
+										class="form-control" id="state" required name="state"
+										value="karnataka">
+									<html:errors property="stateerrmsg" />
 								</div>
 							</div>
 						</div>
@@ -132,7 +147,9 @@
 							<div class="col-md-8">
 								<div class="form-group">
 									<label for="name">Pin Code</label> <input type="text"
-										class="form-control" id="pin" required name="pincode" value="876545">		<html:errors property="pincodeerrmsg"/>
+										class="form-control" id="pin" required name="pincode"
+										value="876545">
+									<html:errors property="pincodeerrmsg" />
 								</div>
 							</div>
 						</div>
@@ -331,7 +348,7 @@
 <script src="js/front.js"></script>
 
 <!--  For password and confirm password validation -->
- <script type="text/javascript">
+<script type="text/javascript">
 	window.onload = function() {
 		var password = document.getElementById("password");
 		var cpassword = document.getElementById("cpassword");
@@ -345,6 +362,6 @@
 		}
 	}
 </script>
- 
-<%@ include file = "footer.jsp" %>
+
+<%@ include file="footer.jsp"%>
 

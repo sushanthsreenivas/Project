@@ -143,7 +143,7 @@
 
 				<ul class="nav navbar-nav navbar-left">
 					<li class="active"><a href="index.jsp">Home</a></li>
-					<li><a href="auction.jsp" class="dropdown-toggle"
+					<li><a href="auction.do" class="dropdown-toggle" 
 						data-hover="dropdown" data-delay="200">Auction <b></b></a></li>
 
 

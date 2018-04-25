@@ -1,5 +1,6 @@
 package oaa.web.entities;
 
+import java.sql.Blob;
 import java.sql.Date;
 
 public class Auction {
@@ -8,20 +9,26 @@ public class Auction {
 	private int productId;
 	private int userId;
 	private Date startDate;
-
 	private Date endDate;
-
 	private int bidPrice;
+	private String productName;
+	private String description;
+	private Blob photo;
+	private Boolean status;
 
-	public Auction(int auctionId, int productId, int userId, Date startDate, Date endDate, int bidPrice) {
+	public Auction(int auctionId, int productId, int userId, Date startDate, Date endDate, int bidPrice,
+			String productName, Blob photo, String description) {
 
 		// TODO Auto-generated constructor stub
 		this.auctionId = auctionId;
 		this.productId = productId;
-		this.userId=userId;
+		this.userId = userId;
 		this.startDate = startDate;
 		this.endDate = endDate;
 		this.bidPrice = bidPrice;
+		this.productName = productName;
+		this.photo = photo;
+		this.description = description;
 
 	}
 
@@ -63,6 +70,46 @@ public class Auction {
 
 	public void setBidPrice(int bidPrice) {
 		this.bidPrice = bidPrice;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Blob getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(Blob photo) {
+		this.photo = photo;
+	}
+
+	public Boolean getStatus() {
+		return status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
 	}
 
 }

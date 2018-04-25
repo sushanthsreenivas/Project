@@ -7,8 +7,8 @@
 			<div class="col-md-12">
 
 				<ul class="breadcrumb">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Login</a></li>
+					<li><a href="home.do">Home</a></li>
+
 					<li>Buyer</li>
 				</ul>
 
@@ -26,7 +26,7 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<li><a href="mybiding.do"><i class="fa fa-list"></i> My
+							<li><a href="biding.do"><i class="fa fa-list"></i> My
 									Bidings</a></li>
 
 							<li><a href="buyer_account.jsp"><i class="fa fa-user"></i>

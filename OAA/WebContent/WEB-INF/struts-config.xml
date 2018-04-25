@@ -12,6 +12,9 @@
 		<form-bean name="PB" type="oaa.web.model.ProductBean"></form-bean>
 		<form-bean name="bid" type="oaa.web.model.BidingBean"></form-bean>
 		<form-bean name="AB" type="oaa.web.model.AccountBean"></form-bean>
+		<form-bean name="CB" type="oaa.web.model.CategoryBean"></form-bean>
+		<form-bean name="AB" type="oaa.web.model.AuctionBean"></form-bean>
+
 	</form-beans>
 
 	<global-exceptions>
@@ -24,7 +27,7 @@
 
 	<action-mappings>
 		<!-- <action path="/regist" forward="/registration.jsp" /> -->
-		<action path="/addproduct" forward="/product_add.jsp"></action>
+
 		<action path="/updateproduct" forward="/product_update.jsp"></action>
 		<action path="/removeproduct" forward="/product_remove.jsp"></action>
 		<action path="/addbid" forward="/bid_add.jsp"></action>
@@ -32,8 +35,6 @@
 		<action path="/farmeraccount" forward="/farmer_account.jsp"></action>
 
 
-
-		<action path="/mybiding" forward="/mybiding.jsp"></action>
 
 
 		<action path="/processRegistration" name="URB"
@@ -43,12 +44,22 @@
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
-<!-- 	<action path="/buyerAccount" name="MA"
-			type="oaa.web.controller.AccountAction" input="/buyer_account.jsp"
-			scope="request">
-			<forward name="success" path="/updatesuccess.jsp" />
-			<forward name="failure" path="/dberror.jsp" />
-		</action> -->
+		<action path="/home" type="oaa.web.controller.HomeAction"
+			input="/index.jsp">
+			<forward name="farmer" path="/farmer.jsp" />
+			<forward name="buyer" path="/buyer.jsp" />
+			<forward name="index" path="/index.jsp" />
+		</action>
+
+
+		<!-- <action path="/buyerAccount" name="MA" type="oaa.web.controller.AccountAction" 
+			input="/buyer_account.jsp" scope="request"> <forward name="success" path="/updatesuccess.jsp" 
+			/> <forward name="failure" path="/dberror.jsp" /> </action> -->
+
+		<!-- <action path="/buyerAccount" name="MA" type="oaa.web.controller.AccountAction" 
+			input="/buyer_account.jsp" scope="request"> <forward name="success" path="/updatesuccess.jsp" 
+			/> <forward name="failure" path="/dberror.jsp" /> </action> -->
+
 		<action path="/farmeraccount" name="AB"
 			type="oaa.web.controller.AccountAction" input="/farmer_account.jsp"
 			scope="request">
@@ -63,6 +74,10 @@
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
+		<action path="/addproduct" name="CB"
+			type="oaa.web.controller.CategoryAction" scope="session">
+			<forward name="success" path="/product_add.jsp" />
+		</action>
 
 		<action path="/productAdd" name="PB"
 			type="oaa.web.controller.ProductAction" input="/product_add.jsp"
@@ -75,7 +90,7 @@
 		<action path="/productupdate" name="PB"
 			type="oaa.web.controller.ProductUpdateAction" input="/product_update.jsp"
 			scope="request" validate="true">
-			<forward name="success" path="/addsuccess.jsp" />
+			<forward name="success" path="/updatesuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
@@ -86,20 +101,27 @@
 		<action path="/productremove" name="PB"
 			type="oaa.web.controller.ProductRemoveAction" input="/product_remove.jsp"
 			scope="request">
-			<forward name="success" path="/addsuccess.jsp" />
+			<forward name="success" path="/removesuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
 
-		<action path="/auction" name="bid" type="oaa.web.controller.RetriveAuctionAction"
-			input="/mybiding.jsp" scope="request">
-			<forward name="success" path="/addsuccess.jsp" />
+		<action path="/auction" name="AB"
+			type="oaa.web.controller.RetriveAuctionAction" input="/auction.jsp"
+			scope="request">
+			<forward name="success" path="/auction.jsp" />
+		</action>
+
+		<action path="/biding" name="bid"
+			type="oaa.web.controller.BidingAuctionAction" input="/biding.jsp"
+			scope="request">
+			<forward name="success" path="/biding.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
 		<action path="/bidadd" name="bid" type="oaa.web.controller.BidingAction"
 			input="/bid_add.jsp" scope="request">
-			<forward name="success" path="/addsuccess.jsp" />
+			<forward name="success" path="/bidingsuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
@@ -110,6 +132,7 @@
 			<forward name="success" path="/addsuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
+
 
 
 	</action-mappings>

@@ -7,8 +7,8 @@
 			<div class="col-md-12">
 
 				<ul class="breadcrumb">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Login</a></li>
+					<li><a href="home.do">Home</a></li>
+
 					<li>Farmer</li>
 				</ul>
 
@@ -45,7 +45,7 @@
 			<div class="col-md-9">
 
 				<ul class="breadcrumb">
-					<li><a href="#">Home</a></li>
+					<li><a href="farmer.jsp">Home</a></li>
 					<li>My Products</li>
 				</ul>
 
@@ -438,16 +438,16 @@
 												/.product
  -->
 										</div>
-										</div>
 									</div>
-									<!-- /.product-slider -->
 								</div>
-								<!-- /.container -->
+								<!-- /.product-slider -->
+							</div>
+							<!-- /.container -->
 							</div>
 						</table>
 					</div>
 					<!-- /.container -->
-					
+
 				</div>
 			</div>
 		</div>

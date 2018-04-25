@@ -58,9 +58,11 @@ public class ProcessRequestServlet extends HttpServlet {
 				session.setAttribute("user_id", user_id);
 
 				String role = result[1];
-				if (role.equals("Farmer")) {
+				session.setAttribute("role",role);
+
+				if (role.equals("farmer")) {
 					request.getRequestDispatcher("/farmer.jsp").forward(request, response);
-				} else if (role.equals("Customer")) {
+				} else if (role.equals("buyer")) {
 					request.getRequestDispatcher("/buyer.jsp").forward(request, response);
 				} else {
 					request.getRequestDispatcher("/InvaidUser.jsp").forward(request, response);
