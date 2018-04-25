@@ -10,10 +10,10 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import oaa.web.model.MyAccountBean;
+import oaa.web.model.AccountBean;
 import oaa.web.model.UserRegBean;
 
-public class MyAccountAction extends Action {
+public class AccountAction extends Action {
 	private static final String FALIURE = "failure";
 	private static final String SUCCESS = "success";
 
@@ -21,8 +21,8 @@ public class MyAccountAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
-		if (form instanceof MyAccountBean) {
-			MyAccountBean mab = (MyAccountBean) form;
+		if (form instanceof AccountBean) {
+			AccountBean mab = (AccountBean) form;
 			boolean status = false;
 			try {
 				status = mab.updatepassword();
