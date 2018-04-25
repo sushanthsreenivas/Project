@@ -153,10 +153,9 @@ public class BidingBean extends ActionForm {
 		Collection<Auction> auctionList = new ArrayList<Auction>();
 		try {
 
-			OutputStream oImage;
-			Auction auction = null;
+			Auction bidingAuction = null;
 			connection = connection();
-			String sql = "SELECT auction_id,product_id,user_id,start_date,end_date,bid_prize FROM auction_master  where status=?";
+			String sql = "SELECT auction_id,product_id,user_id,start_date,end_date,bid_prize FROM auction_master join auction_transaction on auction_master.auction_id=auction_transaction.auction_id where status=? and auction_transaction.user_id=?";
 			PreparedStatement ps = connection.prepareStatement(sql);
 
 			ps.setString(1, "E");
@@ -164,9 +163,36 @@ public class BidingBean extends ActionForm {
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
+				/*
+				 * bidingAuction = new Auction(rs.getInt(1), rs.getInt(2),
+				 * rs.getInt(3), rs.getDate(4), rs.getDate(5), rs.getInt(6)); //
+				 * add each employee to the list auctionList.add(bidingAuction);
+				 */
+
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return auctionList;
+	}
+
+	public Collection<Auction> getListAuction() {
+
+		Collection<Auction> auctionList = new ArrayList<Auction>();
+		try {
+
+			Auction auction = null;
+			connection = connection();
+			String sql = "SELECT m.auction_id,m.product_id,m.user_id,m.start_date,m.end_date,m.bid_prize,p.product_name,p.photo,p.description,p.m.status FROM auction_master m join product p on m.product_id=p.product_id  where  status=?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, "E");
+
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
 
 				auction = new Auction(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getDate(4), rs.getDate(5),
-						rs.getInt(6));
+						rs.getInt(6), rs.getString(7), rs.getBlob(8), rs.getString(9), rs.getBoolean(10));
 				// add each employee to the list
 				auctionList.add(auction);
 
@@ -176,4 +202,5 @@ public class BidingBean extends ActionForm {
 		}
 		return auctionList;
 	}
+
 }

@@ -12,6 +12,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import oaa.web.entities.Auction;
+import oaa.web.model.AuctionBean;
 import oaa.web.model.BidingBean;
 
 public class RetriveAuctionAction  extends Action{
@@ -23,15 +24,16 @@ public class RetriveAuctionAction  extends Action{
 
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		if (form instanceof BidingBean) {
+		if (form instanceof AuctionBean) {
 
-			BidingBean auction = (BidingBean) form;
-
+			AuctionBean auction = (AuctionBean) form;
+			HttpSession session = request.getSession(false);
+/*
 			HttpSession session = request.getSession(false);
 			String userid = (String) session.getAttribute("user_id");
 			int user_id = Integer.parseInt(userid);
-
-			Collection<Auction> auctionList = auction.getListAuction(user_id);
+*/
+			Collection<Auction> auctionList = auction.getListAuction();
 			session.setAttribute("AuctionList", auctionList);
 
 		}

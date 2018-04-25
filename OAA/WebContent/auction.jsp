@@ -5,7 +5,7 @@
 			<div class="col-md-12">
 				<ul class="breadcrumb">
 					<li><a href="index.html">Home</a></li>
-					<li><a href="auction.jsp">Auction</a></li>
+					<li class="active"><a href="auction.jsp">Auction</a></li>
 				</ul>
 				<!--col-md-12 end-->
 			</div>
@@ -56,7 +56,7 @@
 												</div>
 												<!-- /.product -->
 											</div>
-											<div class="item">
+										<!-- 	<div class="item">
 												<div class="product">
 													<div class="flip-container">
 														<div class="flipper">
@@ -84,27 +84,27 @@
 															₹143.00
 														</p>
 													</div>
-													<!-- /.text -->
+													/.text
 
 													<div class="ribbon sale">
 
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 
 													<div class="ribbon new">
 
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 
 													<div class="ribbon gift">
 
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 												</div>
-												<!-- /.product -->
+												/.product
 											</div>
 
 											<div class="item">
@@ -132,9 +132,9 @@
 														</h3>
 														<p class="price">₹143.00</p>
 													</div>
-													<!-- /.text -->
+													/.text
 												</div>
-												<!-- /.product -->
+												/.product
 											</div>
 
 											<div class="item">
@@ -162,9 +162,9 @@
 														</h3>
 														<p class="price">₹143.00</p>
 													</div>
-													<!-- /.text -->
+													/.text
 												</div>
-												<!-- /.product -->
+												/.product
 											</div>
 
 											<div class="item">
@@ -192,15 +192,15 @@
 														</h3>
 														<p class="price">₹143.00</p>
 													</div>
-													<!-- /.text -->
+													/.text
 
 													<div class="ribbon new">
 
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 												</div>
-												<!-- /.product -->
+												/.product
 											</div>
 
 											<div class="item">
@@ -228,18 +228,18 @@
 														</h3>
 														<p class="price">₹143.00</p>
 													</div>
-													<!-- /.text -->
+													/.text
 
 													<div class="ribbon gift">
 
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 
 												</div>
-												<!-- /.product -->
+												/.product
 											</div>
-											<!-- /.col-md-4 -->
+											/.col-md-4
 
 											<div class="item">
 												<div class="product">
@@ -269,12 +269,12 @@
 															₹143.00
 														</p>
 													</div>
-													<!-- /.text -->
+													/.text
 
 													<div class="ribbon sale">
 														<div class="ribbon new">
 															<div class="ribbon gift"></div>
-															<!-- /.product -->
+															/.product
 														</div>
 
 														<div class="item">
@@ -302,19 +302,16 @@
 																	</h3>
 																	<p class="price">₹143.00</p>
 
-																	<!-- /.text -->
+																	/.text
 																</div>
 															</div>
-														</div>
+														</div> -->
 													</div>
 												</div>
 											</div>
 										</div>
 										<!-- /.product -->
-									</div>
-									<!-- item tag end -->
-								</div>
-							</div>
+								
 							<!-- /.product-slider -->
 						</table>
 						<!-- /.table-responsive -->
@@ -327,7 +324,7 @@
 								<div class="box">
 									<div class="container">
 										<div class="col-md-10">
-											<h2>Recent Auctions</h2>
+											<h2>Completed Auctions</h2>
 										</div>
 									</div>
 								</div>
@@ -366,7 +363,7 @@
 												<!-- /.product -->
 											</div>
 
-
+<!-- 
 											<div class="item">
 												<div class="product">
 													<div class="flip-container">
@@ -395,27 +392,27 @@
 															₹143.00
 														</p>
 													</div>
-													<!-- /.text -->
+													/.text
 
 													<div class="ribbon sale">
 
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 
 													<div class="ribbon new">
 
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 
 													<div class="ribbon gift">
 
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 												</div>
-												<!-- /.product -->
+												/.product
 											</div>
 
 											<div class="item">
@@ -443,9 +440,9 @@
 														</h3>
 														<p class="price">₹143.00</p>
 													</div>
-													<!-- /.text -->
+													/.text
 												</div>
-												<!-- /.product -->
+												/.product
 											</div>
 
 											<div class="item">
@@ -473,9 +470,9 @@
 														</h3>
 														<p class="price">₹143.00</p>
 													</div>
-													<!-- /.text -->
+													/.text
 												</div>
-												<!-- /.product -->
+												/.product
 											</div>
 
 											<div class="item">
@@ -503,15 +500,15 @@
 														</h3>
 														<p class="price">₹143.00</p>
 													</div>
-													<!-- /.text -->
+													/.text
 
 													<div class="ribbon new">
 
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 												</div>
-												<!-- /.product -->
+												/.product
 											</div>
 
 											<div class="item">
@@ -539,18 +536,18 @@
 														</h3>
 														<p class="price">₹143.00</p>
 													</div>
-													<!-- /.text -->
+													/.text
 
 													<div class="ribbon gift">
 
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 
 												</div>
-												<!-- /.product -->
+												/.product
 											</div>
-											<!-- /.col-md-4 -->
+											/.col-md-4
 
 											<div class="item">
 												<div class="product">
@@ -580,27 +577,27 @@
 															₹143.00
 														</p>
 													</div>
-													<!-- /.text -->
+													/.text
 
 													<div class="ribbon sale">
 
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 
 													<div class="ribbon new">
 
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 
 													<div class="ribbon gift">
 
 														<div class="ribbon-background"></div>
 													</div>
-													<!-- /.ribbon -->
+													/.ribbon
 												</div>
-												<!-- /.product -->
+												/.product
 											</div>
 
 											<div class="item">
@@ -628,13 +625,13 @@
 														</h3>
 														<p class="price">₹143.00</p>
 
-														<!-- /.text -->
+														/.text
 													</div>
-													<!-- /.product -->
+													/.product
 
 												</div>
-												<!-- item -->
-											</div>
+												item
+											</div> -->
 											<!-- /.product-slider -->
 										</div>
 										<!-- col-md-10-->
