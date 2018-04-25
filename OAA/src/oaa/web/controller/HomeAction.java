@@ -26,7 +26,7 @@ public class HomeAction extends Action {
 			String role = (String) session.getAttribute("role");
 			if (role.equals("farmer")) {
 				return mapping.findForward("farmer");
-			} else {
+			} else if(role.equals("buyer")){
 				return mapping.findForward("buyer");
 			}
 		}
