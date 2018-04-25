@@ -41,7 +41,18 @@
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
-
+<!-- 	<action path="/buyerAccount" name="MA"
+			type="oaa.web.controller.MyAccountAction" input="/buyer_account.jsp"
+			scope="request">
+			<forward name="success" path="/updatesuccess.jsp" />
+			<forward name="failure" path="/dberror.jsp" />
+		</action> -->
+		<action path="/farmerAccount" name="MA"
+			type="oaa.web.controller.MyAccountAction" input="/farmer_account.jsp"
+			scope="request">
+			<forward name="success" path="/updatesuccess.jsp" />
+			<forward name="failure" path="/dberror.jsp" />
+		</action>
 
 		<action path="/myproducts" name="PB"
 			type="oaa.web.controller.MyProductAction" input="/myproducts.jsp"
