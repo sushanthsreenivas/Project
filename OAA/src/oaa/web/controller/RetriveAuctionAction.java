@@ -2,6 +2,7 @@ package oaa.web.controller;
 
 import java.util.Collection;
 
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -13,7 +14,6 @@ import org.apache.struts.action.ActionMapping;
 
 import oaa.web.entities.Auction;
 import oaa.web.model.AuctionBean;
-import oaa.web.model.BidingBean;
 
 public class RetriveAuctionAction  extends Action{
 
