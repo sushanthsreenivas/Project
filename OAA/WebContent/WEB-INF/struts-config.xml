@@ -43,6 +43,13 @@
 			<forward name="success" path="/thanks.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
+		
+		<action path="/home" 
+			type="oaa.web.controller.HomeAction" input="/index.jsp">
+			<forward name="farmer" path="/farmer.jsp" />
+			<forward name="buyer" path="/buyer.jsp" />
+			<forward name="index" path="/index.jsp" />
+		</action>
 
 
 	<!-- <action path="/buyerAccount" name="MA"
