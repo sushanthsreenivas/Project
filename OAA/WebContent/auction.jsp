@@ -53,7 +53,13 @@
 															<h3>
 																<a href="detail.html">${auction.productName}</a>
 															</h3>
+
 															<p class="price">&#8377;143.00</p>
+
+															<p class="price">${auction.description }</p>
+															<p class="price">Start Date - ${auction.startDate }</p>
+															<p class="price">End Date - ${auction.endDate }</p>
+
 														</div>
 														<!-- /.text -->
 													</div>
