@@ -27,294 +27,45 @@
 								<div class="container">
 									<div class="col-md-10">
 										<div class="product-slider">
-										<%int index=-1;%>
-										<c:forEach items="${sessionScope.AuctionList}" var="auction">
-											<div class="item">
-												<div class="product">
-													<div class="flip-container">
-														<div class="flipper">
-															<div class="front">
-																<a href="detail.html"> <img src="image?type=auction&index=<%=(++index)%>"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-															<div class="back">
-																<a href="detail.html"> <img src="image?type=auction&index=<%=(index)%>"
-																	alt="" class="img-responsive">
-																</a>
+										<%int index=-1; %>
+											<c:forEach items="${sessionScope.AuctionList}" var="auction">
+												<div class="item">
+													<div class="product">
+														<div class="flip-container">
+															<div class="flipper">
+																<div class="front">
+																	<a href="detail.html"> <img
+																		src="image?type=auction&index=<%=(++index)%>" alt=""
+																		class="img-responsive">
+																	</a>
+																</div>
+																<div class="back">
+																	<a href="detail.html"> <img src="image?type=auction&index=<%=(index)%>"
+																		alt="" class="img-responsive">
+																	</a>
+																</div>
 															</div>
 														</div>
+														<a href="detail.html" class="invisible"> <img
+															src="img/product1.jpg" alt="" class="img-responsive">
+														</a>
+														<div class="text">
+															<h3>
+																<a href="detail.html">${auction.productName}</a>
+															</h3>
+															<p class="price">₹143.00</p>
+														</div>
+														<!-- /.text -->
 													</div>
-													<a href="detail.html" class="invisible"> <img
-														src="img/product1.jpg" alt="" class="img-responsive">
-													</a>
-													<div class="text">
-														<h3>
-															<a href="detail.html">${auction.productName}</a>
-														</h3>
-														<p class="price">&#8377;143.00</p>
-													</div>
-													<!-- /.text -->
+													<!-- /.product -->
 												</div>
-												<!-- /.product -->
-											</div>
 											</c:forEach>
-										<!-- 	<div class="item">
-												<div class="product">
-													<div class="flip-container">
-														<div class="flipper">
-															<div class="front">
-																<a href="detail.html"> <img src="img/product3.jpeg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-															<div class="back">
-																<a href="detail.html"> <img src="img/product3.jpeg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-														</div>
-													</div>
-													<a href="detail.html" class="invisible"> <img
-														src="img/product3.jpeg" alt="" class="img-responsive">
-													</a>
-													<div class="text">
-														<h3>
-															<a href="detail.html">Tomato</a>
-														</h3>
-														<p class="price">
-															<!-- <del>&#8377;280</del> -->
-															&#8377;143.00
-														</p>
-													</div>
-													/.text
-
-													<div class="ribbon sale">
-
-														<div class="ribbon-background"></div>
-													</div>
-													/.ribbon
-
-													<div class="ribbon new">
-
-														<div class="ribbon-background"></div>
-													</div>
-													/.ribbon
-
-													<div class="ribbon gift">
-
-														<div class="ribbon-background"></div>
-													</div>
-													/.ribbon
-												</div>
-												/.product
-											</div>
-
-											<div class="item">
-												<div class="product">
-													<div class="flip-container">
-														<div class="flipper">
-															<div class="front">
-																<a href="detail.html"> <img src="img/product4.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-															<div class="back">
-																<a href="detail.html"> <img src="img/product4.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-														</div>
-													</div>
-													<a href="detail.html" class="invisible"> <img
-														src="img/product4.jpg" alt="" class="img-responsive">
-													</a>
-													<div class="text">
-														<h3>
-															<a href="detail.html">Cherry</a>
-														</h3>
-														<p class="price">&#8377;143.00</p>
-													</div>
-													/.text
-												</div>
-												/.product
-											</div>
-
-											<div class="item">
-												<div class="product">
-													<div class="flip-container">
-														<div class="flipper">
-															<div class="front">
-																<a href="detail.html"> <img src="img/product2.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-															<div class="back">
-																<a href="detail.html"> <img src="img/product2.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-														</div>
-													</div>
-													<a href="detail.html" class="invisible"> <img
-														src="img/product2.jpg" alt="" class="img-responsive">
-													</a>
-													<div class="text">
-														<h3>
-															<a href="detail.html">Carrot</a>
-														</h3>
-														<p class="price">&#8377;143.00</p>
-													</div>
-													/.text
-												</div>
-												/.product
-											</div>
-
-											<div class="item">
-												<div class="product">
-													<div class="flip-container">
-														<div class="flipper">
-															<div class="front">
-																<a href="detail.html"> <img src="img/product5.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-															<div class="back">
-																<a href="detail.html"> <img src="img/product5.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-														</div>
-													</div>
-													<a href="detail.html" class="invisible"> <img
-														src="img/product5.jpg" alt="" class="img-responsive">
-													</a>
-													<div class="text">
-														<h3>
-															<a href="detail.html">Apple</a>
-														</h3>
-														<p class="price">&#8377;143.00</p>
-													</div>
-													/.text
-
-													<div class="ribbon new">
-
-														<div class="ribbon-background"></div>
-													</div>
-													/.ribbon
-												</div>
-												/.product
-											</div>
-
-											<div class="item">
-												<div class="product">
-													<div class="flip-container">
-														<div class="flipper">
-															<div class="front">
-																<a href="detail.html"> <img src="img/product6.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-															<div class="back">
-																<a href="detail.html"> <img src="img/product6.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-														</div>
-													</div>
-													<a href="detail.html" class="invisible"> <img
-														src="img/product6.jpg" alt="" class="img-responsive">
-													</a>
-													<div class="text">
-														<h3>
-															<a href="detail.html">Banana</a>
-														</h3>
-														<p class="price">&#8377;143.00</p>
-													</div>
-													/.text
-
-													<div class="ribbon gift">
-
-														<div class="ribbon-background"></div>
-													</div>
-													/.ribbon
-
-												</div>
-												/.product
-											</div>
-											/.col-md-4
-
-											<div class="item">
-												<div class="product">
-													<div class="flip-container">
-														<div class="flipper">
-															<div class="front">
-																<a href="detail.html"> <img src="img/product7.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-															<div class="back">
-																<a href="detail.html"> <img src="img/product7.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-														</div>
-													</div>
-													<a href="detail.html" class="invisible"> <img
-														src="img/product7.jpg" alt="" class="img-responsive">
-													</a>
-													<div class="text">
-														<h3>
-															<a href="detail.html">Maize</a>
-														</h3>
-														<p class="price">
-															<!-- <del>&#8377;280</del> -->
-															&#8377;143.00
-														</p>
-													</div>
-													/.text
-
-													<div class="ribbon sale">
-														<div class="ribbon new">
-															<div class="ribbon gift"></div>
-															/.product
-														</div>
-
-														<div class="item">
-															<div class="product">
-																<div class="flip-container">
-																	<div class="flipper">
-																		<div class="front">
-																			<a href="detail.html"> <img
-																				src="img/product8.jpg" alt="" class="img-responsive">
-																			</a>
-																		</div>
-																		<div class="back">
-																			<a href="detail.html"> <img
-																				src="img/product8.jpg" alt="" class="img-responsive">
-																			</a>
-																		</div>
-																	</div>
-																</div>
-																<a href="detail.html" class="invisible"> <img
-																	src="img/product8.jpg" alt="" class="img-responsive">
-																</a>
-																<div class="text">
-																	<h3>
-																		<a href="detail.html">Red Lentils</a>
-																	</h3>
-																	<p class="price">&#8377;143.00</p>
-
-																	/.text
-																</div>
-															</div>
-														</div> -->
-													</div>
-												</div>
-											</div>
 										</div>
-										<!-- /.product -->
-								
+									</div>
+								</div>
+							</div>
+							<!-- /.product -->
+
 							<!-- /.product-slider -->
 						</table>
 						<!-- /.table-responsive -->
@@ -359,292 +110,21 @@
 														<h3>
 															<a href="detail.html">Beans</a>
 														</h3>
-														<p class="price">&#8377;143.00</p>
+														<p class="price">₹143.00</p>
 													</div>
 													<!-- /.text -->
 												</div>
 												<!-- /.product -->
 											</div>
 
-<!-- 
-											<div class="item">
-												<div class="product">
-													<div class="flip-container">
-														<div class="flipper">
-															<div class="front">
-																<a href="detail.html"> <img src="img/product3.jpeg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-															<div class="back">
-																<a href="detail.html"> <img src="img/product3.jpeg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-														</div>
-													</div>
-													<a href="detail.html" class="invisible"> <img
-														src="img/product3.jpeg" alt="" class="img-responsive">
-													</a>
-													<div class="text">
-														<h3>
-															<a href="detail.html">Tomato</a>
-														</h3>
-														<p class="price">
-															<!-- <del>&#8377;280</del> -->
-															&#8377;143.00
-														</p>
-													</div>
-													/.text
 
-													<div class="ribbon sale">
-
-														<div class="ribbon-background"></div>
-													</div>
-													/.ribbon
-
-													<div class="ribbon new">
-
-														<div class="ribbon-background"></div>
-													</div>
-													/.ribbon
-
-													<div class="ribbon gift">
-
-														<div class="ribbon-background"></div>
-													</div>
-													/.ribbon
-												</div>
-												/.product
-											</div>
-
-											<div class="item">
-												<div class="product">
-													<div class="flip-container">
-														<div class="flipper">
-															<div class="front">
-																<a href="detail.html"> <img src="img/product4.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-															<div class="back">
-																<a href="detail.html"> <img src="img/product4.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-														</div>
-													</div>
-													<a href="detail.html" class="invisible"> <img
-														src="img/product4.jpg" alt="" class="img-responsive">
-													</a>
-													<div class="text">
-														<h3>
-															<a href="detail.html">Cherry</a>
-														</h3>
-														<p class="price">&#8377;143.00</p>
-													</div>
-													/.text
-												</div>
-												/.product
-											</div>
-
-											<div class="item">
-												<div class="product">
-													<div class="flip-container">
-														<div class="flipper">
-															<div class="front">
-																<a href="detail.html"> <img src="img/product2.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-															<div class="back">
-																<a href="detail.html"> <img src="img/product2.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-														</div>
-													</div>
-													<a href="detail.html" class="invisible"> <img
-														src="img/product2.jpg" alt="" class="img-responsive">
-													</a>
-													<div class="text">
-														<h3>
-															<a href="detail.html">Carrot</a>
-														</h3>
-														<p class="price">&#8377;143.00</p>
-													</div>
-													/.text
-												</div>
-												/.product
-											</div>
-
-											<div class="item">
-												<div class="product">
-													<div class="flip-container">
-														<div class="flipper">
-															<div class="front">
-																<a href="detail.html"> <img src="img/product5.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-															<div class="back">
-																<a href="detail.html"> <img src="img/product5.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-														</div>
-													</div>
-													<a href="detail.html" class="invisible"> <img
-														src="img/product5.jpg" alt="" class="img-responsive">
-													</a>
-													<div class="text">
-														<h3>
-															<a href="detail.html">Apple</a>
-														</h3>
-														<p class="price">&#8377;143.00</p>
-													</div>
-													/.text
-
-													<div class="ribbon new">
-
-														<div class="ribbon-background"></div>
-													</div>
-													/.ribbon
-												</div>
-												/.product
-											</div>
-
-											<div class="item">
-												<div class="product">
-													<div class="flip-container">
-														<div class="flipper">
-															<div class="front">
-																<a href="detail.html"> <img src="img/product6.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-															<div class="back">
-																<a href="detail.html"> <img src="img/product6.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-														</div>
-													</div>
-													<a href="detail.html" class="invisible"> <img
-														src="img/product6.jpg" alt="" class="img-responsive">
-													</a>
-													<div class="text">
-														<h3>
-															<a href="detail.html">Banana</a>
-														</h3>
-														<p class="price">&#8377;143.00</p>
-													</div>
-													/.text
-
-													<div class="ribbon gift">
-
-														<div class="ribbon-background"></div>
-													</div>
-													/.ribbon
-
-												</div>
-												/.product
-											</div>
-											/.col-md-4
-
-											<div class="item">
-												<div class="product">
-													<div class="flip-container">
-														<div class="flipper">
-															<div class="front">
-																<a href="detail.html"> <img src="img/product7.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-															<div class="back">
-																<a href="detail.html"> <img src="img/product7.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-														</div>
-													</div>
-													<a href="detail.html" class="invisible"> <img
-														src="img/product7.jpg" alt="" class="img-responsive">
-													</a>
-													<div class="text">
-														<h3>
-															<a href="detail.html">Maize</a>
-														</h3>
-														<p class="price">
-															<!-- <del>&#8377;280</del> -->
-															&#8377;143.00
-														</p>
-													</div>
-													/.text
-
-													<div class="ribbon sale">
-
-														<div class="ribbon-background"></div>
-													</div>
-													/.ribbon
-
-													<div class="ribbon new">
-
-														<div class="ribbon-background"></div>
-													</div>
-													/.ribbon
-
-													<div class="ribbon gift">
-
-														<div class="ribbon-background"></div>
-													</div>
-													/.ribbon
-												</div>
-												/.product
-											</div>
-
-											<div class="item">
-												<div class="product">
-													<div class="flip-container">
-														<div class="flipper">
-															<div class="front">
-																<a href="detail.html"> <img src="img/product8.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-															<div class="back">
-																<a href="detail.html"> <img src="img/product8.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-														</div>
-													</div>
-													<a href="detail.html" class="invisible"> <img
-														src="img/product8.jpg" alt="" class="img-responsive">
-													</a>
-													<div class="text">
-														<h3>
-															<a href="detail.html">Red Lentils</a>
-														</h3>
-														<p class="price">&#8377;143.00</p>
-
-														/.text
-													</div>
-													/.product
-
-												</div>
-												item
-											</div> -->
-											<!-- /.product-slider -->
 										</div>
-										<!-- col-md-10-->
+										<!-- second container end -->
 									</div>
-									<!-- second container end -->
+									<!-- *** second HOT tag END *** -->
 								</div>
-								<!-- *** second HOT tag END *** -->
-							</div>
 
-							<!--end table tag-->
+								<!--end table tag-->
 						</table>
 						<!-- *** table responsive***-->
 					</div>
