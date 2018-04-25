@@ -34,8 +34,6 @@
 		<action path="/farmeraccount" forward="/farmer_account.jsp"></action>
 
 
-		<action path="/mybiding" forward="/mybiding.jsp"></action>
-
 
 
 		<action path="/processRegistration" name="URB"

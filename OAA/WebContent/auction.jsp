@@ -5,7 +5,7 @@
 			<div class="col-md-12">
 				<ul class="breadcrumb">
 					<li><a href="index.html">Home</a></li>
-					<li class="active"><a href="auction.jsp">Auction</a></li>
+					<li class="active"><a href="auction.do">Auction</a></li>
 				</ul>
 				<!--col-md-12 end-->
 			</div>

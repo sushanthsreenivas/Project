@@ -16,10 +16,9 @@ public class Auction {
 	private Blob photo;
 	private Boolean status;
 
+	public Auction(int auctionId, int productId, int userId, Date startDate, Date endDate, int bidPrice,
+			String productName, Blob photo, String description) {
 
-	public Auction(int auctionId, int productId, int userId, Date startDate, Date  endDate, int bidPrice, String productName, Blob photo,
-			String description, boolean status) {
-		
 		// TODO Auto-generated constructor stub
 		this.auctionId = auctionId;
 		this.productId = productId;
@@ -29,8 +28,7 @@ public class Auction {
 		this.bidPrice = bidPrice;
 		this.productName = productName;
 		this.photo = photo;
-		this.description=description;
-		this.status=status;
+		this.description = description;
 
 	}
 

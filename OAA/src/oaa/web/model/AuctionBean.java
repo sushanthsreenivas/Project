@@ -125,7 +125,7 @@ public class AuctionBean extends ActionForm{
 
 			Auction auction = null;
 			connection = connection();
-			String sql = "SELECT m.auction_id,m.product_id,m.user_id,m.start_date,m.end_date,m.bid_prize,p.product_name,p.photo,p.description,p.m.status FROM auction_master m join product p on m.product_id=p.product_id  where  m.status=?";
+			String sql = "SELECT m.auction_id,m.product_id,m.user_id,m.start_date,m.end_date,m.bid_prize,p.product_name,p.photo,p.description  FROM auction_master m join product p on m.product_id=p.product_id  where  m.status=?";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setString(1, "E");
 
@@ -134,7 +134,7 @@ public class AuctionBean extends ActionForm{
 			while (rs.next()) {
 
 				auction = new Auction(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getDate(4), rs.getDate(5),
-						rs.getInt(6), rs.getString(7), rs.getBlob(8), rs.getString(9), rs.getBoolean(10));
+						rs.getInt(6), rs.getString(7), rs.getBlob(8), rs.getString(9));
 				// add each employee to the list
 				auctionList.add(auction);
 

@@ -159,6 +159,7 @@ public class BidingBean extends ActionForm {
 			PreparedStatement ps = connection.prepareStatement(sql);
 
 			ps.setString(1, "E");
+			ps.setInt(2, user_id);
 
 			ResultSet rs = ps.executeQuery();
 
