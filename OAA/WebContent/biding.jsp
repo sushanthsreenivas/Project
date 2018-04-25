@@ -7,8 +7,8 @@
 			<div class="col-md-12">
 
 				<ul class="breadcrumb">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Login</a></li>
+					<li><a href="home.do">Home</a></li>
+					
 					<li>Buyer</li>
 				</ul>
 
@@ -42,7 +42,7 @@
 			<div class="col-md-9">
 
 				<ul class="breadcrumb">
-					<li><a href="#">Home</a></li>
+					<li><a href="buyer.jsp">Home</a></li>
 					<li>My Bidings</li>
 				</ul>
 
