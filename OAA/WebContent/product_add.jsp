@@ -6,7 +6,7 @@
 			<div class="col-md-12">
 				<ul class="breadcrumb">
 					<li><a href="#">Home</a></li>
-					<li><a href="#">Login</a></li>
+
 					<li>Farmer</li>
 				</ul>
 			</div>
@@ -64,13 +64,14 @@
 											<div class="form-group">
 												<label for="category">Category</label>
 												<html:select styleClass="form-control" styleId="category"
-													property="category" >
-												<c:forEach items="${sessionScope.CB.categories}" var="category">	 
-													<html:option value="${category.categoryId}">${category.categoryName}</html:option>
-												</c:forEach>
+													property="category">
+													<c:forEach items="${sessionScope.CB.categories}"
+														var="category">
+														<html:option value="${category.categoryId}">${category.categoryName}</html:option>
+													</c:forEach>
 												</html:select>
-<%-- 												<html:text styleClass="form-control" styleId="category" --%>
-<%-- 													property="category" /> --%>
+												<%-- 												<html:text styleClass="form-control" styleId="category" --%>
+												<%-- 													property="category" /> --%>
 											</div>
 										</div>
 
