@@ -15,8 +15,10 @@ import oaa.web.entities.Auction;
 import oaa.web.model.BidingBean;
 
 public class HomeAction extends Action {
-	/*private static final String FAILURE = "failure";
-	private static final String SUCCESS = "success";*/
+	/*
+	 * private static final String FAILURE = "failure"; private static final
+	 * String SUCCESS = "success";
+	 */
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -24,10 +26,12 @@ public class HomeAction extends Action {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
 			String role = (String) session.getAttribute("role");
-			if (role.equals("farmer")) {
-				return mapping.findForward("farmer");
-			} else if(role.equals("buyer")){
-				return mapping.findForward("buyer");
+			if (role != null) {
+				if (role.equals("farmer")) {
+					return mapping.findForward("farmer");
+				} else if (role.equals("buyer")) {
+					return mapping.findForward("buyer");
+				}
 			}
 		}
 
