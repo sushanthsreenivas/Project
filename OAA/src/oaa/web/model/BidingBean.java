@@ -16,6 +16,7 @@ import javax.sql.DataSource;
 import org.apache.struts.action.ActionForm;
 
 import oaa.web.entities.Auction;
+import oaa.web.entities.Bid;
 
 public class BidingBean extends ActionForm {
 
@@ -24,9 +25,10 @@ public class BidingBean extends ActionForm {
 	PreparedStatement ps = null;
 	ResultSet rs = null;
 
-	private int bidprice;
-
 	private int auctionid;
+	private int bidAmount;
+	private int lastBidAmount;
+	private int bidAmountIncrement;
 
 	public int getAuctionid() {
 		return auctionid;
@@ -36,12 +38,28 @@ public class BidingBean extends ActionForm {
 		this.auctionid = auctionid;
 	}
 
-	public int getBidprice() {
-		return bidprice;
+	public int getBidAmount() {
+		return bidAmount;
 	}
 
-	public void setBidprice(int bidprice) {
-		this.bidprice = bidprice;
+	public void setBidAmount(int bidAmount) {
+		this.bidAmount = bidAmount;
+	}
+
+	public int getLastBidAmount() {
+		return lastBidAmount;
+	}
+
+	public void setLastBidAmount(int lastBidAmount) {
+		this.lastBidAmount = lastBidAmount;
+	}
+
+	public int getBidAmountIncrement() {
+		return bidAmountIncrement;
+	}
+
+	public void setBidAmountIncrement(int bidAmountIncrement) {
+		this.bidAmountIncrement = bidAmountIncrement;
 	}
 
 	public Connection connection() {
@@ -70,7 +88,7 @@ public class BidingBean extends ActionForm {
 			ps = connection.prepareStatement("insert into auction_transaction values(null,?,?,?,now())");
 			ps.setInt(1, getAuctionid());
 			ps.setInt(2, user_id);
-			ps.setInt(3, getBidprice());
+			ps.setInt(3, getBidAmount());
 
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
@@ -110,7 +128,7 @@ public class BidingBean extends ActionForm {
 					"UPDATE auction_transaction join users on users.user_id=auction_transaction.user_id join "
 							+ "auction_master on auction_master.auction_id=auction_transaction.auction_id"
 							+ " SET auction_transaction.bid_prize =?, Date=now() where auction_transaction.user_id=? and auction_transaction.auction_id=?");
-			ps.setInt(1, getBidprice());
+			ps.setInt(1, getBidAmount());
 			ps.setInt(2, user_id);
 			ps.setInt(3, getAuctionid());
 
@@ -147,34 +165,32 @@ public class BidingBean extends ActionForm {
 		return false;
 	}
 
-	public Collection<Auction> getListAuction(int user_id) {
+	public Bid getBidDetails(int auctionid) {
 		// TODO Auto-generated method stub
 
-		Collection<Auction> auctionList = new ArrayList<Auction>();
+		Bid bid= null;
 		try {
-
-			Auction bidingAuction = null;
+			
 			connection = connection();
-			String sql = "SELECT auction_id,product_id,user_id,start_date,end_date,bid_prize FROM auction_master join auction_transaction on auction_master.auction_id=auction_transaction.auction_id where status=? and auction_transaction.user_id=?";
+			String sql = "SELECT distinct bid_amount_increment,max(bid_amount) FROM auction_transaction join auction_master "
+					+ "on auction_transaction.auction_id=auction_master.auction_id where status=? and auction_master.auction_id=?";
 			PreparedStatement ps = connection.prepareStatement(sql);
 
 			ps.setString(1, "E");
-			ps.setInt(2, user_id);
+			ps.setInt(2, auctionid);
 
 			ResultSet rs = ps.executeQuery();
 
-			while (rs.next()) {
-				/*
-				 * bidingAuction = new Auction(rs.getInt(1), rs.getInt(2),
-				 * rs.getInt(3), rs.getDate(4), rs.getDate(5), rs.getInt(6)); //
-				 * add each employee to the list auctionList.add(bidingAuction);
-				 */
+			if (rs.next()) {
+				this.auctionid = auctionid;
+				this.bidAmountIncrement = rs.getInt(1);
+				this.lastBidAmount = rs.getInt(2);
 
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return auctionList;
+		return bid;
 	}
 
 	public Collection<Auction> getListAuction() {

@@ -16,38 +16,40 @@
 			<div class="col-md-9">
 
 				<div class="row" id="productMain">
-					<div class="col-sm-6">
+					<!-- <div class="col-sm-6">
 						<div id="mainImage">
 							<img src="img/product9.jpg" alt="" class="img-responsive">
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<div class="col-sm-6">
 					<div class="box">
-						<h1 class="text-center">Ladies Finger</h1>
+						<h1 class="text-center">Bid for ${param.pname}</h1>
 
 
-						<p class="price">$124.00</p>
+						<p class="price">Current Bid Amount :
+							$${requestScope.BB.lastBidAmount}/p>
+						<p class="price">Minimum Bid increment :
+							$${requestScope.BB.bidAmountIncrement}</p>
 
+						<p class="input">
+							<label>Bid Amount:</label> <input type="text" value="bid amount"
+								name="bidAmount" id="bidAmount">
+						</p>
 						<p class="text-center buttons">
-							<a href="basket.html" class="btn btn-primary"><i
-								class="fa fa-shopping-cart"></i> Add to cart</a> <a
-								href="basket.html" class="btn btn-default"><i
-								class="fa fa-heart"></i> Add to wishlist</a>
+
+							<a href="addBid.do" class="btn btn-primary"><i
+								class="fa  fa-rupee-sign"></i> Bid</a> <a
+								href="javascript:history.go(-1)" class="btn btn-default"><i
+								class="fa  fa-arrow-left"></i> Go Back</a>
 						</p>
 
-
-					</div>
 				</div>
-
-
-
+				</div>
 
 				<div class="col-sm-7" id="details">
 					<p>
-					<h4>Product details</h4>
-
-
+					<h4>Details</h4>
 					<hr>
 
 				</div>
@@ -67,5 +69,4 @@
 <script src="js/bootstrap-hover-dropdown.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/front.js"></script>
-
 <%@ include file="footer.jsp"%>

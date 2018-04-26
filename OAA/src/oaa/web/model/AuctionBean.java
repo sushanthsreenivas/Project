@@ -125,7 +125,8 @@ public class AuctionBean extends ActionForm{
 
 			Auction auction = null;
 			connection = connection();
-			String sql = "SELECT m.auction_id,m.product_id,m.user_id,m.start_date,m.end_date,m.bid_prize,p.product_name,p.photo,p.description  FROM auction_master m join product p on m.product_id=p.product_id  where  m.status=?";
+			String sql = "SELECT m.auction_id,m.product_id,m.user_id,m.start_date,m.end_date,p.min_bid_price,p.product_name,"
+					+ "p.photo,p.description  FROM auction_master m join product p on m.product_id=p.product_id  where  m.status=?";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setString(1, "E");
 

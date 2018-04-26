@@ -10,7 +10,7 @@
 	<form-beans>
 		<form-bean name="URB" type="oaa.web.model.UserRegBean"></form-bean>
 		<form-bean name="PB" type="oaa.web.model.ProductBean"></form-bean>
-		<form-bean name="bid" type="oaa.web.model.BidingBean"></form-bean>
+		<form-bean name="BB" type="oaa.web.model.BidingBean"></form-bean>
 		<form-bean name="AB" type="oaa.web.model.AccountBean"></form-bean>
 		<form-bean name="CB" type="oaa.web.model.CategoryBean"></form-bean>
 		<form-bean name="AB" type="oaa.web.model.AuctionBean"></form-bean>
@@ -30,28 +30,19 @@
 
 		<action path="/updateproduct" forward="/product_update.jsp"></action>
 		<action path="/removeproduct" forward="/product_remove.jsp"></action>
-		<action path="/addbid" forward="/bid_add.jsp"></action>
-		<action path="/updatebid" forward="/bid_update.jsp"></action>
 		<action path="/farmeraccount" forward="/farmer_account.jsp"></action>
-
-
-
-
 		<action path="/processRegistration" name="URB"
 			type="oaa.web.controller.RegistrationAction" input="/registration.jsp"
 			scope="request">
 			<forward name="success" path="/thanks.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
-
 		<action path="/home" type="oaa.web.controller.HomeAction"
 			input="/index.jsp">
 			<forward name="farmer" path="/farmer.jsp" />
 			<forward name="buyer" path="/buyer.jsp" />
 			<forward name="index" path="/index.jsp" />
 		</action>
-
-
 		<!-- <action path="/buyerAccount" name="MA" type="oaa.web.controller.AccountAction" 
 			input="/buyer_account.jsp" scope="request"> <forward name="success" path="/updatesuccess.jsp" 
 			/> <forward name="failure" path="/dberror.jsp" /> </action> -->
@@ -99,10 +90,6 @@
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
-		<!-- <action path="/productretrive" name="PB" type="oaa.web.controller.ProductretriveAction" 
-			input="/product_add.jsp" scope="request" validate="true"> <forward name="success" 
-			path="/addsuccess.jsp" /> <forward name="failure" path="/dberror.jsp" /> 
-			</action> -->
 		<action path="/productremove" name="PB"
 			type="oaa.web.controller.ProductRemoveAction" input="/product_remove.jsp"
 			scope="request">
@@ -117,20 +104,25 @@
 			<forward name="success" path="/auction.jsp" />
 		</action>
 
-		<action path="/biding" name="bid"
-			type="oaa.web.controller.BidingAuctionAction" input="/biding.jsp"
+		<action path="/initiateBid" name="BB"
+			type="oaa.web.controller.InitiateBidingAction" input="/auction.jsp"
 			scope="request">
-			<forward name="success" path="/biding.jsp" />
-			<forward name="failure" path="/dberror.jsp" />
+			<forward name="success" path="/bidding_page.jsp" />
 		</action>
 
-		<action path="/bidadd" name="bid" type="oaa.web.controller.BidingAction"
+		<action path="/biding" name="AB"
+			type="oaa.web.controller.RetriveAuctionAction" input="/biding.jsp"
+			scope="request">
+			<forward name="success" path="/biding.jsp" />
+		</action>
+
+		<action path="/addBid" name="BB" type="oaa.web.controller.BidingAction"
 			input="/bid_add.jsp" scope="request">
 			<forward name="success" path="/bidingsuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
-		<action path="/bidupdate" name="bid"
+		<action path="/updatebid" name="BB"
 			type="oaa.web.controller.BidingUpdateAction" input="/bid_update.jsp"
 			scope="request">
 

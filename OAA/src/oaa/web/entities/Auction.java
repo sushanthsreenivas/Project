@@ -10,13 +10,13 @@ public class Auction {
 	private int userId;
 	private Date startDate;
 	private Date endDate;
-	private int bidPrice;
+	private int minBidPrice;
 	private String productName;
 	private String description;
 	private Blob photo;
 	private Boolean status;
 
-	public Auction(int auctionId, int productId, int userId, Date startDate, Date endDate, int bidPrice,
+	public Auction(int auctionId, int productId, int userId, Date startDate, Date endDate, int minBidPrice,
 			String productName, Blob photo, String description) {
 
 		// TODO Auto-generated constructor stub
@@ -25,7 +25,7 @@ public class Auction {
 		this.userId = userId;
 		this.startDate = startDate;
 		this.endDate = endDate;
-		this.bidPrice = bidPrice;
+		this.minBidPrice = minBidPrice;
 		this.productName = productName;
 		this.photo = photo;
 		this.description = description;
@@ -64,12 +64,12 @@ public class Auction {
 		this.endDate = endDate;
 	}
 
-	public int getBidPrice() {
-		return bidPrice;
+	public int getMinBidPrice() {
+		return minBidPrice;
 	}
 
-	public void setBidPrice(int bidPrice) {
-		this.bidPrice = bidPrice;
+	public void setMinBidPrice(int minBidPrice) {
+		this.minBidPrice = minBidPrice;
 	}
 
 	public int getUserId() {

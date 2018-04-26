@@ -36,7 +36,7 @@ public class BidingUpdateAction extends Action {
 
 			try {
 				status = biding.updateBid(user_id);
-				System.out.println(status);
+				
 				
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block

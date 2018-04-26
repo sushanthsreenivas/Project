@@ -27,8 +27,8 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<li class="active"><a href="addproduct.do"><i
-									class="fa fa-list"></i> Add Products</a></li>
+							<li><a href="addproduct.do"><i class="fa fa-list"></i>
+									Add Products</a></li>
 							<li><a href="updateproduct.do"><i class="fa fa-list"></i>
 									Manage Products</a></li>
 							<li><a href="removeproduct.do"><i class="fa fa-list"></i>
@@ -81,14 +81,14 @@
 																<div class="front">
 
 																	<a href="detail.html"> <img
-																		src="image?type=product&index=<%=(++index)%>" alt="No Image"
-																		class="img-responsive"></img>
+																		src="image?type=product&index=<%=(++index)%>"
+																		alt="No Image" class="img-responsive"></img>
 																	</a>
 																</div>
 																<div class="back">
 																	<a href="detail.html"> <img
-																		src="image?type=product&index=<%=index%>" alt="No Image"
-																		class="img-responsive">
+																		src="image?type=product&index=<%=index%>"
+																		alt="No Image" class="img-responsive">
 																	</a>
 																</div>
 															</div>
@@ -101,7 +101,7 @@
 															<h3>
 																<a href="detail.html">${product.productName}</a>
 															</h3>
-															<p class="price">$${product.minBidPrice}</p>
+															<p class="price">&#8377;${product.minBidPrice}</p>
 														</div>
 														<!-- /.text -->
 													</div>

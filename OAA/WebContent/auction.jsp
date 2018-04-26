@@ -27,7 +27,9 @@
 								<div class="container">
 									<div class="col-md-10">
 										<div class="product-slider">
-										<%int index=-1; %>
+											<%
+												int index = -1;
+											%>
 											<c:forEach items="${sessionScope.AuctionList}" var="auction">
 												<div class="item">
 													<div class="product">
@@ -40,13 +42,14 @@
 																	</a>
 																</div>
 																<div class="back">
-																	<a href="detail.html"> <img src="image?type=auction&index=<%=(index)%>"
-																		alt="" class="img-responsive">
+																	<a href="detail.html"> <img
+																		src="image?type=auction&index=<%=(index)%>" alt=""
+																		class="img-responsive">
 																	</a>
 																</div>
 															</div>
 														</div>
-														<a href="detail.html" class="invisible"> <img
+														<a href="initiateBid.do" class="invisible"> <img
 															src="img/product1.jpg" alt="" class="img-responsive">
 														</a>
 														<div class="text">
@@ -54,11 +57,10 @@
 																<a href="detail.html">${auction.productName}</a>
 															</h3>
 
-															<p class="price">&#8377;143.00</p>
-
-															<p class="price">${auction.description }</p>
-															<p class="price">Start Date - ${auction.startDate }</p>
-															<p class="price">End Date - ${auction.endDate }</p>
+															<p class="price">&#8377;${auction.minBidPrice}</p>
+															<p class="description">${auction.description }</p>
+															<p class="date">Start Date - ${auction.startDate }</p>
+															<p class="date">End Date - ${auction.endDate }</p>
 
 														</div>
 														<!-- /.text -->
@@ -70,11 +72,7 @@
 									</div>
 								</div>
 							</div>
-							<!-- /.product -->
-
-							<!-- /.product-slider -->
 						</table>
-						<!-- /.table-responsive -->
 					</div>
 
 					<!-- /.container -->
@@ -118,26 +116,23 @@
 														</h3>
 														<p class="price">&#8377;143.00</p>
 													</div>
-													<!-- /.text -->
+
 												</div>
-												<!-- /.product -->
+
 											</div>
 
 
 										</div>
-										<!-- second container end -->
-									</div>
-									<!-- *** second HOT tag END *** -->
-								</div>
 
-								<!--end table tag-->
+									</div>
+
+								</div>
 						</table>
-						<!-- *** table responsive***-->
+
 					</div>
 
-					<!--box end-->
 				</div>
-				<!-- customer order -->
+
 			</div>
 
 			<!-- /#container end-->

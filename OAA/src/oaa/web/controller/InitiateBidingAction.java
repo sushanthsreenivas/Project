@@ -1,42 +1,39 @@
 package oaa.web.controller;
 
-import java.util.Collection;
-
+import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+import oaa.web.model.BidingBean;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import oaa.web.entities.Auction;
-import oaa.web.model.BidingBean;
-
-public class BidingAuctionAction extends Action{
-
+public class InitiateBidingAction extends Action {
 	private static final String FAILURE = "failure";
 	private static final String SUCCESS = "success";
 
+	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
 
+		// TODO Auto-generated method stub
 		if (form instanceof BidingBean) {
 
-			BidingBean auction = (BidingBean) form;
-
+			BidingBean bidBean = (BidingBean) form;
+			boolean status = false;
 			HttpSession session = request.getSession(false);
-			String userid = (String) session.getAttribute("user_id");
-			int user_id = Integer.parseInt(userid);
+			String pAuctionId = (String) request.getParameter("aid");
+			int auctionid = Integer.parseInt(pAuctionId);
 
-		/*	Collection<Auction> auctionList = auction.getListAuction(user_id);
-			session.setAttribute("AuctionList", auctionList);*/
-
+			bidBean.getBidDetails(auctionid);
+			
+			return mapping.findForward(SUCCESS);
 		}
-		return mapping.findForward(SUCCESS);
 
+		return mapping.findForward(FAILURE);
 	}
 
 }
