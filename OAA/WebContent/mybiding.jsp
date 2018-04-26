@@ -284,12 +284,7 @@
 												<!-- /.product -->
 											</div>
 											<!-- /.col-md-4 -->
-
-
-
-
 										</div>
-
 									</div>
 									<!-- /.product-slider -->
 								</div>
@@ -359,9 +354,6 @@
 
 						</table>
 					</div>
-
-					<!-- /.table-responsive -->
-
 
 				</div>
 			</div>

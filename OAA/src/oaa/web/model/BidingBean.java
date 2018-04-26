@@ -26,6 +26,7 @@ public class BidingBean extends ActionForm {
 	ResultSet rs = null;
 
 	private int auctionid;
+	private int userid;
 	private int bidAmount;
 	private int lastBidAmount;
 	private int bidAmountIncrement;
@@ -36,6 +37,14 @@ public class BidingBean extends ActionForm {
 
 	public void setAuctionid(int auctionid) {
 		this.auctionid = auctionid;
+	}
+
+	public int getUserid() {
+		return userid;
+	}
+
+	public void setUserid(int userid) {
+		this.userid = userid;
 	}
 
 	public int getBidAmount() {
@@ -165,12 +174,12 @@ public class BidingBean extends ActionForm {
 		return false;
 	}
 
-	public Bid getBidDetails(int auctionid) {
+	public Bid getBidDetails(int auctionid,int userid) {
 		// TODO Auto-generated method stub
 
-		Bid bid= null;
+		Bid bid = null;
 		try {
-			
+
 			connection = connection();
 			String sql = "SELECT distinct bid_amount_increment,max(bid_amount) FROM auction_transaction join auction_master "
 					+ "on auction_transaction.auction_id=auction_master.auction_id where status=? and auction_master.auction_id=?";
@@ -183,6 +192,7 @@ public class BidingBean extends ActionForm {
 
 			if (rs.next()) {
 				this.auctionid = auctionid;
+				this.userid = userid;
 				this.bidAmountIncrement = rs.getInt(1);
 				this.lastBidAmount = rs.getInt(2);
 

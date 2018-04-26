@@ -1,4 +1,5 @@
 <%@ include file="header.jsp"%>
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
 <div id="all">
 
 	<div id="content">
@@ -26,25 +27,31 @@
 					<div class="box">
 						<h1 class="text-center">Bid for ${param.pname}</h1>
 
+						<html:form action="addBid">
+							<html:hidden property="auctionid" />
+							<html:hidden property="userid" />
+							<p class="price">
+								Current Bid Amount :
+								<html:text property="lastBidAmount" disabled="true" />
+							</p>
+							<p class="price">
+								Minimum Bid increment :
+								<html:text property="bidAmountIncrement" disabled="true" />
+							</p>
 
-						<p class="price">Current Bid Amount :
-							$${requestScope.BB.lastBidAmount}/p>
-						<p class="price">Minimum Bid increment :
-							$${requestScope.BB.bidAmountIncrement}</p>
+							<p class="input">
+								<label>Bid Amount:</label>
+								<html:text property="bidAmount" />
+							</p>
+							<p class="text-center buttons">
 
-						<p class="input">
-							<label>Bid Amount:</label> <input type="text" value="bid amount"
-								name="bidAmount" id="bidAmount">
-						</p>
-						<p class="text-center buttons">
-
-							<a href="addBid.do" class="btn btn-primary"><i
-								class="fa  fa-rupee-sign"></i> Bid</a> <a
-								href="javascript:history.go(-1)" class="btn btn-default"><i
-								class="fa  fa-arrow-left"></i> Go Back</a>
-						</p>
-
-				</div>
+								<html:submit styleClass="btn btn-primary"> Bid</html:submit>
+								<html:button styleClass="btn btn-default fa  fa-arrow-left"
+									property="goBack" onclick="history.go(-1)">								
+									Go Back</html:button>
+							</p>
+						</html:form>
+					</div>
 				</div>
 
 				<div class="col-sm-7" id="details">
@@ -58,9 +65,9 @@
 
 		</div>
 	</div>
-
-
 </div>
+
+<script src="js/bidvalidate"></script>
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.cookie.js"></script>

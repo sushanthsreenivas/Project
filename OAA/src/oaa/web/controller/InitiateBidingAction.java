@@ -25,11 +25,13 @@ public class InitiateBidingAction extends Action {
 			BidingBean bidBean = (BidingBean) form;
 			boolean status = false;
 			HttpSession session = request.getSession(false);
+			String sUserId = (String) session.getAttribute("user_id");
+			int userid = Integer.parseInt(sUserId);
 			String pAuctionId = (String) request.getParameter("aid");
 			int auctionid = Integer.parseInt(pAuctionId);
 
-			bidBean.getBidDetails(auctionid);
-			
+			bidBean.getBidDetails(auctionid, userid);
+
 			return mapping.findForward(SUCCESS);
 		}
 

@@ -115,7 +115,16 @@
 			scope="request">
 			<forward name="success" path="/biding.jsp" />
 		</action>
-
+		<action path="/farmer" name="AB"
+			type="oaa.web.controller.RetriveAuctionAction" input="/farmer.jsp"
+			scope="request">
+			<forward name="success" path="/farmer.jsp" />
+		</action>
+		<action path="/buyer" name="AB"
+			type="oaa.web.controller.RetriveAuctionAction" input="/buyer.jsp"
+			scope="request">
+			<forward name="success" path="/buyer.jsp" />
+		</action>
 		<action path="/addBid" name="BB" type="oaa.web.controller.BidingAction"
 			input="/bid_add.jsp" scope="request">
 			<forward name="success" path="/bidingsuccess.jsp" />

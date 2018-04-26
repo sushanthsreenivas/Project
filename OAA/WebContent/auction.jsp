@@ -74,7 +74,6 @@
 							</div>
 						</table>
 					</div>
-
 					<!-- /.container -->
 					<div class="table-responsive">
 						<table class="table">
@@ -86,8 +85,6 @@
 										</div>
 									</div>
 								</div>
-
-
 								<div class="container">
 									<div class="col-md-10">
 										<div class="product-slider">
@@ -120,8 +117,6 @@
 												</div>
 
 											</div>
-
-
 										</div>
 
 									</div>
