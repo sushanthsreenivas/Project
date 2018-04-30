@@ -106,10 +106,10 @@ public class AuctionBean extends ActionForm{
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
 			connection = ds.getConnection();
 		} catch (NamingException e) {
-			// TODO Auto-generated catch block
+			 
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 

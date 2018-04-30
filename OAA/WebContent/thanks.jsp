@@ -1,9 +1,9 @@
 <%@ include file="header.jsp"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-<%@ taglib uri="/WEB-INF/struts-bean.tld"  prefix="bean"%>
+	pageEncoding="UTF-8"%>
+
+<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean"%>
 
 <div id="all">
 
@@ -21,17 +21,20 @@
 
 
 				<div class="box" id="contact">
-					<h3>Thank you <bean:write name="URB" property="firstname"/> for registering.... Please Login</h3>
+					<h3>
+						Thank you
+						<bean:write name="URB" property="firstname" />
+						for registering.... Please Login
+					</h3>
 
 					<p class="lead">
-					
-					<!-- Are you curious about something? Do you have
+
+						<!-- Are you curious about something? Do you have
 						some kind of problem with our products?</p>
 					<p>Please feel free to contact us, our customer service center
 						is working for you 24/7.</p>
 
 					<hr>  -->
-
 					<div class="row">
 						<div class="col-sm-4">
 							<h3>
@@ -117,13 +120,9 @@
 								</button>
 
 							</div> -->
-						</div>
-						<!-- /.row -->
-					</form>
-
-
 				</div>
-
+				<!-- /.row -->
+				<!-- 	</form> -->
 
 			</div>
 			<!-- /.col-md-9 -->

@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import javax.naming.Context;
@@ -15,7 +14,6 @@ import javax.sql.DataSource;
 
 import org.apache.struts.action.ActionForm;
 
-import oaa.web.entities.Auction;
 import oaa.web.entities.Category;
 
 public class CategoryBean extends ActionForm {
@@ -50,10 +48,10 @@ public class CategoryBean extends ActionForm {
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
 			connection = ds.getConnection();
 		} catch (NamingException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 

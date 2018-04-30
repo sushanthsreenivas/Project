@@ -24,7 +24,7 @@ public class BidingUpdateAction extends Action {
 
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		// TODO Auto-generated method stub
+		
 		if (form instanceof BidingBean) {
 
 			BidingBean biding = (BidingBean) form;
@@ -39,7 +39,7 @@ public class BidingUpdateAction extends Action {
 				
 				
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 				return mapping.findForward(FALIURE);
 			}

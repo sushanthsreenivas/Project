@@ -17,7 +17,7 @@ import oaa.web.model.AuctionBean;
 
 public class RetriveAuctionAction  extends Action{
 
-	private static final String FAILURE = "failure";
+	//private static final String FAILURE = "failure";
 	private static final String SUCCESS = "success";
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,

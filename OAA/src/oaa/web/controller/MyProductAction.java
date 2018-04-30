@@ -15,7 +15,7 @@ import oaa.web.entities.Product;
 import oaa.web.model.ProductBean;
 
 public class MyProductAction extends Action {
-	private static final String FAILURE = "failure";
+	//private static final String FAILURE = "failure";
 	private static final String SUCCESS = "success";
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
@@ -25,7 +25,7 @@ public class MyProductAction extends Action {
 		if (form instanceof ProductBean) {
 
 			ProductBean myproduct = (ProductBean) form;
-			boolean status = false;
+		//	boolean status = false;
 			HttpSession session = request.getSession(false);
 			String userid = (String) session.getAttribute("user_id");
 			int user_id = Integer.parseInt(userid);

@@ -5,10 +5,7 @@
 package oaa.web.model;
 
 import java.io.ByteArrayInputStream;
-
-
 import java.io.IOException;
-import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,6 +20,7 @@ import javax.sql.DataSource;
 
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.upload.FormFile;
+
 import oaa.web.entities.Product;
 
 public class ProductBean extends ActionForm {
@@ -94,10 +92,10 @@ public class ProductBean extends ActionForm {
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
 			connection = ds.getConnection();
 		} catch (NamingException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 
@@ -161,10 +159,10 @@ public class ProductBean extends ActionForm {
 					rs.close();
 				}
 			} catch (NamingException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			}
 		}
@@ -199,10 +197,10 @@ public class ProductBean extends ActionForm {
 				return true;
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		} finally {
 
@@ -220,10 +218,9 @@ public class ProductBean extends ActionForm {
 					rs.close();
 				}
 			} catch (NamingException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -257,10 +254,10 @@ public class ProductBean extends ActionForm {
 					rs.close();
 				}
 			} catch (NamingException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			}
 		}
@@ -272,7 +269,6 @@ public class ProductBean extends ActionForm {
 		List<Product> productList = new ArrayList<Product>();
 		try {
 
-			OutputStream oImage;
 			Product product = null;
 			connection = connection();
 			String sql = "SELECT product_id,product_name,category_id,description,min_bid_price,photo,Date FROM product where user_id=? and status=?";
@@ -284,8 +280,6 @@ public class ProductBean extends ActionForm {
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
-				
-								
 
 				product = new Product(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getInt(5),
 						rs.getBlob(6), rs.getDate(7));

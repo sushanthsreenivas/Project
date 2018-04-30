@@ -18,14 +18,14 @@ public class NavigationServlet extends HttpServlet {
      * Default constructor. 
      */
     public NavigationServlet() {
-        // TODO Auto-generated constructor stub
+      
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		String page=request.getParameter("pg");
 		
 		if(page!=null){
@@ -40,8 +40,7 @@ public class NavigationServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
+	
 	}
 
 }

@@ -50,7 +50,7 @@ public class ProductAction extends Action {
 			request.setAttribute("uploadedFileName", newFile.getName());
 			productBean.setImage(file);
 		}
-		// TODO Auto-generated method stub
+		
 		if (form instanceof ProductBean) {
 
 			ProductBean pb = (ProductBean) form;

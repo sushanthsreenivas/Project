@@ -289,6 +289,7 @@
 									<!-- /.product-slider -->
 								</div>
 								<!-- /.container -->
+							</div>
 						</table>
 					</div>
 					<!-- /#hot -->

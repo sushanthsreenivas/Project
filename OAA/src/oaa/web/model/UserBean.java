@@ -70,10 +70,9 @@ public class UserBean implements Serializable {
 				return result;
 			}
 		} catch (NamingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		} finally {
 			try {
@@ -90,10 +89,10 @@ public class UserBean implements Serializable {
 					rs.close();
 				}
 			} catch (NamingException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			}
 		}

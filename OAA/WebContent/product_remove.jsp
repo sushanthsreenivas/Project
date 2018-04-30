@@ -449,7 +449,7 @@
 							</div>
 							<!-- /.container -->
 
-							</div>
+
 							<!-- /#hot -->
 						</table>
 						<!-- *** HOT END *** -->

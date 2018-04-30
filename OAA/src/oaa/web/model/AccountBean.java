@@ -124,7 +124,7 @@ public class AccountBean extends ActionForm {
 				return true;
 			}
 		} catch (NamingException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} finally {
 			try {
@@ -142,7 +142,7 @@ public class AccountBean extends ActionForm {
 
 				e.printStackTrace();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 		}
@@ -177,7 +177,7 @@ public class AccountBean extends ActionForm {
 				return true;
 			}
 		} catch (NamingException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} finally {
 			try {
@@ -195,7 +195,7 @@ public class AccountBean extends ActionForm {
 
 				e.printStackTrace();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 		}

@@ -16,7 +16,7 @@ public class Product {
 
 	public Product(int productId, String productName, int categoryId, String description, int minBidPrice, Blob photo,
 			Date Date) {
-		// TODO Auto-generated constructor stub
+	
 		this.productId = productId;
 		this.productName = productName;
 		this.categoryId = categoryId;

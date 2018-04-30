@@ -186,7 +186,7 @@ public class UserRegBean extends ActionForm {
 			}
 
 		} catch (NamingException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} finally {
 			try {
@@ -206,7 +206,7 @@ public class UserRegBean extends ActionForm {
 
 				e.printStackTrace();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 		}

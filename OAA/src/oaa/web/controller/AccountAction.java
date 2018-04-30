@@ -11,7 +11,6 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import oaa.web.model.AccountBean;
-import oaa.web.model.UserRegBean;
 
 public class AccountAction extends Action {
 	private static final String FALIURE = "failure";

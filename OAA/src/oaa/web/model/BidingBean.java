@@ -1,13 +1,12 @@
 package oaa.web.model;
 
-import java.io.OutputStream;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -78,10 +77,10 @@ public class BidingBean extends ActionForm {
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
 			connection = ds.getConnection();
 		} catch (NamingException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 
@@ -119,10 +118,10 @@ public class BidingBean extends ActionForm {
 					rs.close();
 				}
 			} catch (NamingException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			}
 		}
@@ -147,7 +146,7 @@ public class BidingBean extends ActionForm {
 				return true;
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		} finally {
 			try {
@@ -164,18 +163,16 @@ public class BidingBean extends ActionForm {
 					rs.close();
 				}
 			} catch (NamingException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			}
 		}
 		return false;
 	}
 
-	public Bid getBidDetails(int auctionid,int userid) {
-		// TODO Auto-generated method stub
+	public Bid getBidDetails(int auctionid, int userid) {
 
 		Bid bid = null;
 		try {

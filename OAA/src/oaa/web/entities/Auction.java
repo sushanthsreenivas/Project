@@ -19,7 +19,6 @@ public class Auction {
 	public Auction(int auctionId, int productId, int userId, Date startDate, Date endDate, int minBidPrice,
 			String productName, Blob photo, String description) {
 
-		// TODO Auto-generated constructor stub
 		this.auctionId = auctionId;
 		this.productId = productId;
 		this.userId = userId;

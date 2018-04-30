@@ -23,7 +23,7 @@ public class ProcessRequestServlet extends HttpServlet {
 	 */
 	public ProcessRequestServlet() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	/**
@@ -32,8 +32,7 @@ public class ProcessRequestServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-
+	
 	}
 
 	/**
@@ -42,7 +41,7 @@ public class ProcessRequestServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 		String email_id = request.getParameter("email");
 		String passwd = request.getParameter("passwd");
 

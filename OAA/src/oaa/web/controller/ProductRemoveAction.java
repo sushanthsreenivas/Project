@@ -22,7 +22,6 @@ public class ProductRemoveAction extends Action {
 
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		// TODO Auto-generated method stub
 		if (form instanceof ProductBean) {
 
 			ProductBean pb = (ProductBean) form;
@@ -34,7 +33,7 @@ public class ProductRemoveAction extends Action {
 				status = pb.RemoveProduct(user_id);
 
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+			
 
 				e.printStackTrace();
 				return mapping.findForward(FALIURE);

@@ -16,6 +16,7 @@ import oaa.web.model.ProductBean;
 public class ProductUpdateAction extends Action {
 	private static final String FALIURE = "failure";
 	private static final String SUCCESS = "success";
+
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 
@@ -46,7 +47,7 @@ public class ProductUpdateAction extends Action {
 			request.setAttribute("uploadedFileName", newFile.getName());
 			productBean.setImage(file);
 		}
-		// TODO Auto-generated method stub
+
 		if (form instanceof ProductBean) {
 
 			ProductBean pb = (ProductBean) form;
