@@ -444,8 +444,8 @@
 
 							<div class="col-sm-6">
 								<div class="form-group">
-									<label for="mobile">Mobile no</label> <input type="number"
-										class="form-control" id="mobile" required name="mobile">
+									<label for="mobile">Mobile no</label> <input type="tel"
+										class="form-control" id="telNo" required name="telNo" maxlength="10">
 								</div>
 							</div>
 							<div class="col-sm-6">
