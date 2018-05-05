@@ -15,9 +15,9 @@ import org.apache.struts.action.ActionMapping;
 import oaa.web.entities.Auction;
 import oaa.web.model.AuctionBean;
 
-public class RetriveAuctionAction  extends Action{
+public class RetriveAuctionAction extends Action {
 
-	//private static final String FAILURE = "failure";
+	// private static final String FAILURE = "failure";
 	private static final String SUCCESS = "success";
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
@@ -28,15 +28,18 @@ public class RetriveAuctionAction  extends Action{
 
 			AuctionBean auction = (AuctionBean) form;
 			HttpSession session = request.getSession(false);
-/*
-			HttpSession session = request.getSession(false);
-			String userid = (String) session.getAttribute("user_id");
-			int user_id = Integer.parseInt(userid);
-*/
+			/*
+			 * HttpSession session = request.getSession(false); String userid =
+			 * (String) session.getAttribute("user_id"); int user_id =
+			 * Integer.parseInt(userid);
+			 */
+
 			Collection<Auction> auctionList = auction.getListAuction();
 			session.setAttribute("AuctionList", auctionList);
-
+			Collection<Auction> completedAuctionList = auction.getListCompletedAuction();
+			session.setAttribute("CompletedAuctionList", completedAuctionList);
 		}
+		
 		return mapping.findForward(SUCCESS);
 
 	}

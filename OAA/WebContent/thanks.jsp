@@ -79,65 +79,19 @@
 					</div>
 
 					<hr>
-					<!-- <h2>Contact form</h2>
-
-					<form>
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="form-group">
-									<label for="firstname">Firstname</label> <input type="text"
-										class="form-control" id="firstname">
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="form-group">
-									<label for="lastname">Lastname</label> <input type="text"
-										class="form-control" id="lastname">
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="form-group">
-									<label for="email">Email</label> <input type="text"
-										class="form-control" id="email">
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="form-group">
-									<label for="subject">Subject</label> <input type="text"
-										class="form-control" id="subject">
-								</div>
-							</div>
-							<div class="col-sm-12">
-								<div class="form-group">
-									<label for="message">Message</label>
-									<textarea id="message" class="form-control"></textarea>
-								</div>
-							</div>
-
-							<div class="col-sm-12 text-center">
-								<button type="submit" class="btn btn-primary">
-									<i class="fa fa-envelope-o"></i> Send message
-								</button>
-
-							</div> -->
 				</div>
-				<!-- /.row -->
-				<!-- 	</form> -->
-
 			</div>
-			<!-- /.col-md-9 -->
+			<!-- /.container -->
 		</div>
-		<!-- /.container -->
 	</div>
-</div>
-<!-- /#content -->
-<script src="js/jquery-1.11.0.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.cookie.js"></script>
-<script src="js/waypoints.min.js"></script>
-<script src="js/modernizr.js"></script>
-<script src="js/bootstrap-hover-dropdown.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/front.js"></script>
+	<!-- /#content -->
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.cookie.js"></script>
+	<script src="js/waypoints.min.js"></script>
+	<script src="js/modernizr.js"></script>
+	<script src="js/bootstrap-hover-dropdown.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/front.js"></script>
 
-<%@ include file="footer.jsp"%>
+	<%@ include file="footer.jsp"%>

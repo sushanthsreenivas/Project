@@ -312,9 +312,6 @@
 									<div class="col-md-8">
 										<div class="product-slider">
 
-
-
-
 											<div class="item">
 												<div class="product">
 													<div class="flip-container">

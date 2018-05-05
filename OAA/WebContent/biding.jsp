@@ -14,7 +14,7 @@
 
 			</div>
 
-<div class="col-md-3">
+			<div class="col-md-3">
 				<div class="panel panel-default sidebar-menu">
 
 					<div class="panel-heading">
@@ -75,13 +75,15 @@
 														<div class="flip-container">
 															<div class="flipper">
 																<div class="front">
-																	<a href="initiateBid.do?aid=${auction.auctionId}&pname=${auction.productName}">
+																	<a
+																		href="initiateBid.do?aid=${auction.auctionId}&pname=${auction.productName}">
 																		<img src="image?type=auction&index=<%=(++index)%>"
 																		alt="" class="img-responsive">
 																	</a>
 																</div>
 																<div class="back">
-																	<a href="initiateBid.do?aid=${auction.auctionId}&pname=${auction.productName}">
+																	<a
+																		href="initiateBid.do?aid=${auction.auctionId}&pname=${auction.productName}">
 																		<img src="image?type=auction&index=<%=(index)%>"
 																		alt="" class="img-responsive">
 																	</a>
@@ -94,7 +96,8 @@
 														</a>
 														<div class="text">
 															<h3>
-																<a href="initiateBid.do?aid=${auction.auctionId}&pname=${auction.productName}">${auction.productName}</a>
+																<a
+																	href="initiateBid.do?aid=${auction.auctionId}&pname=${auction.productName}">${auction.productName}</a>
 															</h3>
 
 															<p class="price">&#8377;${auction.minBidPrice}</p>
@@ -112,6 +115,7 @@
 									</div>
 								</div>
 								<!-- /.container -->
+							</div>
 						</table>
 					</div>
 					<!-- /#hot -->
@@ -133,35 +137,47 @@
 								<div class="container">
 									<div class="col-md-8">
 										<div class="product-slider">
-											<div class="item">
-												<div class="product">
-													<div class="flip-container">
-														<div class="flipper">
-															<div class="front">
-																<a href="detail.html"> <img src="img/product1.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-															<div class="back">
-																<a href="detail.html"> <img src="img/product1.jpg"
-																	alt="" class="img-responsive">
-																</a>
+											<%
+												int value = -1;
+											%>
+											<c:forEach items="${sessionScope.CompletedAuctionList}"
+												var="auction">
+												<div class="item">
+													<div class="product">
+														<div class="flip-container">
+															<div class="flipper">
+																<div class="front">
+																	<a href="detail.html"> <img
+																		src="image?type=auction&index=<%=(++value)%>" alt=""
+																		class="img-responsive">
+																	</a>
+																</div>
+																<div class="back">
+																	<a href="detail.html"> <img
+																		src="image?type=auction&value=<%=(value)%>" alt=""
+																		class="img-responsive">
+																	</a>
+																</div>
 															</div>
 														</div>
+														<a href="initiateBid.do" class="invisible"> <img
+															src="img/product1.jpg" alt="" class="img-responsive">
+														</a>
+														<div class="text">
+															<h3>
+																<a href="detail.html">${auction.productName}</a>
+															</h3>
+
+															<p class="price">&#8377;${auction.minBidPrice}</p>
+															<p class="description">${auction.description }</p>
+															<p class="date">Start Date - ${auction.startDate }</p>
+															<p class="date">End Date - ${auction.endDate }</p>
+
+														</div>
 													</div>
-													<a href="detail.html" class="invisible"> <img
-														src="img/product1.jpg" alt="" class="img-responsive">
-													</a>
-													<div class="text">
-														<h3>
-															<a href="detail.html">Beans</a>
-														</h3>
-														<p class="price">₹143.00</p>
-													</div>
-													<!-- /.text -->
+
 												</div>
-												<!-- /.product -->
-											</div>
+											</c:forEach>
 										</div>
 									</div>
 									<!-- /.product-slider -->

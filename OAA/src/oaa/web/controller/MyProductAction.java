@@ -15,7 +15,6 @@ import oaa.web.entities.Product;
 import oaa.web.model.ProductBean;
 
 public class MyProductAction extends Action {
-	//private static final String FAILURE = "failure";
 	private static final String SUCCESS = "success";
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,

@@ -1,6 +1,7 @@
 package oaa.web.model;
 
 import java.sql.Blob;
+
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -18,8 +19,8 @@ import org.apache.struts.action.ActionForm;
 
 import oaa.web.entities.Auction;
 
-public class AuctionBean extends ActionForm{
-	
+public class AuctionBean extends ActionForm {
+
 	private int auctionId;
 	private int productId;
 	private int userId;
@@ -30,75 +31,92 @@ public class AuctionBean extends ActionForm{
 	private String description;
 	private Blob photo;
 	private Boolean status;
-	
+
 	Context context = null;
 	Connection connection = null;
 	PreparedStatement ps = null;
 	ResultSet rs = null;
 
-	
 	public int getAuctionId() {
 		return auctionId;
 	}
+
 	public void setAuctionId(int auctionId) {
 		this.auctionId = auctionId;
 	}
+
 	public int getProductId() {
 		return productId;
 	}
+
 	public void setProductId(int productId) {
 		this.productId = productId;
 	}
+
 	public int getUserId() {
 		return userId;
 	}
+
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+
 	public Date getStartDate() {
 		return startDate;
 	}
+
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
+
 	public Date getEndDate() {
 		return endDate;
 	}
+
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
+
 	public int getBidPrice() {
 		return bidPrice;
 	}
+
 	public void setBidPrice(int bidPrice) {
 		this.bidPrice = bidPrice;
 	}
+
 	public String getProductName() {
 		return productName;
 	}
+
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 	public Blob getPhoto() {
 		return photo;
 	}
+
 	public void setPhoto(Blob photo) {
 		this.photo = photo;
 	}
+
 	public Boolean getStatus() {
 		return status;
 	}
+
 	public void setStatus(Boolean status) {
 		this.status = status;
 	}
 
-	
 	public Connection connection() {
 
 		try {
@@ -106,10 +124,10 @@ public class AuctionBean extends ActionForm{
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
 			connection = ds.getConnection();
 		} catch (NamingException e) {
-			 
+
 			e.printStackTrace();
 		} catch (SQLException e) {
-			
+
 			e.printStackTrace();
 		}
 
@@ -117,7 +135,6 @@ public class AuctionBean extends ActionForm{
 
 	}
 
-	
 	public Collection<Auction> getListAuction() {
 
 		Collection<Auction> auctionList = new ArrayList<Auction>();
@@ -126,7 +143,8 @@ public class AuctionBean extends ActionForm{
 			Auction auction = null;
 			connection = connection();
 			String sql = "SELECT m.auction_id,m.product_id,m.user_id,m.start_date,m.end_date,p.min_bid_price,p.product_name,"
-					+ "p.photo,p.description  FROM auction_master m join product p on m.product_id=p.product_id  where  m.status=?";
+					+ "p.photo,p.description"
+					+ " FROM auction_master m join product p on m.product_id=p.product_id  where  m.status=?";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setString(1, "E");
 
@@ -136,7 +154,7 @@ public class AuctionBean extends ActionForm{
 
 				auction = new Auction(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getDate(4), rs.getDate(5),
 						rs.getInt(6), rs.getString(7), rs.getBlob(8), rs.getString(9));
-				// add each employee to the list
+
 				auctionList.add(auction);
 
 			}
@@ -146,7 +164,31 @@ public class AuctionBean extends ActionForm{
 		return auctionList;
 	}
 
-	
-	
+	public Collection<Auction> getListCompletedAuction() {
+
+		Collection<Auction> auctionList = new ArrayList<Auction>();
+		try {
+
+			Auction auction = null;
+			connection = connection();
+			String sql = "   SELECT m.auction_id,m.product_id,m.user_id,m.start_date,m.end_date,p.min_bid_price,p.product_name,p.photo,p.description FROM auction_master m join product p on m.product_id=p.product_id   where  m.status=? and	date_format(end_date,'%Y-%m') = date_format(now(), '%Y-%m') and date_format(end_date,'%Y-%m-%d') < date_format(now(), '%Y-%m-%d')";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, "E");
+
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+
+				auction = new Auction(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getDate(4), rs.getDate(5),
+						rs.getInt(6), rs.getString(7), rs.getBlob(8), rs.getString(9));
+
+				auctionList.add(auction);
+
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return auctionList;
+	}
 
 }

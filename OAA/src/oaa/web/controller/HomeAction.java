@@ -10,10 +10,6 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 public class HomeAction extends Action {
-	/*
-	 * private static final String FAILURE = "failure"; private static final
-	 * String SUCCESS = "success";
-	 */
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
@@ -31,6 +27,7 @@ public class HomeAction extends Action {
 		}
 
 		return mapping.findForward("index");
+		
 	}
 
 }

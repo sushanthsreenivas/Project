@@ -97,7 +97,7 @@
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
-									<label for=""lastname">Lastname</label> <input type="text"
+									<label for="lastname">Lastname</label> <input type="text"
 										class="form-control" id="lastname" required name="lastname">
 								</div>
 							</div>

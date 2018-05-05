@@ -9,7 +9,6 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 public class CategoryAction extends Action {
-	// private static final String FAILURE = "failure";
 	private static final String SUCCESS = "success";
 
 	@Override

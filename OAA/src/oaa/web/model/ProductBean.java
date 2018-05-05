@@ -112,9 +112,6 @@ public class ProductBean extends ActionForm {
 
 			fileData = image.getFileData();
 			connection = connection();
-			if (connection != null) {
-				System.out.println(connection);
-			}
 
 			fileBA = new ByteArrayInputStream(fileData);
 
@@ -135,7 +132,7 @@ public class ProductBean extends ActionForm {
 
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
-				System.out.println("entered");
+
 				return true;
 			}
 		} catch (SQLException e) {

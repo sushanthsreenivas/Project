@@ -15,6 +15,7 @@ public class Auction {
 	private String description;
 	private Blob photo;
 	private Boolean status;
+	private Date curDate;
 
 	public Auction(int auctionId, int productId, int userId, Date startDate, Date endDate, int minBidPrice,
 			String productName, Blob photo, String description) {
@@ -111,4 +112,11 @@ public class Auction {
 		this.status = status;
 	}
 
+	public Date getCurDate() {
+		return curDate;
+	}
+
+	public void setCurDate(Date curDate) {
+		this.curDate = curDate;
+	}
 }

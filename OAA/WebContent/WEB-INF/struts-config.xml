@@ -97,6 +97,11 @@
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
+		<action path="/auction" name="AB"
+			type="oaa.web.controller.RetriveAuctionAction" input="/auction.jsp"
+			scope="request">
+			<forward name="success" path="/auction.jsp" />
+		</action>
 
 		<action path="/auction" name="AB"
 			type="oaa.web.controller.RetriveAuctionAction" input="/auction.jsp"

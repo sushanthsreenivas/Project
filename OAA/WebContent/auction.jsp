@@ -69,6 +69,20 @@
 												</div>
 											</c:forEach>
 										</div>
+										<div class="owl-controls clickable">
+											<div class="owl-pagination">
+												<div class="owl-page active">
+													<span class=""></span>
+												</div>
+												<div class="owl-page">
+													<span class=""></span>
+												</div>
+											</div>
+											<div class="owl-buttons">
+												<div class="owl-prev">prev</div>
+												<div class="owl-next">next</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -88,53 +102,66 @@
 								<div class="container">
 									<div class="col-md-10">
 										<div class="product-slider">
-											<div class="item">
-												<div class="product">
-													<div class="flip-container">
-														<div class="flipper">
-															<div class="front">
-																<a href="detail.html"> <img src="img/product1.jpg"
-																	alt="" class="img-responsive">
-																</a>
-															</div>
-															<div class="back">
-																<a href="detail.html"> <img src="img/product1.jpg"
-																	alt="" class="img-responsive">
-																</a>
+											<%
+												int value = -1;
+											%>
+											<c:forEach items="${sessionScope.CompletedAuctionList}"
+												var="auction">
+												<div class="item">
+													<div class="product">
+														<div class="flip-container">
+															<div class="flipper">
+																<div class="front">
+																	<a href="detail.html"> <img
+																		src="image?type=auction&index=<%=(++value)%>" alt=""
+																		class="img-responsive">
+																	</a>
+																</div>
+																<div class="back">
+																	<a href="detail.html"> <img
+																		src="image?type=auction&value=<%=(value)%>" alt=""
+																		class="img-responsive">
+																	</a>
+																</div>
 															</div>
 														</div>
-													</div>
-													<a href="detail.html" class="invisible"> <img
-														src="img/product1.jpg" alt="" class="img-responsive">
-													</a>
-													<div class="text">
-														<h3>
-															<a href="detail.html">Beans</a>
-														</h3>
-														<p class="price">&#8377;143.00</p>
+														<a href="initiateBid.do" class="invisible"> <img
+															src="img/product1.jpg" alt="" class="img-responsive">
+														</a>
+														<div class="text">
+															<h3>
+																<a href="detail.html">${auction.productName}</a>
+															</h3>
+															<p class="price">&#8377;${auction.minBidPrice}</p>
+															<p class="description">${auction.description }</p>
+															<p class="date">Start Date - ${auction.startDate }</p>
+															<p class="date">End Date - ${auction.endDate }</p>
+
+														</div>
 													</div>
 
 												</div>
-
-											</div>
+											</c:forEach>
 										</div>
-
 									</div>
-
 								</div>
+							</div>
 						</table>
 
 					</div>
 
+
 				</div>
+				<!-- /#hot -->
+
 
 			</div>
 
-			<!-- /#container end-->
 		</div>
-		<!-- end content -->
+
+		<!-- /#container end-->
 	</div>
-	<!--div all end-->
+	<!-- end content -->
 </div>
 
 <script src="js/jquery-1.11.0.min.js"></script>

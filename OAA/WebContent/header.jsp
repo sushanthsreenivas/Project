@@ -72,13 +72,13 @@
 						<h4 class="modal-title" id="Login">Customer login</h4>
 					</div>
 					<div class="modal-body">
-						<form action="process" method="post">
+						<form id="loginForm" action="process" method="post">
 							<div class="form-group">
-								<input type="email" class="form-control" name="email" required
+								<input type="email" class="form-control" id="email" name="email" required
 									placeholder="email">
 							</div>
 							<div class="form-group">
-								<input type="password" class="form-control" name="passwd"
+								<input type="password" class="form-control" id="passwd" name="passwd"
 									required placeholder="password">
 							</div>
 
@@ -89,7 +89,7 @@
 							</div>
 
 							<p class="text-center">
-								<button class="btn btn-primary">
+								<button class="btn btn-primary" id="btnLogin">
 									<i class="fa fa-sign-in"></i> Log in
 								</button>
 							</p>
