@@ -149,12 +149,8 @@
 						</table>
 
 					</div>
-
-
 				</div>
 				<!-- /#hot -->
-
-
 			</div>
 
 		</div>
