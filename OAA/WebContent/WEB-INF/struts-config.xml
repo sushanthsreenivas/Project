@@ -14,6 +14,7 @@
 		<form-bean name="AB" type="oaa.web.model.AccountBean"></form-bean>
 		<form-bean name="CB" type="oaa.web.model.CategoryBean"></form-bean>
 		<form-bean name="AB" type="oaa.web.model.AuctionBean"></form-bean>
+		<form-bean name="CAB" type="oaa.web.model.LaunchAuctionBean"></form-bean>
 
 	</form-beans>
 
@@ -29,6 +30,7 @@
 		<!-- <action path="/regist" forward="/registration.jsp" /> -->
 
 		<action path="/updateproduct" forward="/product_update.jsp"></action>
+		<action path="/launchauction" forward="/launch_auction.jsp"></action>
 		<action path="/removeproduct" forward="/product_remove.jsp"></action>
 		<action path="/farmeraccount" forward="/farmer_account.jsp"></action>
 		<action path="/processRegistration" name="URB"
@@ -43,6 +45,11 @@
 			<forward name="buyer" path="/buyer.jsp" />
 			<forward name="index" path="/index.jsp" />
 		</action>
+		<action path="/createauction" name="CAB"
+			type="oaa.web.controller.LaunchAuctionAction" input="/launch_auction.jsp">
+
+		</action>
+
 		<!-- <action path="/buyerAccount" name="MA" type="oaa.web.controller.AccountAction" 
 			input="/buyer_account.jsp" scope="request"> <forward name="success" path="/updatesuccess.jsp" 
 			/> <forward name="failure" path="/dberror.jsp" /> </action> -->

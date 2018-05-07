@@ -74,12 +74,13 @@
 					<div class="modal-body">
 						<form id="loginForm" action="process" method="post">
 							<div class="form-group">
-								<input type="email" class="form-control" id="email" name="email" required
-									placeholder="email">
+								<input type="email" class="form-control" id="email" name="email"
+									required placeholder="email" value="kavya@gmail.com">
 							</div>
 							<div class="form-group">
-								<input type="password" class="form-control" id="passwd" name="passwd"
-									required placeholder="password">
+								<input type="password" class="form-control" id="passwd"
+									name="passwd" required placeholder="password"
+									value="kavyapatil">
 							</div>
 
 							<div class="form-group">
@@ -143,7 +144,7 @@
 
 				<ul class="nav navbar-nav navbar-left">
 					<li class="active"><a href="index.jsp">Home</a></li>
-					<li><a href="auction.do" class="dropdown-toggle" 
+					<li><a href="auction.do" class="dropdown-toggle"
 						data-hover="dropdown" data-delay="200">Auction <b></b></a></li>
 
 

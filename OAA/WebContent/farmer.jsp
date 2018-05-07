@@ -1,4 +1,4 @@
-<%@ include file="headermodify.jsp"%>
+<%@ include file="header.jsp"%>
 <div id="all">
 
 	<div id="content">
@@ -15,6 +15,7 @@
 			</div>
 
 			<div class="col-md-3">
+			
 				<!-- *** Farmer MENU ***
  _________________________________________________________ -->
 				<div class="panel panel-default sidebar-menu">
@@ -26,6 +27,8 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
+								<li><a href="launchauction.do"><i class="fa fa-list"></i>
+									Launch Auction</a></li>
 							<li><a href="myproducts.do"><i class="fa fa-list"></i>
 									My Products</a></li>
 
@@ -37,11 +40,8 @@
 					</div>
 
 				</div>
-				<!-- /.col-md-3 -->
 
-				<!-- *** Farmer MENU END *** -->
 			</div>
-
 
 			<div class="col-md-9" id="customer-order">
 				<div class="box">
@@ -139,11 +139,12 @@
 
 								<div class="container">
 									<div class="col-md-8">
-											<div class="product-slider">
+										<div class="product-slider">
 											<%
 												int value = -1;
 											%>
-											<c:forEach items="${sessionScope.CompletedAuctionList}" var="auction">
+											<c:forEach items="${sessionScope.CompletedAuctionList}"
+												var="auction">
 												<div class="item">
 													<div class="product">
 														<div class="flip-container">
@@ -188,18 +189,8 @@
 								<!-- /.container -->
 							</div>
 
-							<!-- /#hot -->
-
-							<!-- *** HOT END *** -->
-
-							<!-- *** GET INSPIRED ***-->
-
 						</table>
 					</div>
-
-					<!-- /.table-responsive -->
-
-
 
 				</div>
 			</div>
