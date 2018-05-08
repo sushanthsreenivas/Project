@@ -19,6 +19,7 @@ public class InitiateBidingAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
+
 		if (form instanceof BidingBean) {
 
 			BidingBean bidBean = (BidingBean) form;

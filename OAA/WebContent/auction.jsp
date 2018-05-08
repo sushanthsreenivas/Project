@@ -26,7 +26,7 @@
 
 								<div class="container">
 									<div class="col-md-10">
-										<div class="product-slider">
+										<div class="product-slider" id="owl-demo">
 											<%
 												int index = -1;
 											%>
@@ -69,20 +69,7 @@
 												</div>
 											</c:forEach>
 										</div>
-										<div class="owl-controls clickable">
-											<div class="owl-pagination">
-												<div class="owl-page active">
-													<span class=""></span>
-												</div>
-												<div class="owl-page">
-													<span class=""></span>
-												</div>
-											</div>
-											<div class="owl-buttons">
-												<div class="owl-prev">prev</div>
-												<div class="owl-next">next</div>
-											</div>
-										</div>
+
 									</div>
 								</div>
 							</div>

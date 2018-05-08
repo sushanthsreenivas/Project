@@ -20,9 +20,10 @@ public class LaunchAuctionAction extends Action {
 
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		LaunchAuctionBean launch = (LaunchAuctionBean) form;
 		if (form instanceof LaunchAuctionBean) {
 
+			LaunchAuctionBean launch = (LaunchAuctionBean) form;
+			
 			boolean status = false;
 
 			HttpSession session = request.getSession(false);

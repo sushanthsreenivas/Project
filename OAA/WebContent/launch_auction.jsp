@@ -1,4 +1,4 @@
-<%@ include file="header.jsp"%>
+<%@ include file="header.jsp"%>1
 <%@taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
 <div id="all">
 	<div id="content">
@@ -10,33 +10,14 @@
 					<li>Farmer</li>
 				</ul>
 			</div>
-			<div class="col-md-3">
-				<div class="panel panel-default sidebar-menu">
-					<div class="panel-heading">
-						<h3 class="panel-title">Farmer section</h3>
-					</div>
-					<div class="panel-body">
-						<ul class="nav nav-pills nav-stacked">
-							<li class="active"><a href="addproduct.do"><i
-									class="fa fa-list"></i> Add Products</a></li>
-							<li><a href="updateproduct.do"><i class="fa fa-list"></i>
-									Manage Products</a></li>
-							<li><a href="removeproduct.do"><i class="fa fa-list"></i>
-									Remove Products</a></li>
-							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>
-									Logout</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-9">
+			<div class="col-md-12">
 
 				<ul class="breadcrumb">
 					<li><a href="farmer.jsp">Home</a></li>
 					<li>My Products</li>
 				</ul>
 			</div>
-			<div class="col-md-9" id="customer-order">
+			<div class="col-md-12" id="customer-order">
 				<div class="box">
 					<h1>Create Auction</h1>
 					<hr>
@@ -56,22 +37,24 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="product_name">product Name</label>
-												<html:select styleClass="form-control" styleId="productName"
+												<label for="product_name">Product Name</label>
+
+												<%-- 	<html:select styleClass="form-control" styleId="productName"
 													property="productName">
-													<c:forEach items="${sessionScope.PB.listProducts(user_id)}"
+													<c:forEach items="${sessionScope.PB.listproducts(user_id)}"
 														var="product">
 														<html:option value="${product.productId}">${product.productName}</html:option>
 													</c:forEach>
 												</html:select>
+ --%>
+												<html:text styleClass="form-control" styleId="productName"
+													property="productName" />
 
-												<%-- <html:text styleClass="form-control" styleId="productName"
-													property="productName" /> --%>
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="product_name">description</label>
+												<label for="product_name">Description</label>
 												<html:text styleClass="form-control" styleId="description"
 													property="description" />
 											</div>
@@ -83,7 +66,10 @@
 												<label for="start date">Start Date</label>
 												<html:text styleClass="form-control" styleId="startDate"
 													property="startDate" />
+
+												<input type="text" id="datepicker">
 											</div>
+
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
@@ -107,7 +93,7 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="minBidprice">Bid Price</label>
+												<label for="minBidprice">Minimum Bid Price</label>
 												<html:text styleClass="form-control" styleId="bidPrice"
 													property="bidPrice" />
 											</div>
@@ -131,6 +117,16 @@
 	</div>
 </div>
 <!-- /#content -->
+
+<script type="text/javascript">
+	$(function() {
+		$("#datepicker").datepicker();
+		//Pass the user selected date format
+		$("#format").change(function() {
+			$("#datepicker").datepicker("option", "dateFormat", $(this).val());
+		});
+	});
+</script>
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.cookie.js"></script>
@@ -139,4 +135,6 @@
 <script src="js/bootstrap-hover-dropdown.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/front.js"></script>
+
+
 <%@ include file="footer.jsp"%>

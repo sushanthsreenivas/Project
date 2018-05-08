@@ -21,6 +21,7 @@ public class AccountAction extends Action {
 			HttpServletResponse response) throws Exception {
 
 		if (form instanceof AccountBean) {
+
 			AccountBean mab = (AccountBean) form;
 			boolean status = false;
 			try {
