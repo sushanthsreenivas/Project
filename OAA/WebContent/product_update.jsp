@@ -122,7 +122,7 @@
 									<!-- /.row -->
 
 									<div class="col-sm-12 text-center">
-										<button type="submit" class="btn btn-primary">
+										<button type="submit" class="btn btn-primary" onclick="myFunction()">
 											<i class="fa fa-save">Update Product</i>
 										</button>
 									</div>
@@ -195,6 +195,13 @@
 </div>
 
 <!-- /#content -->
+
+<script>
+function myFunction() {
+    alert("Product Updated Successfully!");
+}
+</script>
+
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.cookie.js"></script>

@@ -85,7 +85,7 @@
 		<action path="/productAdd" name="PB"
 			type="oaa.web.controller.ProductAction" input="/product_add.jsp"
 			scope="request" validate="true">
-			<forward name="success" path="/addsuccess.jsp" />
+			<forward name="success" path="/myproducts.do" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
@@ -93,14 +93,14 @@
 		<action path="/productupdate" name="PB"
 			type="oaa.web.controller.ProductUpdateAction" input="/product_update.jsp"
 			scope="request" validate="true">
-			<forward name="success" path="/updatesuccess.jsp" />
+			<forward name="success" path="/myproducts.do" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 
 		<action path="/productremove" name="PB"
 			type="oaa.web.controller.ProductRemoveAction" input="/product_remove.jsp"
 			scope="request">
-			<forward name="success" path="/removesuccess.jsp" />
+			<forward name="success" path="/myproducts.do" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 

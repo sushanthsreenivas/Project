@@ -64,7 +64,7 @@
 								</div>
 
 								<div class="container">
-									<div class="col-md-10">
+									<div class="col-md-8">
 										<div class="product-slider">
 											<%
 												int index = -1;
