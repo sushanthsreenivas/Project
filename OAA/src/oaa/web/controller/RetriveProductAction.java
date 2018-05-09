@@ -30,6 +30,7 @@ public class RetriveProductAction extends Action {
 			boolean status = false;
 			HttpSession session = request.getSession(false);
 			String userid = (String) session.getAttribute("user_id");
+
 			int user_id = Integer.parseInt(userid);
 			Collection<Product> productList = retrive.getListProducts(user_id);
 			session.setAttribute("ProductList", productList);

@@ -23,16 +23,18 @@ public class LaunchAuctionAction extends Action {
 		if (form instanceof LaunchAuctionBean) {
 
 			LaunchAuctionBean launch = (LaunchAuctionBean) form;
-			
+
 			boolean status = false;
 
 			HttpSession session = request.getSession(false);
 			String userid = (String) session.getAttribute("user_id");
-			int user_id = Integer.parseInt(userid);
+			if (userid != null) {
+				int user_id = Integer.parseInt(userid);
 
-			status = launch.launchAuction(user_id);
-			if (status == true) {
-				return mapping.findForward(SUCCESS);
+				status = launch.launchAuction(user_id);
+				if (status == true) {
+					return mapping.findForward(SUCCESS);
+				}
 			}
 		}
 		return mapping.findForward(FALIURE);

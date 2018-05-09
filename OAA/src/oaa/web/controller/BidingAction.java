@@ -19,24 +19,26 @@ public class BidingAction extends Action {
 
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		
 		if (form instanceof BidingBean) {
 
 			BidingBean biding = (BidingBean) form;
 			boolean status = false;
 			HttpSession session = request.getSession(false);
 			String userid = (String) session.getAttribute("user_id");
-			int user_id = Integer.parseInt(userid);
+			if (userid != null) {
 
-			try {
-				status = biding.addBid(user_id);
-			} catch (SQLException e) {
-				
-				e.printStackTrace();
-				return mapping.findForward(FAILURE);
-			}
-			if (status == true) {
-				return mapping.findForward(SUCCESS);
+				int user_id = Integer.parseInt(userid);
+
+				try {
+					status = biding.addBid(user_id);
+				} catch (SQLException e) {
+
+					e.printStackTrace();
+					return mapping.findForward(FAILURE);
+				}
+				if (status == true) {
+					return mapping.findForward(SUCCESS);
+				}
 			}
 		}
 

@@ -15,7 +15,6 @@ import oaa.web.model.BidingBean;
 
 public class BidingUpdateAction extends Action {
 
-	
 	private static final String FALIURE = "failure";
 	private static final String SUCCESS = "success";
 
@@ -24,30 +23,29 @@ public class BidingUpdateAction extends Action {
 
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		
 		if (form instanceof BidingBean) {
 
 			BidingBean biding = (BidingBean) form;
 			boolean status = false;
 			HttpSession session = request.getSession();
-			
-			String userid = (String) session.getAttribute("user_id");
-			int user_id = Integer.parseInt(userid);
 
-			try {
-				status = biding.updateBid(user_id);
-				
-				
-			} catch (SQLException e) {
-				
-				e.printStackTrace();
-				return mapping.findForward(FALIURE);
-			}
-			if (status == true) {
-				return mapping.findForward(SUCCESS);
+			String userid = (String) session.getAttribute("user_id");
+			if (userid != null) {
+				int user_id = Integer.parseInt(userid);
+
+				try {
+					status = biding.updateBid(user_id);
+
+				} catch (SQLException e) {
+
+					e.printStackTrace();
+					return mapping.findForward(FALIURE);
+				}
+				if (status == true) {
+					return mapping.findForward(SUCCESS);
+				}
 			}
 		}
-
 		return mapping.findForward(FALIURE);
 	}
 }

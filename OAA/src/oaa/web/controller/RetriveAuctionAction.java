@@ -1,8 +1,6 @@
 package oaa.web.controller;
 
 import java.util.Collection;
-
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -39,7 +37,7 @@ public class RetriveAuctionAction extends Action {
 			Collection<Auction> completedAuctionList = auction.getListCompletedAuction();
 			session.setAttribute("CompletedAuctionList", completedAuctionList);
 		}
-		
+
 		return mapping.findForward(SUCCESS);
 
 	}

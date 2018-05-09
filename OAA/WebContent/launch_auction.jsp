@@ -1,4 +1,5 @@
-<%@ include file="header.jsp"%>1
+<%@ include file="header.jsp"%>
+
 <%@taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
 <div id="all">
 	<div id="content">
@@ -32,8 +33,7 @@
 										</div>
 									</div>
 								</div>
-								<html:form action="createauction.do"
-									enctype="multipart/form-data">
+								<form action="createauction.do" enctype="multipart/form-data">
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
@@ -47,16 +47,15 @@
 													</c:forEach>
 												</html:select>
  --%>
-												<html:text styleClass="form-control" styleId="productName"
-													property="productName" />
+												<input class="form-control" id="productName"
+													name="productName" />
 
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="product_name">Description</label>
-												<html:text styleClass="form-control" styleId="description"
-													property="description" />
+												<label for="product_name">Description</label> <input
+													class="form-control" id="description" name="description" />
 											</div>
 										</div>
 									</div>
@@ -64,38 +63,40 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="start date">Start Date</label>
-												<html:text styleClass="form-control" styleId="startDate"
-													property="startDate" />
-
-												<input type="text" id="datepicker">
+												<%-- <html:text styleClass="form-control" styleId="datepicker"
+													property="startDate" /> --%>
+												<input class="form-control" id="datepicker" type="date"
+													name="startDate">
 											</div>
 
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="end date">End Date</label>
-												<html:text styleClass="form-control" styleId="endDate"
-													property="endDate">
-												</html:text>
+												<label for="end date">End Date</label> <input type="date"
+													class="form-control" id="datepicker" name="endDate">
+
 											</div>
 										</div>
-
+										<script>
+											$('input[type=date]').datepicker({
+												// Consistent format with the HTML5 picker
+												dateFormat : 'yy-mm-dd'
+											});
+										</script>
 									</div>
 									<!-- /.row -->
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="Bid_Amount_increment"> Bid Amount
-													Increment</label>
-												<html:text styleClass="form-control"
-													styleId=" bidPriceIncrement" property="bidPriceIncrement" />
+													Increment</label> <input class="form-control"
+													id=" bidPriceIncrement" name="bidPriceIncrement" />
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="minBidprice">Minimum Bid Price</label>
-												<html:text styleClass="form-control" styleId="bidPrice"
-													property="bidPrice" />
+												<label for="minBidprice">Minimum Bid Price</label> <input
+													class="form-control" id="bidPrice" name="bidPrice" />
 											</div>
 										</div>
 									</div>
@@ -106,7 +107,7 @@
 											<i class="fa fa-save"></i> Add Product
 										</button>
 									</div>
-								</html:form>
+								</form>
 							</div>
 						</table>
 					</div>
@@ -116,17 +117,6 @@
 		</div>
 	</div>
 </div>
-<!-- /#content -->
-
-<script type="text/javascript">
-	$(function() {
-		$("#datepicker").datepicker();
-		//Pass the user selected date format
-		$("#format").change(function() {
-			$("#datepicker").datepicker("option", "dateFormat", $(this).val());
-		});
-	});
-</script>
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.cookie.js"></script>

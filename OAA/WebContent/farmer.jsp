@@ -15,7 +15,7 @@
 			</div>
 
 			<div class="col-md-3">
-			
+
 				<!-- *** Farmer MENU ***
  _________________________________________________________ -->
 				<div class="panel panel-default sidebar-menu">
@@ -27,7 +27,7 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-								<li><a href="launchauction.do"><i class="fa fa-list"></i>
+							<li><a href="launchauction.do"><i class="fa fa-list"></i>
 									Launch Auction</a></li>
 							<li><a href="myproducts.do"><i class="fa fa-list"></i>
 									My Products</a></li>

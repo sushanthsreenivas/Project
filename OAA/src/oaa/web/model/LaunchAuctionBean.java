@@ -120,7 +120,7 @@ public class LaunchAuctionBean extends ActionForm {
 			connection = connection();
 
 			ps = connection.prepareStatement(
-					"insert into auction_master values(null,(select product_id from product where product_name=?),?,?,?,?,?,'E',?) " );
+					"insert into auction_master values(null,(select product_id from product where product_name=?),?,?,?,?,?,'E',?) ");
 			ps.setString(1, getProductName());
 			ps.setInt(2, user_id);
 			ps.setDate(3, getStartDate());
@@ -128,6 +128,7 @@ public class LaunchAuctionBean extends ActionForm {
 			ps.setInt(5, getBidPriceIncrement());
 			ps.setInt(6, getBidPrice());
 			ps.setString(7, getDescription());
+
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
 
