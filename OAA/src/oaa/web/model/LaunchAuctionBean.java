@@ -11,16 +11,14 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
-import org.apache.struts.action.ActionForward;
 
 public class LaunchAuctionBean extends ActionForm {
 
 	private int auctionId;
 
 	private int userId;
-	private String productName;
+	private String productId;
 	private int bidPrice;
 	private int bidPriceIncrement;
 	private Date startDate;
@@ -48,12 +46,12 @@ public class LaunchAuctionBean extends ActionForm {
 		this.userId = userId;
 	}
 
-	public String getProductName() {
-		return productName;
+	public String getProductId() {
+		return productId;
 	}
 
-	public void setProductName(String productName) {
-		this.productName = productName;
+	public void setproductId(String productId) {
+		this.productId = productId;
 	}
 
 	public int getBidPrice() {
@@ -119,9 +117,8 @@ public class LaunchAuctionBean extends ActionForm {
 		try {
 			connection = connection();
 
-			ps = connection.prepareStatement(
-					"insert into auction_master values(null,(select product_id from product where product_name=?),?,?,?,?,?,'E',?) ");
-			ps.setString(1, getProductName());
+			ps = connection.prepareStatement("insert into auction_master values(null,?,?,?,?,?,?,'E',?) ");
+			ps.setString(1, getProductId());
 			ps.setInt(2, user_id);
 			ps.setDate(3, getStartDate());
 			ps.setDate(4, getEndDate());

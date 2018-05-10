@@ -11,14 +11,12 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import oaa.web.entities.Auction;
 import oaa.web.entities.Product;
 import oaa.web.model.BidingBean;
 import oaa.web.model.ProductBean;
 
 public class RetriveProductAction extends Action {
 
-	// private static final String FALIURE = "failure";
 	private static final String SUCCESS = "success";
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,

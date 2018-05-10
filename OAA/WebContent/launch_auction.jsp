@@ -37,7 +37,7 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="product_name">Product Name</label>
+												<label for="product_name">Product Id</label>
 
 												<%-- 	<html:select styleClass="form-control" styleId="productName"
 													property="productName">
@@ -47,8 +47,7 @@
 													</c:forEach>
 												</html:select>
  --%>
-												<input class="form-control" id="productName"
-													name="productName" />
+												<input class="form-control" id="productId" name="productId" />
 
 											</div>
 										</div>

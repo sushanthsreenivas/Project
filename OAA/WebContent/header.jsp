@@ -77,12 +77,11 @@
 						<form id="loginForm" action="process" method="post">
 							<div class="form-group">
 								<input type="email" class="form-control" id="email" name="email"
-									required placeholder="email" value="kavya@gmail.com">
+									required placeholder="email">
 							</div>
 							<div class="form-group">
 								<input type="password" class="form-control" id="passwd"
-									name="passwd" required placeholder="password"
-									value="kavyapatil">
+									name="passwd" required placeholder="password">
 							</div>
 
 							<div class="form-group">

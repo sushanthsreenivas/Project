@@ -86,6 +86,29 @@ public class ImageProcessing extends HttpServlet {
 								}
 							}
 						}
+						ArrayList<Auction> completedAuction = (ArrayList<Auction>) session
+								.getAttribute("CompletedAuctionList");
+						Auction completedauction = completedAuction.get(index);
+
+						Blob cphoto = completedauction.getPhoto();
+						if (cphoto != null) {
+							ServletOutputStream oImage = null;
+							try {
+								byte barray[] = cphoto.getBytes(1, (int) cphoto.length());
+								response.setContentType("image/jpeg");
+
+								oImage = response.getOutputStream();
+								oImage.write(barray);
+								oImage.flush();
+							} catch (SQLException e) {
+
+								e.printStackTrace();
+							} finally {
+								if (oImage != null) {
+									oImage.close();
+								}
+							}
+						}
 					}
 				}
 			}

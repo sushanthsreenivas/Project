@@ -2,6 +2,8 @@ package oaa.web.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.Serializable;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -13,7 +15,7 @@ import org.apache.struts.upload.FormFile;
 
 import oaa.web.model.ProductBean;
 
-public class ProductUpdateAction extends Action {
+public class ProductUpdateAction extends Action implements Serializable {
 	private static final String FALIURE = "failure";
 	private static final String SUCCESS = "success";
 
@@ -57,9 +59,11 @@ public class ProductUpdateAction extends Action {
 			String userid = (String) session.getAttribute("user_id");
 
 			int user_id = Integer.parseInt(userid);
-			status = pb.updateProduct(user_id);
-			if (status == true) {
-				return mapping.findForward(SUCCESS);
+			if (userid != null) {
+				status = pb.updateProduct(user_id);
+				if (status == true) {
+					return mapping.findForward(SUCCESS);
+				}
 			}
 		}
 

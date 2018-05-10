@@ -24,9 +24,9 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<li><a href="mybiding.jsp"><i class="fa fa-list"></i> My
+							<!-- 	<li><a href="mybiding.jsp"><i class="fa fa-list"></i> My
 									Bidings</a></li>
-
+ -->
 							<li class="active"><a href="buyer_account.jsp"><i
 									class="fa fa-user"></i> My account</a></li>
 							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>

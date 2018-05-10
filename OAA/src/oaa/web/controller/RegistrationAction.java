@@ -29,7 +29,6 @@ public class RegistrationAction extends Action {
 				status = urb.registerUser();
 
 			} catch (SQLException e) {
-
 				e.printStackTrace();
 				return mapping.findForward(FAILURE);
 			}
