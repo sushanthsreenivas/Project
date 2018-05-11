@@ -136,9 +136,8 @@
 										</div>
 									</div>
 								</div>
-
 								<div class="container">
-									<div class="col-md-8">
+									<div class="col-md-10">
 										<div class="product-slider">
 											<%
 												int value = -1;
@@ -151,7 +150,7 @@
 															<div class="flipper">
 																<div class="front">
 																	<a href="detail.html"> <img
-																		src="image?type=auction&index=<%=(++value)%>" alt=""
+																		src="image?type=auction&value=<%=(++value)%>" alt=""
 																		class="img-responsive">
 																	</a>
 																</div>
@@ -170,7 +169,6 @@
 															<h3>
 																<a href="detail.html">${auction.productName}</a>
 															</h3>
-
 															<p class="price">&#8377;${auction.minBidPrice}</p>
 															<p class="description">${auction.description }</p>
 															<p class="date">Start Date - ${auction.startDate }</p>
@@ -182,9 +180,7 @@
 												</div>
 											</c:forEach>
 										</div>
-
 									</div>
-									<!-- /.product-slider -->
 								</div>
 								<!-- /.container -->
 							</div>

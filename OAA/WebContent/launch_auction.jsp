@@ -4,18 +4,12 @@
 <div id="all">
 	<div id="content">
 		<div class="container">
-			<div class="col-md-12">
-				<ul class="breadcrumb">
-					<li><a href="#">Home</a></li>
 
-					<li>Farmer</li>
-				</ul>
-			</div>
 			<div class="col-md-12">
 
 				<ul class="breadcrumb">
 					<li><a href="farmer.jsp">Home</a></li>
-					<li>My Products</li>
+					<li>Launch Auction</li>
 				</ul>
 			</div>
 			<div class="col-md-12" id="customer-order">
