@@ -29,20 +29,30 @@ public class AccountAction extends Action {
 			HttpSession session = request.getSession(false);
 
 			String userid = (String) session.getAttribute("user_id");
+			String role = (String) session.getAttribute("role");
 			int user_id = Integer.parseInt(userid);
 			String passwd = account.getPassword_old();
 			String firstname = account.getFirstname();
-			if (passwd != null) {
+			if (role.equals("farmer")) {
+				if (passwd != null) {
 
-				status = account.updatepassword(user_id);
-			}
+					status = account.updatepassword(user_id);
+				}
 
-			else if (firstname != null) {
-				status = account.updatedetails(user_id);
-			}
+				else if (firstname != null) {
+					status = account.updatedetails(user_id);
+				}
 
-			if (status == true) {
-				return mapping.findForward(SUCCESS);
+			} else if (role.equals("buyer")) {
+				if (passwd != null) {
+
+					status = account.updatepassword(user_id);
+				}
+
+				else if (firstname != null) {
+					status = account.updatedetails(user_id);
+				}
+
 			}
 
 		}

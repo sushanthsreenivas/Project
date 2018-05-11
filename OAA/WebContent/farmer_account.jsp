@@ -49,7 +49,7 @@
 
 					<h3>Change password</h3>
 
-					<form action="/Account.do" method="post">
+					<form action="/farmerAccount.do" method="post">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
@@ -87,18 +87,18 @@
 					<hr>
 
 					<h3>Personal details</h3>
-					<form action="/farmeraccount.do">
+					<form action="farmerAcoount.do" method="post">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="firstname">Firstname</label> <input type="text"
-										class="form-control" id="firstname" required name="firstname">
+										class="form-control" id="firstname" required name="firstname" value="kavya">
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="lastname">Lastname</label> <input type="text"
-										class="form-control" id="lastname" required name="lastname">
+										class="form-control" id="lastname" required name="lastname" value="kavya">
 								</div>
 							</div>
 						</div>
@@ -108,13 +108,13 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="Address">Address</label> <input type="text"
-										class="form-control" id="address" required name="address">
+										class="form-control" id="address" required name="address" value="vijaynagar">
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="city">City</label> <input type="text"
-										class="form-control" id="city" required name="city">
+										class="form-control" id="city" required name="city" value="bnagalore">
 								</div>
 							</div>
 						</div>
@@ -122,7 +122,7 @@
 						<div class="row">
 							<div class="col-sm-6 col-md-3">
 								<div class="form-group">
-									<label for="state">State</label> <select name=slist
+									<label for="state">State</label> <select 
 										class="form-control" id="state" name=state>
 										<option value=""></option>
 										<option value="Andaman and Nicobar Islands">Andaman
@@ -143,7 +143,7 @@
 										<option value="Himachal Pradesh">Himachal Pradesh</option>
 										<option value="Jammu and Kashmir">Jammu and Kashmir</option>
 										<option value="Jharkhand">Jharkhand</option>
-										<option value="Karnataka">Karnataka</option>
+										<option selected="selected" value="Karnataka">Karnataka</option>
 										<option value="Kerala">Kerala</option>
 										<option value="Lakshadweep">Lakshadweep</option>
 										<option value="Madhya Pradesh">Madhya Pradesh</option>
@@ -444,14 +444,15 @@
 
 							<div class="col-sm-6">
 								<div class="form-group">
-									<label for="mobile">Mobile no</label> <input type="number"
-										class="form-control" id="mobile" required name="mobile">
-								</div>
+									<label for="mobile">Mobile no</label> <input type="tel"
+										class="form-control" id="telNo" required name="telNo"
+										maxlength="10" value="9876543211">
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="email">Email</label> <input type="text"
-										class="form-control" id="email" required name="email">
+										class="form-control" id="email" required name="email"
+										value="kavyapatil@gmail.com">
 								</div>
 							</div>
 							<div class="col-sm-12 text-center">

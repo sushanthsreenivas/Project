@@ -60,15 +60,8 @@
 			<forward name="success" path="/updatesuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
-		<action path="/Personal" name="UAB"
-			type="oaa.web.controller.AccountAction" input="/buyer_account.jsp"
-			scope="request">
-			<forward name="success" path="/updatesuccess.jsp" />
-			<forward name="failure" path="/dberror.jsp" />
-		</action>
 
-
-		<action path="/Account" name="UAB" type="oaa.web.controller.AccountAction"
+		<action path="/farmerAccount" name="UAB" type="oaa.web.controller.AccountAction"
 			input="/farmer_account.jsp" scope="request">
 			<forward name="success" path="/updatesuccess.jsp" />
 			<forward name="failure" path="/dberror.jsp" />

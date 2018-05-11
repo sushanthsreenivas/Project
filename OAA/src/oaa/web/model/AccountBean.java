@@ -14,7 +14,7 @@ import org.apache.struts.action.ActionForm;
 public class AccountBean extends ActionForm {
 	private String password_old, password_new, password_new1;
 	private String firstname, lastname, address, city, state, country;
-	private String mobileno, email;
+	private String telNo, email;
 
 	public String getPassword_old() {
 		return password_old;
@@ -88,12 +88,12 @@ public class AccountBean extends ActionForm {
 		this.country = country;
 	}
 
-	public String getMobileno() {
-		return mobileno;
+	public String getTelNo() {
+		return telNo;
 	}
 
-	public void setMobileno(String mobileno) {
-		this.mobileno = mobileno;
+	public void setTelNo(String telNo) {
+		this.telNo = telNo;
 	}
 
 	public String getEmail() {
@@ -161,19 +161,18 @@ public class AccountBean extends ActionForm {
 			context = new InitialContext();
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
 			connection = ds.getConnection();
-			
+
 			ps = connection.prepareStatement(
-					"update users set firstname=?,lastname=?,address=?,city=?,state=?,country=?,mobileno=?,email=? where  user_id=?");
+					"update users set firstname=?,lastname=?,address=?,city=?,state=?,mobileno=?,email_id=? where  user_id=?");
 			ps.setString(1, getFirstname());
 			ps.setString(2, getLastname());
 			ps.setString(3, getAddress());
 			ps.setString(4, getCity());
 			ps.setString(5, getState());
-			ps.setString(6, getCountry());
-			ps.setString(7, getMobileno());
-			ps.setString(8, getEmail());
-			ps.setInt(9, user_id);
-			
+			ps.setString(6, getTelNo());
+			ps.setString(7, getEmail());
+			ps.setInt(8, user_id);
+
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
 

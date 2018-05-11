@@ -126,8 +126,8 @@
 						<div class="row">
 							<div class="col-sm-6 col-md-3">
 								<div class="form-group">
-									<label for="state">State</label> <select name=slist
-										class="form-control" id="state" name="state">
+									<label for="state">State</label> <select class="form-control"
+										id="state" name="state">
 										<option value=""></option>
 										<option value="Andaman and Nicobar Islands">Andaman
 											and Nicobar Islands</option>
