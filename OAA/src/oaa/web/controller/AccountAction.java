@@ -24,7 +24,6 @@ public class AccountAction extends Action {
 		if (form instanceof AccountBean) {
 
 			AccountBean account = (AccountBean) form;
-			AccountBean mab = (AccountBean) form;
 
 			boolean status = false;
 			HttpSession session = request.getSession(false);

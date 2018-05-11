@@ -28,7 +28,7 @@
 									Bidings</a></li>
  -->
 							<li class="active"><a href="buyer_account.jsp"><i
-									class="fa fa-user"></i> My account</a></li>
+									class="fa fa-user"></i> My Account</a></li>
 							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>
 									Logout</a></li>
 						</ul>
