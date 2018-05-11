@@ -74,7 +74,11 @@
 			path="/myproducts.jsp" /> >>>>>>> refs/remotes/origin/master <forward name="failure" 
 			path="/dberror.jsp" /> </action> <<<<<<< HEAD -->
 		<action path="/myproducts" name="PB"
-			type="oaa.web.controller.MyProductAction" input="/myproducts.jsp"></action>
+			type="oaa.web.controller.MyProductAction" input="/myproducts.jsp">
+
+
+			<forward name="success" path="/myproducts.jsp" />
+		</action>
 
 		<action path="/productAdd" name="PB"
 			type="oaa.web.controller.ProductAction" input="/product_add.jsp"

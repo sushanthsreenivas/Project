@@ -100,7 +100,7 @@
 															<div class="flipper">
 																<div class="front">
 																	<a href="detail.html"> <img
-																		src="image?type=auction&index=<%=(++value)%>" alt=""
+																		src="image?type=auction&value=<%=(++value)%>" alt=""
 																		class="img-responsive">
 																	</a>
 																</div>
@@ -137,9 +137,8 @@
 
 					</div>
 				</div>
-				<!-- /#hot -->
-			</div>
 
+			</div>
 		</div>
 
 		<!-- /#container end-->

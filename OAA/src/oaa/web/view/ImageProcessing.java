@@ -34,13 +34,14 @@ public class ImageProcessing extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setHeader("Cache-Control", "nostore");
-		String strIndex = request.getParameter("index");
-		if (strIndex != null) {
-			int index = Integer.parseInt(strIndex);
-			String type = request.getParameter("type");
 
-			HttpSession session = request.getSession(false);
-			if (session != null) {
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+
+			String strIndex = request.getParameter("index");
+			if (strIndex != null) {
+				int index = Integer.parseInt(strIndex);
+				String type = request.getParameter("type");
 				if (type != null) {
 					if (type.equals("product")) {
 						ArrayList<Product> products = (ArrayList<Product>) session.getAttribute("productList");
@@ -86,9 +87,21 @@ public class ImageProcessing extends HttpServlet {
 								}
 							}
 						}
+
+					}
+				}
+
+			}
+
+			String strval = request.getParameter("value");
+			if (strval != null) {
+				int value = Integer.parseInt(strval);
+				String type = request.getParameter("type");
+				if (type != null) {
+					if (type.equals("auction")) {
 						ArrayList<Auction> completedAuction = (ArrayList<Auction>) session
 								.getAttribute("CompletedAuctionList");
-						Auction completedauction = completedAuction.get(index);
+						Auction completedauction = completedAuction.get(value);
 
 						Blob cphoto = completedauction.getPhoto();
 						if (cphoto != null) {
@@ -111,6 +124,7 @@ public class ImageProcessing extends HttpServlet {
 						}
 					}
 				}
+
 			}
 		}
 	}
