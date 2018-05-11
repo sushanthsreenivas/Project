@@ -10,11 +10,11 @@
 					<li><a href="#">Home</a></li>
 					<li>My account</li>
 				</ul>
- 
+
 			</div>
 
 			<div class="col-md-3">
-				
+
 				<div class="panel panel-default sidebar-menu">
 
 					<div class="panel-heading">
@@ -47,30 +47,30 @@
 
 					<h3>Change password</h3>
 
-					<form>
+					<form action="Account.do" method="post">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="password_old">Old password</label> <input
 										type="password" class="form-control" id="password_old"
-										required name="password_old">
+										required name="password_old" value="kavya">
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="password_1">New password</label> <input
 										type="password" class="form-control" id="password_new"
-										required name="password_new">
+										required name="password_new" value="kavyapatil">
 								</div>
-							</div> 
+							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="password_2">Retype new password</label> <input
 										type="password" class="form-control" id="password_new1"
-										required name="password_new1">
+										required name="password_new1" value="kavyapatil">
 								</div>
 							</div>
 						</div>
@@ -86,19 +86,21 @@
 					<hr>
 
 					<h3>Personal details</h3>
-					<form method="post" name="validate"
+					<form action="Account.do" method="post" name="validate"
 						onsubmit="return validateForm()">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="firstname">Firstname</label> <input type="text"
-										class="form-control" id="firstname" required name="firstname">
+										class="form-control" id="firstname" required name="firstname"
+										value="anushka">
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="lastname">Lastname</label> <input type="text"
-										class="form-control" id="lastname" required name="lastname">
+										class="form-control" id="lastname" required name="lastname"
+										value="patil">
 								</div>
 							</div>
 						</div>
@@ -108,13 +110,15 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="Address">Address</label> <input type="text"
-										class="form-control" id="address" required name="address">
+										class="form-control" id="address" required name="address"
+										value="rajajinagar">
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="city">City</label> <input type="text"
-										class="form-control" id="city" required name="city">
+										class="form-control" id="city" required name="city"
+										value="bangalore">
 								</div>
 							</div>
 						</div>
@@ -143,7 +147,7 @@
 										<option value="Himachal Pradesh">Himachal Pradesh</option>
 										<option value="Jammu and Kashmir">Jammu and Kashmir</option>
 										<option value="Jharkhand">Jharkhand</option>
-										<option value="Karnataka">Karnataka</option>
+										<option selected="selected" value="Karnataka">Karnataka</option>
 										<option value="Kerala">Kerala</option>
 										<option value="Lakshadweep">Lakshadweep</option>
 										<option value="Madhya Pradesh">Madhya Pradesh</option>
@@ -169,7 +173,7 @@
 								<div class="form-group">
 									<label for="country">Country</label> <select
 										class="form-control" id="state" name="country">
-										<option value=""></option>
+										<option value="India"></option>
 										<option value="Afghanistan">Afghanistan</option>
 										<option value="Albania">Albania</option>
 										<option value="Algeria">Algeria</option>
@@ -280,7 +284,7 @@
 										<option value="Hong Kong">Hong Kong</option>
 										<option value="Hungary">Hungary</option>
 										<option value="Iceland">Iceland</option>
-										<option value="India">India</option>
+										<option selected="selected" value="India">India</option>
 										<option value="Indonesia">Indonesia</option>
 										<option value="Iran">Iran (Islamic Republic of)</option>
 										<option value="Iraq">Iraq</option>
@@ -445,13 +449,15 @@
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="mobile">Mobile no</label> <input type="tel"
-										class="form-control" id="telNo" required name="telNo" maxlength="10">
+										class="form-control" id="telNo" required name="telNo"
+										maxlength="10" value="9632324115">
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="email">Email</label> <input type="text"
-										class="form-control" id="email" required name="email">
+										class="form-control" id="email" required name="email"
+										value="anushkapatil@gmail.com">
 								</div>
 							</div>
 							<div class="col-sm-12 text-center">

@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -21,22 +22,29 @@ public class AccountAction extends Action {
 			HttpServletResponse response) throws Exception {
 
 		if (form instanceof AccountBean) {
-			AccountBean mab = (AccountBean) form;
+			AccountBean account = (AccountBean) form;
 			boolean status = false;
-			try {
-				status = mab.updatepassword();
+			HttpSession session = request.getSession(false);
 
-			} catch (SQLException e) {
+			String userid = (String) session.getAttribute("user_id");
+			int user_id = Integer.parseInt(userid);
+			String passwd = account.getPassword_old();
+			String firstname = account.getFirstname();
+			if (passwd != null) {
 
-				e.printStackTrace();
-				return mapping.findForward(FALIURE);
-
+				status = account.updatepassword(user_id);
 			}
+
+			else if (firstname != null) {
+				status = account.updatedetails(user_id);
+			}
+
 			if (status == true) {
 				return mapping.findForward(SUCCESS);
 			}
 
 		}
 		return mapping.findForward(FALIURE);
+
 	}
 }

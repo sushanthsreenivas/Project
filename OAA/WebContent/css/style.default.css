@@ -660,7 +660,7 @@ h1 {
 #content .product .text h3 {
 	font-size: 18px;
 	font-weight: 700;
-	height: 39.6px;
+	height: 20px !important;
 	text-align: center;
 	overflow: hidden;
 }
@@ -1889,3 +1889,4 @@ address {
 	color: #fff;
 	text-decoration: none;
 }
+

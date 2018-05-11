@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 import org.apache.struts.action.ActionForm;
 
 public class AccountBean extends ActionForm {
-	private String password_old, password1, password2;
+	private String password_old, password_new, password_new1;
 	private String firstname, lastname, address, city, state, country;
 	private String mobileno, email;
 
@@ -24,20 +24,20 @@ public class AccountBean extends ActionForm {
 		this.password_old = password_old;
 	}
 
-	public String getPassword1() {
-		return password1;
+	public String getPassword_new() {
+		return password_new;
 	}
 
-	public void setPassword1(String password1) {
-		this.password1 = password1;
+	public void setPassword_new(String password_new) {
+		this.password_new = password_new;
 	}
 
-	public String getPassword2() {
-		return password2;
+	public String getPassword_new1() {
+		return password_new1;
 	}
 
-	public void setPassword2(String password2) {
-		this.password2 = password2;
+	public void setPassword_new1(String password_new1) {
+		this.password_new1 = password_new1;
 	}
 
 	public String getFirstname() {
@@ -104,7 +104,7 @@ public class AccountBean extends ActionForm {
 		this.email = email;
 	}
 
-	public boolean updatepassword() throws SQLException {
+	public boolean updatepassword(int user_id) throws SQLException {
 		Connection connection = null;
 		Context context = null;
 		PreparedStatement ps = null;
@@ -113,10 +113,11 @@ public class AccountBean extends ActionForm {
 			context = new InitialContext();
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
 			connection = ds.getConnection();
-			ps = connection.prepareStatement("update users password_old=?,password_1=?,password_2=? where user_id=?");
-			ps.setString(1, getPassword_old());
-			ps.setString(2, getPassword1());
-			ps.setString(3, getPassword2());
+
+			ps = connection.prepareStatement("update users set passwd=? where user_id=? ");
+
+			ps.setInt(2, user_id);
+			ps.setString(1, getPassword_new());
 
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
@@ -124,7 +125,7 @@ public class AccountBean extends ActionForm {
 				return true;
 			}
 		} catch (NamingException e) {
-			
+
 			e.printStackTrace();
 		} finally {
 			try {
@@ -142,7 +143,7 @@ public class AccountBean extends ActionForm {
 
 				e.printStackTrace();
 			} catch (SQLException e) {
-				
+
 				e.printStackTrace();
 			}
 		}
@@ -151,7 +152,7 @@ public class AccountBean extends ActionForm {
 
 	}
 
-	public boolean updatedetails() throws SQLException {
+	public boolean updatedetails(int user_id) throws SQLException {
 		Connection connection = null;
 		Context context = null;
 		PreparedStatement ps = null;
@@ -160,8 +161,9 @@ public class AccountBean extends ActionForm {
 			context = new InitialContext();
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
 			connection = ds.getConnection();
+			
 			ps = connection.prepareStatement(
-					"update users firstname=?,lastname=?,address=?,city=?,state=?,country=?,mobileno=?,email=? where status=? and user_id=?");
+					"update users set firstname=?,lastname=?,address=?,city=?,state=?,country=?,mobileno=?,email=? where  user_id=?");
 			ps.setString(1, getFirstname());
 			ps.setString(2, getLastname());
 			ps.setString(3, getAddress());
@@ -170,14 +172,15 @@ public class AccountBean extends ActionForm {
 			ps.setString(6, getCountry());
 			ps.setString(7, getMobileno());
 			ps.setString(8, getEmail());
-
+			ps.setInt(9, user_id);
+			
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
 
 				return true;
 			}
 		} catch (NamingException e) {
-			
+
 			e.printStackTrace();
 		} finally {
 			try {
@@ -195,7 +198,7 @@ public class AccountBean extends ActionForm {
 
 				e.printStackTrace();
 			} catch (SQLException e) {
-				
+
 				e.printStackTrace();
 			}
 		}

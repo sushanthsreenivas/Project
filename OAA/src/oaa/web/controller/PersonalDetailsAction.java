@@ -1,9 +1,8 @@
 package oaa.web.controller;
 
-import java.sql.SQLException;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -15,30 +14,27 @@ import oaa.web.model.AccountBean;
 public class PersonalDetailsAction extends Action {
 	private static final String FALIURE = "failure";
 	private static final String SUCCESS = "success";
-	
 
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
 		if (form instanceof AccountBean) {
-			AccountBean mab = (AccountBean) form;
+			AccountBean account = (AccountBean) form;
 			boolean status = false;
-			try {
-				status = mab.updatedetails();
+			HttpSession session = request.getSession(false);
 
-			} catch (SQLException e) {
+			String userid = (String) session.getAttribute("user_id");
+			int user_id = Integer.parseInt(userid);
 
-				e.printStackTrace();
-				return mapping.findForward(FALIURE);
+			status = account.updatedetails(user_id);
 
-			}
 			if (status == true) {
 				return mapping.findForward(SUCCESS);
 			}
 
 		}
 		return mapping.findForward(FALIURE);
-
 	}
+
 }

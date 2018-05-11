@@ -45,17 +45,17 @@
 					<h1>My account</h1>
 					<p class="lead">Change your personal details or your password
 						here.</p>
- 
+
 
 					<h3>Change password</h3>
 
-					<form action="/farmeraccount.do">
+					<form action="/Account.do" method="post">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="password_old">Old password</label> <input
 										type="password" class="form-control" id="password_old"
-										required name="password_old">
+										required name="password_old" value="kavyapatil">
 								</div>
 							</div>
 						</div>
@@ -64,14 +64,14 @@
 								<div class="form-group">
 									<label for="password_1">New password</label> <input
 										type="password" class="form-control" id="password_1" required
-										name="password_1">
+										name="password_1" value="kavya">
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="password_2">Retype new password</label> <input
 										type="password" class="form-control" id="password_2" required
-										name="password_2">
+										name="password_2" value="kavya">
 								</div>
 							</div>
 						</div>
