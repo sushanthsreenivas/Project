@@ -1,17 +1,19 @@
 package oaa.web.model;
 
 import java.sql.Connection;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
+
 import org.apache.struts.action.ActionForm;
+
 import oaa.web.entities.Auction;
 import oaa.web.entities.Bid;
 

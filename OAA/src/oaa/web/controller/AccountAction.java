@@ -1,9 +1,9 @@
 package oaa.web.controller;
 
 import java.sql.SQLException;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.Action;
@@ -22,7 +22,10 @@ public class AccountAction extends Action {
 			HttpServletResponse response) throws Exception {
 
 		if (form instanceof AccountBean) {
+
 			AccountBean account = (AccountBean) form;
+			AccountBean mab = (AccountBean) form;
+
 			boolean status = false;
 			HttpSession session = request.getSession(false);
 

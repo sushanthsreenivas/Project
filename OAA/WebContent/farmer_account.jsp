@@ -165,7 +165,7 @@
 									</select>
 								</div>
 							</div>
-							<div class="col-sm-6 col-md-3">
+							<!-- 	<div class="col-sm-6 col-md-3">
 								<div class="form-group">
 									<label for="country">Country</label> <select
 										class="form-control" id="state" name=country>
@@ -440,7 +440,7 @@
 										<option value="Zimbabwe">Zimbabwe</option>
 									</select>
 								</div>
-							</div>
+							</div> -->
 
 							<div class="col-sm-6">
 								<div class="form-group">

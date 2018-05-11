@@ -23,7 +23,7 @@ public class ProcessRequestServlet extends HttpServlet {
 	 */
 	public ProcessRequestServlet() {
 		super();
-		
+
 	}
 
 	/**
@@ -32,7 +32,7 @@ public class ProcessRequestServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	
+
 	}
 
 	/**
@@ -41,7 +41,7 @@ public class ProcessRequestServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	
+
 		String email_id = request.getParameter("email");
 		String passwd = request.getParameter("passwd");
 
@@ -55,7 +55,6 @@ public class ProcessRequestServlet extends HttpServlet {
 				session.setMaxInactiveInterval(60 * 60 * 24 * 7);
 				String user_id = result[0];
 				session.setAttribute("user_id", user_id);
-
 				String role = result[1];
 				session.setAttribute("role", role);
 

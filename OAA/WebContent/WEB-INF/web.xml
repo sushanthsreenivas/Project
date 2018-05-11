@@ -65,4 +65,10 @@
             <taglib-location>/WEB-INF/struts-tiles.tld</taglib-location>
         </taglib>
         </jsp-config>
-    </web-app>
+        
+        
+<welcome-file-list>
+<welcome-file>index.jsp</welcome-file>
+</welcome-file-list>
+
+</web-app>

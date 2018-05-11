@@ -33,8 +33,6 @@ public class ProductRemoveAction extends Action {
 				status = pb.RemoveProduct(user_id);
 
 			} catch (SQLException e) {
-			
-
 				e.printStackTrace();
 				return mapping.findForward(FALIURE);
 			}

@@ -24,15 +24,15 @@ public class MyProductAction extends Action {
 		if (form instanceof ProductBean) {
 
 			ProductBean myproduct = (ProductBean) form;
-		//	boolean status = false;
 			HttpSession session = request.getSession(false);
 			String userid = (String) session.getAttribute("user_id");
-			int user_id = Integer.parseInt(userid);
+			if (userid != null) {
+				int user_id = Integer.parseInt(userid);
 
-			Collection<Product> productList = myproduct.getListProducts(user_id);
-			session.setAttribute("productList", productList);
-			
-			
+				Collection<Product> productList = myproduct.getListProducts(user_id);
+				session.setAttribute("productList", productList);
+
+			}
 		}
 		return mapping.findForward(SUCCESS);
 

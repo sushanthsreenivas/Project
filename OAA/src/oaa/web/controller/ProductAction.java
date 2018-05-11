@@ -1,19 +1,22 @@
 package oaa.web.controller;
 
 import java.io.File;
-
 import java.io.FileOutputStream;
+import java.io.Serializable;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import oaa.web.model.ProductBean;
+
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.upload.FormFile;
 
-public class ProductAction extends Action {
+import oaa.web.model.ProductBean;
+
+public class ProductAction extends Action implements Serializable{
 	private static final String FALIURE = "failure";
 	private static final String SUCCESS = "success";
 
@@ -26,7 +29,6 @@ public class ProductAction extends Action {
 
 		FormFile file = productBean.getImage();
 
-		// Get the servers upload directory real path name
 		String filePath = getServlet().getServletContext().getRealPath("/") + "upload";
 		// create the upload folder if not exists
 		File folder = new File(filePath);
@@ -37,7 +39,6 @@ public class ProductAction extends Action {
 
 		if (!("").equals(fileName)) {
 
-			
 			File newFile = new File(filePath, fileName);
 
 			if (!newFile.exists()) {
@@ -50,7 +51,7 @@ public class ProductAction extends Action {
 			request.setAttribute("uploadedFileName", newFile.getName());
 			productBean.setImage(file);
 		}
-		
+
 		if (form instanceof ProductBean) {
 
 			ProductBean pb = (ProductBean) form;
@@ -58,11 +59,13 @@ public class ProductAction extends Action {
 
 			HttpSession session = request.getSession(false);
 			String userid = (String) session.getAttribute("user_id");
-			int user_id = Integer.parseInt(userid);
-			
-			status = pb.addProduct(user_id);
-			if (status == true) {
-				return mapping.findForward(SUCCESS);
+			if (userid != null) {
+				int user_id = Integer.parseInt(userid);
+
+				status = pb.addProduct(user_id);
+				if (status == true) {
+					return mapping.findForward(SUCCESS);
+				}
 			}
 		}
 

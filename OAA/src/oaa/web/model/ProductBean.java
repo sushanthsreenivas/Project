@@ -1,7 +1,4 @@
-/**
 
- * 
- */
 package oaa.web.model;
 
 import java.io.ByteArrayInputStream;
@@ -228,9 +225,10 @@ public class ProductBean extends ActionForm {
 
 		try {
 			connection = connection();
-			ps = connection.prepareStatement("delete from product where user_id=? and product_id=?");
-			ps.setInt(1, user_id);
-			ps.setInt(2, getProductId());
+			ps = connection.prepareStatement("update product set status=? where user_id=? and product_id=?");
+			ps.setString(1, "D");
+			ps.setInt(2, user_id);
+			ps.setInt(3, getProductId());
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
 				System.out.println("entered");

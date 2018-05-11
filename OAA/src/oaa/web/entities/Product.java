@@ -1,7 +1,7 @@
 package oaa.web.entities;
 
-import java.util.Date;
 import java.sql.Blob;
+import java.util.Date;
 
 public class Product {
 

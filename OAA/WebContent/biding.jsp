@@ -24,10 +24,10 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<li><a href="addBid.do"><i class="fa fa-list"></i>Bid</a></li>
+							<!-- 	<li><a href="addBid.do"><i class="fa fa-list"></i>Bid</a></li>
 
 							<li><a href="updatebid.do"><i class="fa fa-list"></i>
-									Manage Bid</a></li>
+									Manage Bid</a></li> -->
 
 							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>
 									Logout</a></li>
@@ -64,7 +64,7 @@
 								</div>
 
 								<div class="container">
-									<div class="col-md-10">
+									<div class="col-md-8">
 										<div class="product-slider">
 											<%
 												int index = -1;
@@ -190,7 +190,6 @@
 			</div>
 		</div>
 	</div>
-
 </div>
 <!-- /#content -->
 <script src="js/jquery-1.11.0.min.js"></script>

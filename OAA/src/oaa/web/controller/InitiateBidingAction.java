@@ -3,12 +3,10 @@ package oaa.web.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-
 import oaa.web.model.BidingBean;
 
 public class InitiateBidingAction extends Action {
@@ -19,10 +17,10 @@ public class InitiateBidingAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 
 			HttpServletRequest request, HttpServletResponse response) throws Exception {
+
 		if (form instanceof BidingBean) {
 
 			BidingBean bidBean = (BidingBean) form;
-			// boolean status = false;
 			HttpSession session = request.getSession(false);
 			String sUserId = (String) session.getAttribute("user_id");
 			int userid = Integer.parseInt(sUserId);

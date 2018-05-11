@@ -2,7 +2,6 @@ package oaa.web.controller;
 
 import java.util.Collection;
 
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -17,7 +16,6 @@ import oaa.web.model.AuctionBean;
 
 public class RetriveAuctionAction extends Action {
 
-	// private static final String FAILURE = "failure";
 	private static final String SUCCESS = "success";
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
@@ -28,18 +26,12 @@ public class RetriveAuctionAction extends Action {
 
 			AuctionBean auction = (AuctionBean) form;
 			HttpSession session = request.getSession(false);
-			/*
-			 * HttpSession session = request.getSession(false); String userid =
-			 * (String) session.getAttribute("user_id"); int user_id =
-			 * Integer.parseInt(userid);
-			 */
-
 			Collection<Auction> auctionList = auction.getListAuction();
 			session.setAttribute("AuctionList", auctionList);
 			Collection<Auction> completedAuctionList = auction.getListCompletedAuction();
 			session.setAttribute("CompletedAuctionList", completedAuctionList);
 		}
-		
+
 		return mapping.findForward(SUCCESS);
 
 	}
