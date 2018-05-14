@@ -9,8 +9,8 @@
 
 				<ul class="breadcrumb">
 					<li><a href="home.do">Home</a></li>
-
 					<li>Farmer</li>
+					<li>My product</li>
 				</ul>
 
 			</div>
@@ -72,42 +72,7 @@
 										<div class="product-slider">
 											<%
 												int index = -1;
-											%><%-- 
-								s	<c:forEach items="${sessionScope.productList}" var="product"> 
-
-											<div class="item">
-												<div class="product">
-													<div class="flip-container">
-														<div class="flipper">
-															<div class="front">
-																<a href="detail.html"> <img
-																	src="image?type=product&index=<%=(++index)%>"
-																	alt="No Image" class="img-responsive"></img>
-																</a>
-															</div>
-															<div class="back">
-																<a href="detail.html"> <img
-																	src="image?type=product&index=<%=index%>"
-																	alt="No Image" class="img-responsive">
-																</a>
-															</div>
-														</div>
-													</div>
-													<a href="detail.html" class="invisible"> <img
-														src="image?index=<%=index%>" alt="" class="img-responsive">
-													</a>
-													<div class="text">
-														<div class="text">
-															<h3>
-																<a href="detail.html">${product.productName}</a>
-															</h3>
-															<p class="price">&#8377;${product.minBidPrice}</p>
-														</div>
-													</div>
-													<!-- /.text -->
-												</div>
-												<!-- /.product -->
-											</div>--%>
+											%>
 											<c:forEach items="${sessionScope.productList}" var="product">
 												<div class="item">
 													<div class="product">
@@ -139,7 +104,7 @@
 														<!-- /.text -->
 
 														<div class="ribbon gift">
-															<!--                                   <div class="theribbon">GIFT</div>  -->
+
 															<div class="ribbon-background"></div>
 														</div>
 														<!-- /.ribbon -->

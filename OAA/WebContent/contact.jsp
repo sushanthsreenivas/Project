@@ -1,5 +1,4 @@
 <%@ include file="header.jsp"%>
-
 <div id="all">
 
 	<div id="content">
@@ -35,7 +34,6 @@
 								<br> <strong>India</strong>
 							</p>
 						</div>
-						<!-- /.col-sm-4 -->
 						<div class="col-sm-4">
 							<h3>
 								<i class="fa fa-phone"></i> Call center
@@ -47,7 +45,6 @@
 								<strong>+91 555 444 333</strong>
 							</p>
 						</div>
-						<!-- /.col-sm-4 -->
 						<div class="col-sm-4">
 							<h3>
 								<i class="fa fa-envelope"></i> Electronic support
@@ -58,7 +55,7 @@
 								<li><strong><a href="mailto:">oaa@gmail.com</a></strong></li>
 							</ul>
 						</div>
-						<!-- /.col-sm-4 -->
+						>
 					</div>
 					<!-- /.row -->
 
@@ -119,9 +116,8 @@
 
 
 			</div>
-			<!-- /.col-md-9 -->
+
 		</div>
-		<!-- /.container -->
 	</div>
 </div>
 <!-- /#content -->

@@ -56,10 +56,10 @@ public class AccountAction extends Action {
 	}
 
 	boolean check(AccountBean account, String passwd, String firstname, int user_id) {
-		boolean status = false;
 
 		try {
-			// if (role.equals("buyer")) {
+			boolean status = false;
+
 			if (passwd != null) {
 
 				status = account.updatepassword(user_id);
@@ -70,14 +70,15 @@ public class AccountAction extends Action {
 				status = account.updatedetails(user_id);
 
 			}
+			if (status = true) {
+				return true;
+
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if (status = true) {
-			return true;
 
-		}
 		return false;
 
 	}

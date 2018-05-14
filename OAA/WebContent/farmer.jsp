@@ -118,11 +118,6 @@
 							</div>
 						</table>
 					</div>
-					<!-- /#hot -->
-
-					<!-- *** HOT END *** -->
-
-					<!-- *** GET INSPIRED ***
 
            
             <!-- /.container -->

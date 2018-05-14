@@ -7,22 +7,14 @@
 
 			<div class="col-md-12">
 				<ul class="breadcrumb">
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Login</a></li>
-					<li><a href="#">Buyer</a></li>
-					<li>Bid</li>
+					<li><a href="home.do">Home</a></li>
+					<li><a href="#">Bid</a></li>
 				</ul>
 
 			</div>
 			<div class="col-md-9">
 
-				<div class="row" id="productMain">
-					<!-- <div class="col-sm-6">
-						<div id="mainImage">
-							<img src="img/product9.jpg" alt="" class="img-responsive">
-						</div>
-					</div> -->
-				</div>
+				<div class="row" id="productMain"></div>
 				<div class="col-sm-6">
 					<div class="box">
 						<h1 class="text-center">Bid for ${param.pname}</h1>
@@ -53,16 +45,7 @@
 						</html:form>
 					</div>
 				</div>
-
-				<div class="col-sm-7" id="details">
-					<p>
-					<h4>Details</h4>
-					<hr>
-
-				</div>
-
 			</div>
-
 		</div>
 	</div>
 </div>

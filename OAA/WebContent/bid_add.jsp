@@ -26,10 +26,11 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<li class="active"><a href="addbid.do"><i class="fa fa-list"></i>Bid</a></li>
+							<li class="active"><a href="addbid.do"><i
+									class="fa fa-list"></i>Bid</a></li>
 
-							<li> <a href="updatebid.do"><i
-									class="fa fa-list"></i> Manage Bid</a></li>
+							<li><a href="updatebid.do"><i class="fa fa-list"></i>
+									Manage Bid</a></li>
 
 							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>
 									Logout</a></li>
@@ -407,21 +408,13 @@
 										</div>
 
 									</div>
-									<!-- /.product-slider -->
 								</div>
-								<!-- /.container -->
+
 
 							</div>
-							<!-- /#hot -->
-
-							<!-- *** HOT END *** -->
-
-							<!-- *** GET INSPIRED ***-->
 
 						</table>
 					</div>
-					<!-- /.table-responsive -->
-
 
 				</div>
 			</div>

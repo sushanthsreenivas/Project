@@ -112,7 +112,8 @@
 										/.row
 -->
 									<div class="col-sm-12 text-center">
-										<button type="submit" class="btn btn-primary" onclick="myFunction()">
+										<button type="submit" class="btn btn-primary"
+											onclick="myFunction()">
 											<i class="fa fa-save"></i> Remove Product
 										</button>
 
@@ -146,7 +147,6 @@
 														<div class="flip-container">
 															<div class="flipper">
 																<div class="front">
-
 																	<a href="detail.html"> <img
 																		src="image?type=product&index=<%=(++index)%>"
 																		alt="No Image" class="img-responsive"></img>
@@ -161,16 +161,22 @@
 															</div>
 														</div>
 														<a href="detail.html" class="invisible"> <img
-															src="image?index=<%=index%>" alt=""
-															class="img-responsive">
+															src="img/product6.jpg" alt="" class="img-responsive">
 														</a>
 														<div class="text">
 															<h3>
 																<a href="detail.html">${product.productName}</a>
 															</h3>
-															<p class="price">$${product.minBidPrice}</p>
+															<p class="price">&#8377;${product.minBidPrice}</p>
 														</div>
 														<!-- /.text -->
+
+														<div class="ribbon gift">
+
+															<div class="ribbon-background"></div>
+														</div>
+														<!-- /.ribbon -->
+
 													</div>
 													<!-- /.product -->
 												</div>
@@ -190,14 +196,6 @@
 		</div>
 	</div>
 </div>
-<!-- /#content -->
-<!-- 
-<script>
-function myFunction() {
-    alert("Product Removed Successfully!");
-}
-</script>
- -->
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.cookie.js"></script>

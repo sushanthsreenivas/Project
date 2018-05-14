@@ -7,7 +7,7 @@
 			<div class="col-md-12">
 
 				<ul class="breadcrumb">
-					<li><a href="#">Home</a></li>
+					<li><a href="home.do">Home</a></li>
 					<li>My account</li>
 				</ul>
 
@@ -24,9 +24,6 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<!-- 	<li><a href="mybiding.jsp"><i class="fa fa-list"></i> My
-									Bidings</a></li>
- -->
 							<li class="active"><a href="buyer_account.jsp"><i
 									class="fa fa-user"></i> My Account</a></li>
 							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>
@@ -35,9 +32,9 @@
 					</div>
 
 				</div>
-				<!-- /.col-md-3 -->
+
 			</div>
-			<!-- *** CUSTOMER MENU END *** -->
+
 			<div class="col-md-9">
 				<div class="box">
 					<h1>My account</h1>

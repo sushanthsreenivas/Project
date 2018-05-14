@@ -31,17 +31,8 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="product_name">Product Id</label>
-
-												<%-- 	<html:select styleClass="form-control" styleId="productName"
-													property="productName">
-													<c:forEach items="${sessionScope.PB.listproducts(user_id)}"
-														var="product">
-														<html:option value="${product.productId}">${product.productName}</html:option>
-													</c:forEach>
-												</html:select>
- --%>
-												<input class="form-control" id="productId" name="productId" />
+												<label for="product_name">Product Id</label> <input
+													class="form-control" id="productId" name="productId" />
 
 											</div>
 										</div>

@@ -66,7 +66,7 @@ public class ImageProcessing extends HttpServlet {
 							}
 						}
 					} else if (type.equals("auction")) {
-						ArrayList<Auction> auctions = (ArrayList<Auction>) session.getAttribute("AuctionList");
+						ArrayList<Auction> auctions = (ArrayList<Auction>)session.getAttribute("AuctionList");
 						Auction auction = auctions.get(index);
 						Blob photo = auction.getPhoto();
 						if (photo != null) {

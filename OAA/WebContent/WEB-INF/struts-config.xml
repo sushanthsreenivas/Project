@@ -75,8 +75,6 @@
 			path="/dberror.jsp" /> </action> <<<<<<< HEAD -->
 		<action path="/myproducts" name="PB"
 			type="oaa.web.controller.MyProductAction" input="/myproducts.jsp">
-
-
 			<forward name="success" path="/myproducts.jsp" />
 		</action>
 

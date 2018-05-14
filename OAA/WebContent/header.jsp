@@ -50,7 +50,6 @@
 			<div class="col-md-6 offer" data-animate="fadeInDown">
 				<a href="#" class="btn btn-success btn-sm"
 					data-animate-hover="shake">Online Agriculture Auction</a>
-				<!--<a href="#">Get flat 35% off on orders over $50!</a>-->
 			</div>
 			<div class="col-md-6" data-animate="fadeInDown">
 				<ul class="menu">
@@ -58,8 +57,6 @@
 					</li>
 					<li><a href="registration.jsp">Register</a></li>
 					<li><a href="contact.jsp">Contact</a></li>
-					<!--                     <li><a href="#">Recently viewed</a>
-                    </li>	 -->
 				</ul>
 			</div>
 		</div>
@@ -112,11 +109,6 @@
 
 	</div>
 
-	<!-- *** TOP BAR END *** -->
-
-	<!-- *** NAVBAR ***
- _________________________________________________________ -->
-
 	<div class="navbar navbar-default yamm" role="navigation" id="navbar">
 		<div class="container">
 			<div class="navbar-header">
@@ -156,8 +148,6 @@
 
 
 			</div>
-			<!--/.nav-collapse -->
-
 			<div class="navbar-buttons">
 
 				<div class="navbar-collapse collapse right" id="search-not-mobile">
@@ -185,10 +175,7 @@
 				</form>
 
 			</div>
-			<!--/.nav-collapse -->
-
 		</div>
-		<!-- /.container -->
 	</div>
 
 	<!-- *** SCRIPTS TO INCLUDE ***

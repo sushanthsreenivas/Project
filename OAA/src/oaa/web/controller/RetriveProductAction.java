@@ -25,7 +25,7 @@ public class RetriveProductAction extends Action {
 		if (form instanceof BidingBean) {
 
 			ProductBean retrive = (ProductBean) form;
-			boolean status = false;
+
 			HttpSession session = request.getSession(false);
 			String userid = (String) session.getAttribute("user_id");
 

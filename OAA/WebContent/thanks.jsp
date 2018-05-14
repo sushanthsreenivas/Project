@@ -32,9 +32,10 @@
 						<!-- Are you curious about something? Do you have
 						some kind of problem with our products?</p>
 					<p>Please feel free to contact us, our customer service center
-						is working for you 24/7.</p>
+						is working for you 24/7.
 
 					<hr>  -->
+					</p>
 					<div class="row">
 						<div class="col-sm-4">
 							<h3>
@@ -84,14 +85,15 @@
 			<!-- /.container -->
 		</div>
 	</div>
-	<!-- /#content -->
-	<script src="js/jquery-1.11.0.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.cookie.js"></script>
-	<script src="js/waypoints.min.js"></script>
-	<script src="js/modernizr.js"></script>
-	<script src="js/bootstrap-hover-dropdown.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/front.js"></script>
+</div>
+<!-- /#content -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/modernizr.js"></script>
+<script src="js/bootstrap-hover-dropdown.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/front.js"></script>
 
-	<%@ include file="footer.jsp"%>
+<%@ include file="footer.jsp"%>

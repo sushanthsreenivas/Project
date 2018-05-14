@@ -15,8 +15,7 @@
 			</div>
 
 			<div class="col-md-3">
-				<!-- *** CUSTOMER MENU ***
- _________________________________________________________ -->
+
 				<div class="panel panel-default sidebar-menu">
 
 					<div class="panel-heading">
@@ -26,9 +25,7 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<!-- 		<li><a href="biding.do"><i class="fa fa-list"></i> My
-									Bidings</a></li>
- -->
+
 							<li><a href="buyer_account.jsp"><i class="fa fa-user"></i>
 									My account</a></li>
 							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>
@@ -37,9 +34,6 @@
 					</div>
 
 				</div>
-				<!-- /.col-md-3 -->
-
-				<!-- *** CUSTOMER MENU END *** -->
 			</div>
 
 
@@ -120,7 +114,6 @@
 
 					</div>
 
-					<!-- /.container -->
 					<div class="table-responsive">
 						<table class="table">
 							<div id="hot">
@@ -179,18 +172,12 @@
 										</div>
 									</div>
 								</div>
-								<!-- /.container -->
-
 							</div>
-
 						</table>
 					</div>
-
-					<!-- /.table-responsive -->
 				</div>
 			</div>
 		</div>
-		<!-- /#content -->
 	</div>
 </div>
 
