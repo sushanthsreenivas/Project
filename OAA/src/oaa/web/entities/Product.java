@@ -1,9 +1,10 @@
 package oaa.web.entities;
 
+import java.io.Serializable;
 import java.sql.Blob;
 import java.util.Date;
 
-public class Product {
+public class Product implements Serializable {
 
 	private int productId;
 	private String productName;
