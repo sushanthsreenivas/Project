@@ -49,7 +49,7 @@
 
 					<h3>Change password</h3>
 
-					<form action="/farmerAccount.do" method="post">
+					<form action="Account.do" method="post">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
@@ -62,16 +62,16 @@
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
-									<label for="password_1">New password</label> <input
-										type="password" class="form-control" id="password_1" required
-										name="password_1" value="kavya">
+									<label for="password_new">New password</label> <input
+										type="password" class="form-control" id="password_new" required
+										name="password_new" value="kavya">
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
-									<label for="password_2">Retype new password</label> <input
-										type="password" class="form-control" id="password_2" required
-										name="password_2" value="kavya">
+									<label for="password_new1">Retype new password</label> <input
+										type="password" class="form-control" id="password_new1" required
+										name="password_new1" value="kavya">
 								</div>
 							</div>
 						</div>
@@ -87,7 +87,7 @@
 					<hr>
 
 					<h3>Personal details</h3>
-					<form action="farmerAcoount.do" method="post">
+					<form action="Account.do" method="post">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">

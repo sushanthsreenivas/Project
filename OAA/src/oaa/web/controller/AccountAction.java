@@ -37,20 +37,26 @@ public class AccountAction extends Action {
 				if (passwd != null) {
 
 					status = account.updatepassword(user_id);
+					return mapping.findForward(SUCCESS);
 				}
 
 				else if (firstname != null) {
 					status = account.updatedetails(user_id);
+					return mapping.findForward(SUCCESS);
+
 				}
 
 			} else if (role.equals("buyer")) {
 				if (passwd != null) {
 
 					status = account.updatepassword(user_id);
+					return mapping.findForward(SUCCESS);
+
 				}
 
 				else if (firstname != null) {
 					status = account.updatedetails(user_id);
+					return mapping.findForward(SUCCESS);
 				}
 
 			}
