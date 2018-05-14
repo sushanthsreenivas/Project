@@ -8,7 +8,7 @@
 
 				<ul class="breadcrumb">
 					<li><a href="#">Home</a></li>
-					<li>farmer</li>
+					<li>Farmer</li>
 					<li>My account</li>
 				</ul>
 
