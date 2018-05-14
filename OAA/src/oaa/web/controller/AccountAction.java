@@ -1,6 +1,7 @@
 package oaa.web.controller;
 
 import java.sql.SQLException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -24,8 +25,8 @@ public class AccountAction extends Action {
 		if (form instanceof AccountBean) {
 
 			AccountBean account = (AccountBean) form;
-
 			boolean status = false;
+
 			HttpSession session = request.getSession(false);
 
 			String userid = (String) session.getAttribute("user_id");
@@ -34,35 +35,51 @@ public class AccountAction extends Action {
 			String passwd = account.getPassword_old();
 			String firstname = account.getFirstname();
 			if (role.equals("farmer")) {
-				if (passwd != null) {
 
-					status = account.updatepassword(user_id);
-					return mapping.findForward(SUCCESS);
-				}
-
-				else if (firstname != null) {
-					status = account.updatedetails(user_id);
-					return mapping.findForward(SUCCESS);
-
-				}
-
-			} else if (role.equals("buyer")) {
-				if (passwd != null) {
-
-					status = account.updatepassword(user_id);
-					return mapping.findForward(SUCCESS);
-
-				}
-
-				else if (firstname != null) {
-					status = account.updatedetails(user_id);
-					return mapping.findForward(SUCCESS);
-				}
+				status = check(account, passwd, firstname, user_id);
 
 			}
 
+			else if (role.equals("buyer")) {
+
+				status = check(account, passwd, firstname, user_id);
+			}
+
+			if (status == true) {
+				return mapping.findForward(SUCCESS);
+			}
+
 		}
+
 		return mapping.findForward(FALIURE);
 
 	}
+
+	boolean check(AccountBean account, String passwd, String firstname, int user_id) {
+		boolean status = false;
+
+		try {
+			// if (role.equals("buyer")) {
+			if (passwd != null) {
+
+				status = account.updatepassword(user_id);
+
+			}
+
+			else if (firstname != null) {
+				status = account.updatedetails(user_id);
+
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (status = true) {
+			return true;
+
+		}
+		return false;
+
+	}
+
 }
