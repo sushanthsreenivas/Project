@@ -1,23 +1,17 @@
-function bidCompare() {
+$(document).ready(function() {
+	var lastbidamount = $("#last_bid").val();
+	var bidamount = $("#cur_bid").val();
+	var increment = $("#bid_inc").val();
+	$("#submit").submit(function() {
+		var sum = parseInt(lastbidamount) + parseInt(increment);
 
-	var lastbidamount = $("#lastBidAmount").val();
-	var bidamount = $("#bidAmountIncrement").val();
-	var increment = $("#bidAmount").val();
+		if (parseInt(bidamount) > parseInt(sum)) {
+			alert(bidamount);
+			
+			return true;
+		}
+		return false;
 
-};
-
-$(document).ready(function(){
-	var lastbidamount = $("#lastBidAmount").val();
-	var bidamount = $("#bidAmountIncrement").val();
-	var increment = $("#bidAmount").val();
-    $("submit").on("click", function(){
-        var sum = lastbidamount +increment;
-        if(sum<bidamount)
-        	{
-        	return true;
-        	}
-        else{
-        	return false;       
-        }
-    })
-})
+	});
+	
+});
