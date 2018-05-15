@@ -88,8 +88,7 @@
 														<html:option value="${category.categoryId}">${category.categoryName}</html:option>
 													</c:forEach>
 												</html:select>
-												<%-- 												<html:text styleClass="form-control" styleId="category" --%>
-												<%-- 													property="category" /> --%>
+												
 											</div>
 										</div>
 									</div>

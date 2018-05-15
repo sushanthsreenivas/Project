@@ -70,8 +70,7 @@
 														<html:option value="${category.categoryId}">${category.categoryName}</html:option>
 													</c:forEach>
 												</html:select>
-												<%-- 												<html:text styleClass="form-control" styleId="category" --%>
-												<%-- 													property="category" /> --%>
+
 											</div>
 										</div>
 
@@ -105,7 +104,8 @@
 									<!-- /.row -->
 
 									<div class="col-sm-12 text-center">
-										<button type="submit" class="btn btn-primary" onclick="myFunction()">
+										<button type="submit" class="btn btn-primary"
+											onclick="myFunction()">
 											<i class="fa fa-save"></i> Add Product
 										</button>
 									</div>
@@ -128,9 +128,9 @@
 <!-- /#content -->
 
 <script>
-function myFunction() {
-    alert("Product Successfully Added!");
-}
+	function myFunction() {
+		alert("Product Successfully Added!");
+	}
 </script>
 
 <script src="js/jquery-1.11.0.min.js"></script>

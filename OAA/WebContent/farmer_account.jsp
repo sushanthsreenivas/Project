@@ -51,23 +51,24 @@
 								<div class="form-group">
 									<label for="password_old">Old password</label> <input
 										type="password" class="form-control" id="password_old"
-										required name="password_old" value="kavyapatil">
+										required name="password_old" value="kavya">
 								</div>
 							</div>
 						</div>
+
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
-									<label for="password_new">New password</label> <input
+									<label for="password_1">New password</label> <input
 										type="password" class="form-control" id="password_new"
-										required name="password_new" value="kavya">
+										required name="password_new" value="kavyapatil">
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
-									<label for="password_new1">Retype new password</label> <input
+									<label for="password_2">Retype new password</label> <input
 										type="password" class="form-control" id="password_new1"
-										required name="password_new1" value="kavya">
+										required name="password_new1" value="kavyapatil">
 								</div>
 							</div>
 						</div>
@@ -83,7 +84,8 @@
 					<hr>
 
 					<h3>Personal details</h3>
-					<form action="Account.do" method="post">
+					<form action="Account.do" method="post" name="validate"
+						onsubmit="return validateForm()">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group">
@@ -96,7 +98,7 @@
 								<div class="form-group">
 									<label for="lastname">Lastname</label> <input type="text"
 										class="form-control" id="lastname" required name="lastname"
-										value="kavya">
+										value="patil">
 								</div>
 							</div>
 						</div>
@@ -107,14 +109,14 @@
 								<div class="form-group">
 									<label for="Address">Address</label> <input type="text"
 										class="form-control" id="address" required name="address"
-										value="vijaynagar">
+										value="rajajinagar">
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="city">City</label> <input type="text"
 										class="form-control" id="city" required name="city"
-										value="bnagalore">
+										value="bangalore">
 								</div>
 							</div>
 						</div>
@@ -123,7 +125,7 @@
 							<div class="col-sm-6 col-md-3">
 								<div class="form-group">
 									<label for="state">State</label> <select class="form-control"
-										id="state" name=state>
+										id="state" name="state">
 										<option value=""></option>
 										<option value="Andaman and Nicobar Islands">Andaman
 											and Nicobar Islands</option>
@@ -165,31 +167,32 @@
 									</select>
 								</div>
 							</div>
-</div>
+
+
 							<div class="col-sm-6">
 								<div class="form-group">
 									<label for="mobile">Mobile no</label> <input type="tel"
 										class="form-control" id="telNo" required name="telNo"
-										maxlength="10" value="9876543211">
-								</div>
-								<div class="col-sm-6">
-									<div class="form-group">
-										<label for="email">Email</label> <input type="text"
-											class="form-control" id="email" required name="email"
-											value="kavyapatil@gmail.com">
-									</div>
-								</div>
-								<div class="col-sm-12 text-center">
-									<button type="submit" class="btn btn-primary">
-										<i class="fa fa-save"></i> Save changes
-									</button>
-
+										maxlength="10" value="9632324115">
 								</div>
 							</div>
+							<div class="col-sm-6">
+								<div class="form-group">
+									<label for="email">Email</label> <input type="text"
+										class="form-control" id="email" required name="email"
+										value="kavyapatil@gmail.com">
+								</div>
+							</div>
+							<div class="col-sm-12 text-center">
+								<button type="submit" class="btn btn-primary">
+									<i class="fa fa-save"></i> Save changes
+								</button>
+
+							</div>
+						</div>
 					</form>
 				</div>
 			</div>
-
 		</div>
 		<!-- /.container -->
 	</div>
