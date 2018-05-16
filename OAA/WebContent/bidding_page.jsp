@@ -19,7 +19,7 @@
 					<div class="box">
 						<h1 class="text-center">Bid for ${param.pname}</h1>
 
-						<html:form action="addBid" styleId="submit">
+						<html:form action="addBid" styleId="form">
 							<html:hidden property="auctionid" />
 							<html:hidden property="userid" />
 							<p class="price">
@@ -39,12 +39,12 @@
 							</p>
 							<p class="text-center buttons">
 
-								<html:submit styleClass="btn btn-primary"> Bid</html:submit>
+								<html:submit styleId="submit" styleClass="btn btn-primary" disabled="true"> Bid</html:submit>
 
 								<html:button styleClass="btn btn-default fa  fa-arrow-left"
 									property="goBack" onclick="history.go(-1)">								
 									Go Back</html:button>
-									
+
 							</p>
 						</html:form>
 					</div>
@@ -53,20 +53,6 @@
 		</div>
 	</div>
 </div>
-<!-- <script type="text/javascript">
-	function check() {
-		var last_bid, bid_inc, sum, cur_bid;
-		last_bid = $("#last_bid").val();
-		bid_inc = $("#bid_inc").val();
-		cur_bid = $("#cur_bid").val();
-		sum = last_bid + bid_inc;
-		if (sum < cur_bid) {
-			return true;
-		}
-		return false;
-
-	}
-</script> -->
 <script src="js/bidvalidate.js"></script>
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -76,5 +62,4 @@
 <script src="js/bootstrap-hover-dropdown.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/front.js"></script>
-
 <%@ include file="footer.jsp"%>
