@@ -71,11 +71,11 @@
 					<div class="modal-body">
 						<form id="loginForm" action="process" method="post">
 							<div class="form-group">
-								<input type="email" class="form-control" id="email" name="email" value="anushkap@gmail.com"
+								<input type="email" class="form-control" id="email" name="email" value="anushkapatil@gmail.com"
 									required placeholder="email">
 							</div>
 							<div class="form-group">
-								<input type="password" class="form-control" id="passwd" value="sahana"
+								<input type="password" class="form-control" id="passwd" value="kavyapatil"
 									name="passwd" required placeholder="password" >
 							</div>
 

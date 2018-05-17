@@ -15,7 +15,7 @@
 			<div class="col-md-9">
 
 				<div class="row" id="productMain"></div>
-				<div class="col-sm-6">
+				<div class="col-sm-8">
 					<div class="box">
 						<h1 class="text-center">Bid for ${param.pname}</h1>
 

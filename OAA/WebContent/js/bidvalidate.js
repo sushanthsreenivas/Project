@@ -7,14 +7,16 @@ $(document).ready(function() {
 	$("#cur_bid").blur(function() {
 
 		var sum = parseInt(lastbidamount) + parseInt(increment);
-		if (parseInt(bidamount) > parseInt(sum)) {
+
+		if (parseInt(bidamount) >= parseInt(sum)) {
 			location.reload();
 			$("#submit").attr("disabled", false);
 
 			return true;
+
 		}
+		
 		return false;
 
 	});
-
 });
