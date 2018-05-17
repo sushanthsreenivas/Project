@@ -127,7 +127,7 @@ public class BidingBean extends ActionForm {
 		}
 		return false;
 	}
-/*
+
 	public boolean updateBid(int user_id) throws SQLException {
 
 		try {
@@ -171,7 +171,7 @@ public class BidingBean extends ActionForm {
 		}
 		return false;
 	}
-*/
+
 	public Bid getBidDetails(int auctionid, int userid) {
 
 		Bid bid = null;
@@ -199,7 +199,7 @@ public class BidingBean extends ActionForm {
 		}
 		return bid;
 	}
-
+/*
 	public Collection<Auction> getListAuction() {
 
 		Collection<Auction> auctionList = new ArrayList<Auction>();
@@ -254,6 +254,6 @@ public class BidingBean extends ActionForm {
 			e.printStackTrace();
 		}
 		return completedauctionList;
-	}
+	}*/
 
 }

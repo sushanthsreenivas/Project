@@ -12,6 +12,7 @@ import oaa.web.model.BidingBean;
 public class InitiateBidingAction extends Action {
 	private static final String FAILURE = "failure";
 	private static final String SUCCESS = "success";
+	private static final String HOME = "home";
 
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
@@ -31,6 +32,8 @@ public class InitiateBidingAction extends Action {
 				bidBean.getBidDetails(auctionid, userid);
 
 				return mapping.findForward(SUCCESS);
+			} else {
+				return mapping.findForward(HOME);
 			}
 		}
 		return mapping.findForward(FAILURE);

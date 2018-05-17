@@ -19,7 +19,7 @@
 					<div class="box">
 						<h1 class="text-center">Bid for ${param.pname}</h1>
 
-						<html:form action="addBid" styleId="form">
+						<html:form action="addBid" method="post">
 							<html:hidden property="auctionid" />
 							<html:hidden property="userid" />
 							<p class="price">
@@ -39,7 +39,8 @@
 							</p>
 							<p class="text-center buttons">
 
-								<html:submit styleId="submit" styleClass="btn btn-primary" disabled="true"> Bid</html:submit>
+								<html:submit styleClass="btn btn-primary" styleId="submit"
+									disabled="true"> Bid</html:submit>
 
 								<html:button styleClass="btn btn-default fa  fa-arrow-left"
 									property="goBack" onclick="history.go(-1)">								

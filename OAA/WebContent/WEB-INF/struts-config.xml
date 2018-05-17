@@ -122,8 +122,8 @@
 			name="failure" path="/dberror.jsp" /> </action> -->
 
 		<action path="/addBid" name="BB" type="oaa.web.controller.BidingAction"
-			input="/bid_add.jsp" scope="request">
-			<forward name="success" path="/bidingsuccess.jsp" />
+			input="/bidding_add.jsp" scope="request">
+			<forward name="success" path="/bidding_page.jsp" />
 			<forward name="failure" path="/dberror.jsp" />
 		</action>
 		<action path="/farmeraccount" name="AB"
