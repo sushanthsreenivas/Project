@@ -36,13 +36,13 @@
 														<div class="flip-container">
 															<div class="flipper">
 																<div class="front">
-																	<a href="detail.html"> <img
+																	<a href="" data-target="#login-modal"> <img
 																		src="image?type=auction&index=<%=(++index)%>" alt=""
 																		class="img-responsive">
 																	</a>
 																</div>
 																<div class="back">
-																	<a href="detail.html"> <img
+																	<a href="#"> <img
 																		src="image?type=auction&index=<%=(index)%>" alt=""
 																		class="img-responsive">
 																	</a>
@@ -53,8 +53,8 @@
 															src="img/product1.jpg" alt="" class="img-responsive">
 														</a>
 														<div class="text">
-															<h3>
-																<a href="detail.html">${auction.productName}</a>
+															<h3 id="gologin">
+																<a href="">${auction.productName}</a>
 															</h3>
 
 															<p class="price">&#8377;${auction.minBidPrice}</p>
@@ -99,13 +99,13 @@
 														<div class="flip-container">
 															<div class="flipper">
 																<div class="front">
-																	<a href="detail.html"> <img
+																	<a href="#"> <img
 																		src="image?type=auction&value=<%=(++value)%>" alt=""
 																		class="img-responsive">
 																	</a>
 																</div>
 																<div class="back">
-																	<a href="detail.html"> <img
+																	<a href="#"> <img
 																		src="image?type=auction&value=<%=(value)%>" alt=""
 																		class="img-responsive">
 																	</a>
@@ -117,7 +117,7 @@
 														</a>
 														<div class="text">
 															<h3>
-																<a href="detail.html">${auction.productName}</a>
+																<a href="#">${auction.productName}</a>
 															</h3>
 															<p class="price">&#8377;${auction.minBidPrice}</p>
 															<p class="description">${auction.description }</p>
@@ -146,6 +146,16 @@
 	<!-- end content -->
 </div>
 
+<script>
+	$(document).ready(function() {
+		$("#gologin").click(function() {
+			$("#login-modal").modal();
+		});
+		$(".flipper").click(function() {
+			$("#login-modal").modal();
+		})
+	});
+</script>
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.cookie.js"></script>

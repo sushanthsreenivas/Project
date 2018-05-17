@@ -8,7 +8,7 @@
 			<div class="col-md-12">
 
 				<ul class="breadcrumb">
-					<li><a href="farmer.jsp">Home</a></li>
+					<li><a href="home.do">Home</a></li>
 					<li>Launch Auction</li>
 				</ul>
 			</div>
@@ -32,7 +32,8 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="product_name">Product Id</label> <input
-													class="form-control" id="productId" name="productId" />
+													class="form-control" id="productId" name="productId"
+													required />
 
 											</div>
 										</div>
@@ -50,14 +51,15 @@
 												<%-- <html:text styleClass="form-control" styleId="datepicker"
 													property="startDate" /> --%>
 												<input class="form-control" id="datepicker" type="date"
-													name="startDate">
+													name="startDate" required>
 											</div>
 
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="end date">End Date</label> <input type="date"
-													class="form-control" id="datepicker" name="endDate">
+													class="form-control" id="datepicker" name="endDate"
+													required>
 
 											</div>
 										</div>
@@ -74,13 +76,13 @@
 											<div class="form-group">
 												<label for="Bid_Amount_increment"> Bid Amount
 													Increment</label> <input class="form-control"
-													id=" bidPriceIncrement" name="bidPriceIncrement" />
+													id=" bidPriceIncrement" name="bidPriceIncrement" required />
 											</div>
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="minBidprice">Minimum Bid Price</label> <input
-													class="form-control" id="bidPrice" name="bidPrice" />
+													class="form-control" id="bidPrice" name="bidPrice" required />
 											</div>
 										</div>
 									</div>

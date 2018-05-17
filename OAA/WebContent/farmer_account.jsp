@@ -27,7 +27,7 @@
 							<li><a href="myproducts.do"><i class="fa fa-list"></i>
 									My Products</a></li>
 
-							<li class="active"><a href="farmer_account.jsp"><i
+							<li class="active"><a href="farmeracc.do"><i
 									class="fa fa-user"></i> My Account</a></li>
 							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>
 									Logout</a></li>

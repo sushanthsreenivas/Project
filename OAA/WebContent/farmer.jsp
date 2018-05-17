@@ -32,8 +32,8 @@
 							<li><a href="myproducts.do"><i class="fa fa-list"></i>
 									My Products</a></li>
 
-							<li><a href="farmer_account.jsp"><i class="fa fa-user"></i>
-									My account</a></li>
+							<li><a href="farmeracc.do"><i class="fa fa-user"></i> My
+									account</a></li>
 							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>
 									Logout</a></li>
 						</ul>
@@ -73,29 +73,25 @@
 														<div class="flip-container">
 															<div class="flipper">
 																<div class="front">
-																	<a
-																		href="initiateBid.do?aid=${auction.auctionId}&pname=${auction.productName}">
-																		<img src="image?type=auction&index=<%=(++index)%>"
-																		alt="" class="img-responsive">
+																	<a href="#"> <img
+																		src="image?type=auction&index=<%=(++index)%>" alt=""
+																		class="img-responsive">
 																	</a>
 																</div>
 																<div class="back">
-																	<a
-																		href="initiateBid.do?aid=${auction.auctionId}&pname=${auction.productName}">
-																		<img src="image?type=auction&index=<%=(index)%>"
-																		alt="" class="img-responsive">
+																	<a href="#"> <img
+																		src="image?type=auction&index=<%=(index)%>" alt=""
+																		class="img-responsive">
 																	</a>
 																</div>
 															</div>
 														</div>
-														<a href="initiateBid.do?aid=${auction.auctionId}"
-															class="invisible"> <img src="img/product1.jpg" alt=""
-															class="img-responsive">
+														<a href="#" class="invisible"> <img
+															src="img/product1.jpg" alt="" class="img-responsive">
 														</a>
 														<div class="text">
 															<h3>
-																<a
-																	href="initiateBid.do?aid=${auction.auctionId}&pname=${auction.productName}">${auction.productName}</a>
+																<a href="#">${auction.productName}</a>
 															</h3>
 
 															<p class="price">&#8377;${auction.minBidPrice}</p>
@@ -119,8 +115,8 @@
 						</table>
 					</div>
 
-           
-            <!-- /.container -->
+
+					<!-- /.container -->
 					<div class="table-responsive">
 						<table class="table">
 							<div id="hot">

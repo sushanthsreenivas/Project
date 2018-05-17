@@ -143,9 +143,10 @@ public class AuctionBean extends ActionForm {
 			connection = connection();
 			String sql = "SELECT m.auction_id,m.product_id,m.user_id,m.start_date,m.end_date,p.min_bid_price,p.product_name,"
 					+ "p.photo,p.description"
-					+ " FROM auction_master m join product p on m.product_id=p.product_id  where  m.status=?  and date_format(end_date,'%Y-%m-%d') > date_format(now(), '%Y-%m-%d') and date_format(start_date,'%Y-%m-%d') < date_format(now(), '%Y-%m-%d')order by m.auction_id ";
+					+ " FROM auction_master m join product p on m.product_id=p.product_id  where  m.status=? and p.status=?  and date_format(end_date,'%Y-%m-%d') > date_format(now(), '%Y-%m-%d') and date_format(start_date,'%Y-%m-%d') < date_format(now(), '%Y-%m-%d')order by m.auction_id ";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setString(1, "E");
+			ps.setString(2, "E");
 
 			ResultSet rs = ps.executeQuery();
 
