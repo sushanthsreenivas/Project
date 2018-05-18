@@ -1,6 +1,7 @@
 package oaa.web.model;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,9 +9,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.naming.Context;
-import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.sql.DataSource;
 
 import org.apache.struts.action.ActionForm;
 
@@ -20,7 +19,7 @@ import oaa.web.entities.Bid;
 public class BidingBean extends ActionForm {
 
 	Context context = null;
-	Connection connection = null;
+	Connection connection = new ConnectionManager().connection();
 	PreparedStatement ps = null;
 	ResultSet rs = null;
 
@@ -70,29 +69,9 @@ public class BidingBean extends ActionForm {
 		this.bidAmountIncrement = bidAmountIncrement;
 	}
 
-	public Connection connection() {
-
-		try {
-			context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
-			connection = ds.getConnection();
-		} catch (NamingException e) {
-
-			e.printStackTrace();
-		} catch (SQLException e) {
-
-			e.printStackTrace();
-		}
-
-		return connection;
-
-	}
-
 	public boolean addBid(int user_id) throws SQLException {
 
 		try {
-
-			connection = connection();
 			ps = connection.prepareStatement("insert into auction_transaction values(null,?,?,?,now())");
 			ps.setInt(1, getAuctionid());
 			ps.setInt(2, user_id);
@@ -133,7 +112,6 @@ public class BidingBean extends ActionForm {
 		Bid bid = null;
 		try {
 
-			connection = connection();
 			String sql = "SELECT distinct bid_amount_increment,max(bid_amount) FROM auction_transaction join auction_master "
 					+ "on auction_transaction.auction_id=auction_master.auction_id where status=? and auction_master.auction_id=?";
 			PreparedStatement ps = connection.prepareStatement(sql);
@@ -162,7 +140,6 @@ public class BidingBean extends ActionForm {
 		try {
 
 			Auction auction = null;
-			connection = connection();
 			String sql = "SELECT m.auction_id,m.product_id,m.user_id,m.start_date,m.end_date,m.bid_prize,p.product_name,p.photo,p.description,p.m.status"
 					+ " FROM auction_master m join product p on m.product_id=p.product_id  where  status=?";
 			PreparedStatement ps = connection.prepareStatement(sql);
@@ -190,7 +167,6 @@ public class BidingBean extends ActionForm {
 		try {
 
 			Auction auction = null;
-			connection = connection();
 			String sql = "SELECT m.auction_id,m.product_id,m.user_id,m.start_date,m.end_date,p.min_bid_price,p.product_name,photo,p.description FROM "
 					+ " auction_master m join product p on m.product_id=p.product_id  where  m.status=? and date_format(end_date,'%Y-%m') = date_format(now(),'%Y-%m')";
 			PreparedStatement ps = connection.prepareStatement(sql);

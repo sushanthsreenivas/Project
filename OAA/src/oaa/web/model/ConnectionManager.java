@@ -8,16 +8,16 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-public class ConnectionManager {
+public class ConnectionManager  {
 	Context context = null;
-	Connection connection = null;
+	Connection con= null;
 
 	public Connection connection() {
 
 		try {
 			context = new InitialContext();
 			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
-			connection = ds.getConnection();
+			con = ds.getConnection();
 		} catch (NamingException e) {
 
 			e.printStackTrace();
@@ -26,7 +26,7 @@ public class ConnectionManager {
 			e.printStackTrace();
 		}
 
-		return connection;
+		return con;
 
 	}
 

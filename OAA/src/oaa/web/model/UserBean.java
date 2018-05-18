@@ -7,14 +7,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.naming.Context;
-import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.sql.DataSource;
 
 public class UserBean implements Serializable {
 	private String email_id;
 	private String firstName;
 	private String lastName;
+
+	Context context = null;
+	PreparedStatement ps = null;
+	ResultSet rs = null;
 
 	public String getEmail_id() {
 		return email_id;
@@ -41,16 +43,10 @@ public class UserBean implements Serializable {
 	}
 
 	public String[] validateLogin(String email_id, String passwd) {
-		Context context = null;
-		Connection connection = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
+
+		Connection connection = new ConnectionManager().connection();
 
 		try {
-			context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
-
-			connection = ds.getConnection();
 
 			ps = connection.prepareStatement(
 					"select firstname,lastname,user_id,role from users where email_id=? and passwd=?");
@@ -69,8 +65,6 @@ public class UserBean implements Serializable {
 				result[1] = rs.getString(4);
 				return result;
 			}
-		} catch (NamingException e) {
-			e.printStackTrace();
 		} catch (SQLException e) {
 
 			e.printStackTrace();

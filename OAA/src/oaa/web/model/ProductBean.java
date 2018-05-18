@@ -30,7 +30,7 @@ public class ProductBean extends ActionForm {
 	private FormFile image;
 
 	Context context = null;
-	Connection connection = null;
+	Connection connection = new ConnectionManager().connection();
 	PreparedStatement ps = null;
 	ResultSet rs = null;
 
@@ -108,8 +108,7 @@ public class ProductBean extends ActionForm {
 			ByteArrayInputStream fileBA = null;
 
 			fileData = image.getFileData();
-			connection = connection();
-
+			System.out.println(connection);
 			fileBA = new ByteArrayInputStream(fileData);
 
 			ps = connection.prepareStatement("insert into product values(null,?,?,?,?,?,'E',?,now())");
@@ -173,8 +172,6 @@ public class ProductBean extends ActionForm {
 
 			fileBA = new ByteArrayInputStream(fileData);
 
-			connection = connection();
-
 			ps = connection.prepareStatement(
 					"UPDATE product SET min_bid_price=?, category_id=?,description=?,photo=?,Date=now()  WHERE product_id=?  and user_id=?");
 
@@ -224,7 +221,6 @@ public class ProductBean extends ActionForm {
 	public boolean RemoveProduct(int user_id) throws SQLException {
 
 		try {
-			connection = connection();
 			ps = connection.prepareStatement("update product set status=? where user_id=? and product_id=?");
 			ps.setString(1, "D");
 			ps.setInt(2, user_id);
@@ -265,7 +261,6 @@ public class ProductBean extends ActionForm {
 		try {
 
 			Product product = null;
-			connection = connection();
 			String sql = "SELECT product_id,product_name,category_id,description,min_bid_price,photo,Date FROM product where user_id=? and status=?";
 
 			PreparedStatement ps = connection.prepareStatement(sql);

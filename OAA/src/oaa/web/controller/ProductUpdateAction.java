@@ -27,10 +27,7 @@ public class ProductUpdateAction extends Action implements Serializable {
 		ProductBean productBean = (ProductBean) form;
 
 		FormFile file = productBean.getImage();
-
-		// Get the servers upload directory real path name
 		String filePath = getServlet().getServletContext().getRealPath("/") + "upload";
-		// create the upload folder if not exists
 		File folder = new File(filePath);
 		if (!folder.exists()) {
 			folder.mkdir();

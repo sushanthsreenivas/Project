@@ -7,9 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.naming.Context;
-import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.sql.DataSource;
 
 import org.apache.struts.action.ActionForm;
 
@@ -26,7 +24,7 @@ public class LaunchAuctionBean extends ActionForm {
 	private String description;
 
 	Context context = null;
-	Connection connection = null;
+	Connection connection = new ConnectionManager().connection();
 	PreparedStatement ps = null;
 	ResultSet rs = null;
 
@@ -94,28 +92,10 @@ public class LaunchAuctionBean extends ActionForm {
 		this.description = description;
 	}
 
-	public Connection connection() {
-
-		try {
-			context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
-			connection = ds.getConnection();
-		} catch (NamingException e) {
-
-			e.printStackTrace();
-		} catch (SQLException e) {
-
-			e.printStackTrace();
-		}
-
-		return connection;
-
-	}
-
+	
 	public boolean launchAuction(int user_id) {
 
 		try {
-			connection = connection();
 
 			ps = connection.prepareStatement("insert into auction_master values(null,?,?,?,?,?,?,'E',?) ");
 			ps.setString(1, getProductId());

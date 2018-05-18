@@ -5,14 +5,10 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.sql.DataSource;
 
 import org.apache.struts.action.ActionForm;
 
@@ -32,7 +28,7 @@ public class AuctionBean extends ActionForm {
 	private Boolean status;
 
 	Context context = null;
-	Connection connection = null;
+	Connection connection = new ConnectionManager().connection();
 	PreparedStatement ps = null;
 	ResultSet rs = null;
 
@@ -116,31 +112,13 @@ public class AuctionBean extends ActionForm {
 		this.status = status;
 	}
 
-	public Connection connection() {
-
-		try {
-			context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
-			connection = ds.getConnection();
-		} catch (NamingException e) {
-
-			e.printStackTrace();
-		} catch (SQLException e) {
-
-			e.printStackTrace();
-		}
-
-		return connection;
-
-	}
-
 	public Collection<Auction> getListAuction() {
 
 		Collection<Auction> auctionList = new ArrayList<Auction>();
 		try {
 
 			Auction auction = null;
-			connection = connection();
+
 			String sql = "SELECT m.auction_id,m.product_id,m.user_id,m.start_date,m.end_date,p.min_bid_price,p.product_name,"
 					+ "p.photo,p.description"
 					+ " FROM auction_master m join product p on m.product_id=p.product_id  where  m.status=? and p.status=?  and date_format(end_date,'%Y-%m-%d') > date_format(now(), '%Y-%m-%d') and date_format(start_date,'%Y-%m-%d') < date_format(now(), '%Y-%m-%d')order by m.auction_id ";
@@ -168,7 +146,6 @@ public class AuctionBean extends ActionForm {
 		try {
 
 			Auction auction = null;
-			connection = connection();
 			String sql = "   SELECT m.auction_id,m.product_id,m.user_id,m.start_date,m.end_date,p.min_bid_price,p.product_name,p.photo,p.description FROM auction_master m join product p on m.product_id=p.product_id   where  m.status=? and	date_format(end_date,'%Y-%m') = date_format(now(), '%Y-%m') and date_format(end_date,'%Y-%m-%d') < date_format(now(), '%Y-%m-%d')";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setString(1, "E");

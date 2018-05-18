@@ -3,14 +3,10 @@ package oaa.web.model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.sql.DataSource;
 
 import org.apache.struts.action.ActionForm;
 
@@ -21,7 +17,7 @@ public class CategoryBean extends ActionForm {
 	private int categoryId;
 	private String categoryName;
 	Context context = null;
-	Connection connection = null;
+	Connection connection = new ConnectionManager().connection();
 	PreparedStatement ps = null;
 	ResultSet rs = null;
 
@@ -41,31 +37,12 @@ public class CategoryBean extends ActionForm {
 		this.categoryName = categoryName;
 	}
 
-	public Connection connection() {
-
-		try {
-			context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
-			connection = ds.getConnection();
-		} catch (NamingException e) {
-			
-			e.printStackTrace();
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-		}
-
-		return connection;
-
-	}
-
 	public List<Category> getCategories() {
 
 		List<Category> categoryList = new ArrayList<Category>();
 		try {
 
 			Category category = null;
-			connection = connection();
 			String sql = "SELECT category_id,category_name FROM category";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();

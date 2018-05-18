@@ -1,4 +1,4 @@
-package oaa.web.controller;
+/*package oaa.web.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -38,3 +38,4 @@ public class PersonalDetailsAction extends Action {
 	}
 
 }
+*/

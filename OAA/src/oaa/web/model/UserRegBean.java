@@ -9,10 +9,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.naming.Context;
-import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
-import javax.sql.DataSource;
 
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
@@ -152,20 +150,15 @@ public class UserRegBean extends ActionForm {
 
 		return errors;
 	}
- 
+
 	public boolean registerUser() throws SQLException {
 
 		Context context = null;
-		Connection connection = null;
+		Connection connection = new ConnectionManager().connection();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		
-		
 
 		try {
-			context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
-			connection = ds.getConnection();
 
 			ps = connection.prepareStatement("insert into users values(null,?,?,?,?,?,?,'E',?,?,?,?)");
 
@@ -187,9 +180,6 @@ public class UserRegBean extends ActionForm {
 
 			}
 
-		} catch (NamingException e) {
-			
-			e.printStackTrace();
 		} finally {
 			try {
 				if (context != null) {
@@ -208,7 +198,7 @@ public class UserRegBean extends ActionForm {
 
 				e.printStackTrace();
 			} catch (SQLException e) {
-				
+
 				e.printStackTrace();
 			}
 		}

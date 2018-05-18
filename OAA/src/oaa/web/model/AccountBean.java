@@ -5,9 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import javax.naming.Context;
-import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.sql.DataSource;
 
 import org.apache.struts.action.ActionForm;
 
@@ -15,6 +13,9 @@ public class AccountBean extends ActionForm {
 	private String password_old, password_new, password_new1;
 	private String firstname, lastname, address, city, state, country;
 	private String telNo, email;
+	Connection connection = new ConnectionManager().connection();
+	Context context = null;
+	PreparedStatement ps = null;
 
 	public String getPassword_old() {
 		return password_old;
@@ -105,14 +106,8 @@ public class AccountBean extends ActionForm {
 	}
 
 	public boolean updatepassword(int user_id) throws SQLException {
-		Connection connection = null;
-		Context context = null;
-		PreparedStatement ps = null;
 
 		try {
-			context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
-			connection = ds.getConnection();
 
 			ps = connection.prepareStatement("update users set passwd=? where user_id=? ");
 
@@ -124,10 +119,7 @@ public class AccountBean extends ActionForm {
 
 				return true;
 			}
-		} catch (NamingException e) {
-
-			e.printStackTrace();
-		} finally {
+		}  finally {
 			try {
 				if (context != null) {
 					context.close();
@@ -153,14 +145,8 @@ public class AccountBean extends ActionForm {
 	}
 
 	public boolean updatedetails(int user_id) throws SQLException {
-		Connection connection = null;
-		Context context = null;
-		PreparedStatement ps = null;
 
 		try {
-			context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
-			connection = ds.getConnection();
 
 			ps = connection.prepareStatement(
 					"update users set firstname=?,lastname=?,address=?,city=?,state=?,mobileno=?,email_id=? where  user_id=?");
@@ -178,10 +164,7 @@ public class AccountBean extends ActionForm {
 
 				return true;
 			}
-		} catch (NamingException e) {
-
-			e.printStackTrace();
-		} finally {
+		}  finally {
 			try {
 				if (context != null) {
 					context.close();
