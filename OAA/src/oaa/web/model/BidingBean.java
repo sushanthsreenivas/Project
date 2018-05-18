@@ -128,50 +128,6 @@ public class BidingBean extends ActionForm {
 		return false;
 	}
 
-	public boolean updateBid(int user_id) throws SQLException {
-
-		try {
-			connection = connection();
-			ps = connection.prepareStatement(
-					"UPDATE auction_transaction join users on users.user_id=auction_transaction.user_id join "
-							+ "auction_master on auction_master.auction_id=auction_transaction.auction_id"
-							+ " SET auction_transaction.bid_prize =?, Date=now() where auction_transaction.user_id=? and auction_transaction.auction_id=?");
-			ps.setInt(1, getBidAmount());
-			ps.setInt(2, user_id);
-			ps.setInt(3, getAuctionid());
-
-			int rowsEffected = ps.executeUpdate();
-			if (rowsEffected > 0) {
-
-				return true;
-			}
-		} catch (SQLException e) {
-
-			e.printStackTrace();
-		} finally {
-			try {
-				if (context != null) {
-					context.close();
-				}
-				if (connection != null && !connection.isClosed()) {
-					connection.close();
-				}
-				if (ps != null && !ps.isClosed()) {
-					ps.close();
-				}
-				if (rs != null && !rs.isClosed()) {
-					rs.close();
-				}
-			} catch (NamingException e) {
-				e.printStackTrace();
-			} catch (SQLException e) {
-
-				e.printStackTrace();
-			}
-		}
-		return false;
-	}
-
 	public Bid getBidDetails(int auctionid, int userid) {
 
 		Bid bid = null;
@@ -199,7 +155,7 @@ public class BidingBean extends ActionForm {
 		}
 		return bid;
 	}
-/*
+
 	public Collection<Auction> getListAuction() {
 
 		Collection<Auction> auctionList = new ArrayList<Auction>();
@@ -254,6 +210,6 @@ public class BidingBean extends ActionForm {
 			e.printStackTrace();
 		}
 		return completedauctionList;
-	}*/
+	}
 
 }

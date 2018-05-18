@@ -32,25 +32,19 @@ public class AccountAction extends Action {
 			String userid = (String) session.getAttribute("user_id");
 			String role = (String) session.getAttribute("role");
 			int user_id = Integer.parseInt(userid);
-			String passwd = account.getPassword_old();
-			String firstname = account.getFirstname();
+			String passwd =request.getParameter("password_old");
+			String firstname =request.getParameter("firstname");
+
 			if (role.equals("farmer")) {
-
 				status = check(account, passwd, firstname, user_id);
-
-			}
-
-			else if (role.equals("buyer")) {
-
+			} else if (role.equals("buyer")) {
 				status = check(account, passwd, firstname, user_id);
 			}
 
 			if (status == true) {
 				return mapping.findForward(SUCCESS);
 			}
-
 		}
-
 		return mapping.findForward(FALIURE);
 
 	}

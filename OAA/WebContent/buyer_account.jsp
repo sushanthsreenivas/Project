@@ -1,9 +1,7 @@
 <%@ include file="header.jsp"%>
 <div id="all">
-
 	<div id="content">
 		<div class="container">
-
 			<div class="col-md-12">
 
 				<ul class="breadcrumb">
@@ -24,7 +22,7 @@
 					<div class="panel-body">
 
 						<ul class="nav nav-pills nav-stacked">
-							<li class="active"><a href="buyer_account.jsp"><i
+							<li class="active"><a href="buyeracc.do"><i
 									class="fa fa-user"></i> My Account</a></li>
 							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>
 									Logout</a></li>

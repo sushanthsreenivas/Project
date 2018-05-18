@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="col-md-12">
 				<ul class="breadcrumb">
-					<li><a href="#">Home</a></li>
+					<li><a href="home.do">Home</a></li>
 
 					<li>Farmer</li>
 				</ul>
@@ -129,7 +129,7 @@
 
 <script>
 	function myFunction() {
-		alert("Product Successfully Added!");
+		
 	}
 </script>
 
