@@ -56,8 +56,10 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 												<label for="product_name">Product Name</label>
-												<html:text styleClass="form-control" styleId="productName"
-													property="productName" />
+												<c:forEach items="${sessionScope.PB.product }">
+													<html:text styleClass="form-control" styleId="productName"
+														property="productName" />
+												</c:forEach>
 											</div>
 										</div>
 										<div class="col-sm-6">
@@ -125,13 +127,7 @@
 		</div>
 	</div>
 </div>
-<!-- /#content -->
 
-<script>
-	function myFunction() {
-		
-	}
-</script>
 
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

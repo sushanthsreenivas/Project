@@ -82,24 +82,6 @@ public class ProductBean extends ActionForm {
 		this.image = image;
 	}
 
-	public Connection connection() {
-
-		try {
-			context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
-			connection = ds.getConnection();
-		} catch (NamingException e) {
-
-			e.printStackTrace();
-		} catch (SQLException e) {
-
-			e.printStackTrace();
-		}
-
-		return connection;
-
-	}
-
 	public boolean addProduct(int user_id) {
 
 		try {
@@ -108,16 +90,13 @@ public class ProductBean extends ActionForm {
 			ByteArrayInputStream fileBA = null;
 
 			fileData = image.getFileData();
-			System.out.println(connection);
 			fileBA = new ByteArrayInputStream(fileData);
 
 			ps = connection.prepareStatement("insert into product values(null,?,?,?,?,?,'E',?,now())");
 
 			ps.setString(1, getProductName());
-
 			ps.setString(3, getCategory());
 			ps.setInt(2, user_id);
-
 			ps.setString(4, getDescription());
 			ps.setInt(5, getMinBidPrice());
 			ps.setBinaryStream(6, fileBA);
