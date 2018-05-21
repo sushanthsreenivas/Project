@@ -1,4 +1,6 @@
 <%@ include file="header.jsp"%>
+
+<%@taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
 <div id="all">
 
 	<div id="content">
@@ -68,49 +70,22 @@
 									</div>
 								</div>
 
-								<form action="productremove.do" method="post">
+								<html:form action="productremove.do" method="post">
 
 
-									<!-- <div class="row">
-											<div class="col-sm-6">
-												<div class="form-group">
-													<label for="category">Category</label> <input type="text"
-														class="form-control" id="category">
-												</div>
-											</div> -->
 									<div class="col-sm-6">
 										<div class="form-group">
-											<label for="product_name">Product Id</label> <input
-												type="text" class="form-control" id="productId"
-												name="productId">
+											<label for="product_name">Product Name</label>
+											<html:select styleClass="form-control" styleId="productName"
+												property="productName">
+												<c:forEach items="${sessionScope.productList}" var="product">
+
+													<html:option value="${product.productId}">${product.productName}</html:option>
+												</c:forEach>
+											</html:select>
 										</div>
 									</div>
-									<!-- </div>
-										/.row
-										<div class="row">
-											<div class="col-sm-6">
-												<div class="form-group">
-													<label for="description">Description</label> <input
-														type="text" class="form-control" id="description">
-												</div>
-											</div>
-											<div class="col-sm-6 col-md-3">
-												<div class="form-group">
-													<label for="photo">Photo</label> <select
-														class="form-control" id="photo"></select>
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-6">
-												<div class="form-group">
-													<label for="min_bid_price">Minimum Bid price</label> <input
-														type="text" class="form-control" id="min_bid_price">
-												</div>
-											</div>
-										</div>
-										/.row
--->
+
 									<div class="col-sm-12 text-center">
 										<button type="submit" class="btn btn-primary"
 											onclick="myFunction()">
@@ -118,7 +93,7 @@
 										</button>
 
 									</div>
-								</form>
+								</html:form>
 							</div>
 						</table>
 					</div>

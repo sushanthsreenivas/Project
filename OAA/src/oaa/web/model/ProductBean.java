@@ -95,8 +95,10 @@ public class ProductBean extends ActionForm {
 			ps = connection.prepareStatement("insert into product values(null,?,?,?,?,?,'E',?,now())");
 
 			ps.setString(1, getProductName());
+
 			ps.setString(3, getCategory());
 			ps.setInt(2, user_id);
+
 			ps.setString(4, getDescription());
 			ps.setInt(5, getMinBidPrice());
 			ps.setBinaryStream(6, fileBA);
@@ -158,7 +160,7 @@ public class ProductBean extends ActionForm {
 			ps.setString(2, getCategory());
 			ps.setString(3, getDescription());
 			ps.setBinaryStream(4, fileBA);
-			ps.setInt(5, getProductId());
+			ps.setString(5, getProductName());
 			ps.setInt(6, user_id);
 
 			int rowsEffected = ps.executeUpdate();
@@ -203,10 +205,9 @@ public class ProductBean extends ActionForm {
 			ps = connection.prepareStatement("update product set status=? where user_id=? and product_id=?");
 			ps.setString(1, "D");
 			ps.setInt(2, user_id);
-			ps.setInt(3, getProductId());
+			ps.setString(3, getProductName());
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
-				System.out.println("entered");
 				return true;
 			}
 		} finally {

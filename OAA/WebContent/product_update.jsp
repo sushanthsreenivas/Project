@@ -73,9 +73,16 @@
 										<div class="col-sm-6">
 											<div class="form-group">
 
-												<label for="product_name">Product Id</label>
-												<html:text styleClass="form-control" styleId="productName"
-													property="productId" />
+												<label for="product_name">Product Name</label>
+												<html:select styleClass="form-control" styleId="productName"
+													property="productName">
+													<c:forEach items="${sessionScope.productList}"
+														var="product">
+														<%-- 						<html:text styleClass="form-control" styleId="productName"
+														property="productName"  /> --%>
+														<html:option value="${product.productId}">${product.productName}</html:option>
+													</c:forEach>
+												</html:select>
 											</div>
 										</div>
 										<div class="col-sm-6">
@@ -88,7 +95,7 @@
 														<html:option value="${category.categoryId}">${category.categoryName}</html:option>
 													</c:forEach>
 												</html:select>
-												
+
 											</div>
 										</div>
 									</div>
