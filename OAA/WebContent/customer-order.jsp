@@ -198,15 +198,7 @@
 
 	<!-- *** NAVBAR END *** -->
 
-	<div>
-
-
-
-
-
-
-
-	</div>
+	<div></div>
 
 	<div id="copyright">
 		<div class="container">
@@ -232,7 +224,7 @@
 
 	<!-- *** SCRIPTS TO INCLUDE ***
  _________________________________________________________ -->
-	
+
 	<c:if test="${param.flag }">
 		<script src="js/loginmodal.js"></script>
 	</c:if>

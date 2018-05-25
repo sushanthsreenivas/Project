@@ -1,5 +1,6 @@
 package oaa.web.controller;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,7 @@ import org.apache.struts.action.ActionMapping;
 import oaa.web.entities.Auction;
 import oaa.web.model.AuctionBean;
 
-public class RetriveAuctionAction extends Action {
+public class RetriveAuctionAction extends Action implements Serializable {
 
 	private static final String SUCCESS = "success";
 

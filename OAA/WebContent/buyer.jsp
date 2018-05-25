@@ -26,8 +26,8 @@
 
 						<ul class="nav nav-pills nav-stacked">
 
-							<li><a href="buyeracc.do"><i class="fa fa-user"></i>
-									My account</a></li>
+							<li><a href="buyeracc.do"><i class="fa fa-user"></i> My
+									account</a></li>
 							<li><a href="index.jsp"><i class="fa fa-sign-out"></i>
 									Logout</a></li>
 						</ul>

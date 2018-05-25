@@ -120,7 +120,6 @@
 					<div class="table-responsive">
 						<table class="table">
 							<div id="hot">
-
 								<div class="box">
 									<div class="container">
 										<div class="col-md-8">

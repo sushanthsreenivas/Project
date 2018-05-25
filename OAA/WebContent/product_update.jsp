@@ -1,4 +1,4 @@
-<%@ include file="header.jsp"%>
+s<%@ include file="header.jsp"%>
 <%@taglib uri="/WEB-INF/struts-html.tld" prefix="html"%><div id="all">
 
 	<div id="content">

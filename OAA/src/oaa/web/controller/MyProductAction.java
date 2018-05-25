@@ -1,5 +1,6 @@
 package oaa.web.controller;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +15,8 @@ import org.apache.struts.action.ActionMapping;
 import oaa.web.entities.Product;
 import oaa.web.model.ProductBean;
 
-public class MyProductAction extends Action {
+@SuppressWarnings("serial")
+public class MyProductAction extends Action implements Serializable {
 	private static final String SUCCESS = "success";
 
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
