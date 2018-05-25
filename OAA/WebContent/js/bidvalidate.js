@@ -4,17 +4,21 @@ $(document).ready(function() {
 	var bidamount = $("#cur_bid").val();
 	var increment = $("#bid_inc").val();
 
-	$("#cur_bid").blur(function() {
+	$("#cur_bid").keyup(function() {
 
 		var sum = parseInt(lastbidamount) + parseInt(increment);
-		if (parseInt(bidamount) > parseInt(sum)) {
-			location.reload();
-			$("#submit").attr("disabled", false);
+
+		if (parseInt(bidamount) >= parseInt(sum)) {
+			   console.log('keypressd');
+			$("#submit").removeAttr("disabled");
 
 			return true;
+
+		}else{
+			$("#submit").attr("disabled");
 		}
-		return false;
+
+		//return false;
 
 	});
-
 });
