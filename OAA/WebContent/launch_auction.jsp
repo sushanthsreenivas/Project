@@ -31,9 +31,13 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="product_name">Product Id</label> <input
-													class="form-control" id="productId" name="productId"
-													required />
+												<label for="product_name">Product Name</label> <select
+													class="form-control" id="productName" name="productName">
+													<c:forEach items="${sessionScope.productList}"
+														var="product">
+														<option value="${product.productId}">${product.productName}</option>
+													</c:forEach>
+												</select>
 
 											</div>
 										</div>
@@ -47,29 +51,23 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="start date">Start Date</label>
-												<%-- <html:text styleClass="form-control" styleId="datepicker"
-													property="startDate" /> --%>
-												<input class="form-control" id="datepicker" type="date"
-													name="startDate" required>
+												<label for="start date">Start Date</label> <input
+													class="form-control" id="datepicker" type="text"
+													value="2012-06-15 14:45" name="startDate" required>
 											</div>
 
 										</div>
+
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="end date">End Date</label> <input type="date"
+												<label for="end date">End Date</label> <input type="text"
 													class="form-control" id="datepicker" name="endDate"
-													required>
+													value="2012-06-15 14:45" required>
 
 											</div>
 										</div>
-										<script>
-											$('input[type=date]').datepicker({
-												// Consistent format with the HTML5 picker
-												dateFormat : 'yy-mm-dd'
-											});
-										</script>
 									</div>
+
 									<!-- /.row -->
 									<div class="row">
 										<div class="col-sm-6">
@@ -89,9 +87,10 @@
 									<!-- /.row -->
 
 									<div class="col-sm-12 text-center">
-										<button type="submit" class="btn btn-primary">
+										<button type="submit" id="submit" class="btn btn-primary">
 											<i class="fa fa-save"></i> Add Product
 										</button>
+
 									</div>
 								</form>
 							</div>
@@ -111,6 +110,7 @@
 <script src="js/bootstrap-hover-dropdown.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/front.js"></script>
-
-
+<script type="text/javascript">
+	
+</script>
 <%@ include file="footer.jsp"%>

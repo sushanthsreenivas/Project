@@ -4,7 +4,7 @@
 		<div class="container">
 			<div class="col-md-12">
 				<ul class="breadcrumb">
-					<li><a href="index.html">Home</a></li>
+					<li><a href="home.do">Home</a></li>
 					<li class="active"><a href="auction.do">Auction</a></li>
 				</ul>
 				<!--col-md-12 end-->
