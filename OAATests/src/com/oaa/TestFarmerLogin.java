@@ -9,7 +9,7 @@ public class TestFarmerLogin {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-		System.setProperty("webdriver.gecko.driver", "/opt/softwares/geckodriver");
+		System.setProperty("webdriver.gecko.driver", "/media/sahana/608498A7849880E8/Softwares/geckodriver");
 		
 
 		WebDriver driver = new FirefoxDriver();
@@ -19,9 +19,9 @@ public class TestFarmerLogin {
 		link = driver.findElement(By.linkText("Login"));
 		link.click();
 		Thread.sleep(1000);
-		WebElement emailBox,passwdBox;
+		WebElement emailBox;
 		emailBox = driver.findElement(By.id("email"));
-		emailBox.sendKeys("kavya@gmail.com");
+		emailBox.sendKeys("sahana@gmail.com");
 		
 		emailBox = driver.findElement(By.id("passwd"));
 		emailBox.sendKeys("kavyapatil");
@@ -30,7 +30,7 @@ public class TestFarmerLogin {
 		form.submit();
 		
 		Thread.sleep(3000);
-		driver.quit();
+		//driver.quit();
 	}
 
 }

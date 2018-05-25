@@ -9,8 +9,7 @@ public class TestBuyerLogin {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-System.setProperty("webdriver.gecko.driver", "/opt/softwares/geckodriver");
-		
+		System.setProperty("webdriver.gecko.driver", "/media/sahana/608498A7849880E8/Softwares/geckodriver");
 
 		WebDriver driver = new FirefoxDriver();
 		driver.get("http://localhost:8080/OAA");
@@ -19,18 +18,18 @@ System.setProperty("webdriver.gecko.driver", "/opt/softwares/geckodriver");
 		link = driver.findElement(By.linkText("Login"));
 		link.click();
 		Thread.sleep(1000);
-		WebElement emailBox,passwdBox;
+		WebElement emailBox;
 		emailBox = driver.findElement(By.id("email"));
-		emailBox.sendKeys("sahanagb@gmail.com");
-		
+		emailBox.sendKeys("anushkap@gmail.com");
+
 		emailBox = driver.findElement(By.id("passwd"));
 		emailBox.sendKeys("sahana");
 		Thread.sleep(1000);
 		WebElement form = driver.findElement(By.id("loginForm"));
 		form.submit();
-		
+
 		Thread.sleep(5000);
-		driver.quit();
+		// driver.quit();
 
 	}
 
