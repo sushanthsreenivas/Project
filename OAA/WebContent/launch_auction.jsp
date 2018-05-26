@@ -1,3 +1,4 @@
+<%@page import="java.util.Calendar"%>
 <%@ include file="header.jsp"%>
 
 <%@taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
@@ -31,11 +32,19 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="product_name">Product Name</label> <select
+												<label for="product_name">Product Name</label>
+												<%-- <select
 													class="form-control" id="productName" name="productName">
 													<c:forEach items="${sessionScope.productList}"
 														var="product">
 														<option value="${product.productId}">${product.productName}</option>
+													</c:forEach>
+												</select> --%>
+												<select class="form-control" id="ProductName"
+													name="ProductName">
+													<c:forEach items="${sessionScope.productList}"
+														var="product">
+														<option value="${product.productId }">${product.productName }</option>
 													</c:forEach>
 												</select>
 
@@ -51,9 +60,12 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="start date">Start Date</label> <input
-													class="form-control" id="datepicker" type="text"
-													value="2012-06-15 14:45" name="startDate" required>
+												<label for="start date">Start Date</label>
+												<%
+													java.text.DateFormat df = new java.text.SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+												%><input class="form-control" id="datepicker" type="text"
+													value="<%=df.format(new java.util.Date())%>"
+													name="startDate" required>
 											</div>
 
 										</div>
@@ -62,7 +74,7 @@
 											<div class="form-group">
 												<label for="end date">End Date</label> <input type="text"
 													class="form-control" id="datepicker" name="endDate"
-													value="2012-06-15 14:45" required>
+													value="<%=df.format(new java.util.Date())%>" required>
 
 											</div>
 										</div>

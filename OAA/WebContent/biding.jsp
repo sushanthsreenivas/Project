@@ -174,9 +174,7 @@
 											</c:forEach>
 										</div>
 									</div>
-									<!-- /.product-slider -->
 								</div>
-								<!-- /.container -->
 							</div>
 						</table>
 					</div>

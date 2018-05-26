@@ -1,4 +1,4 @@
-s<%@ include file="header.jsp"%>
+<%@ include file="header.jsp"%>
 <%@taglib uri="/WEB-INF/struts-html.tld" prefix="html"%><div id="all">
 
 	<div id="content">
@@ -49,7 +49,6 @@ s<%@ include file="header.jsp"%>
 					<li>My Products</li>
 				</ul>
 
-
 			</div>
 
 			<div class="col-md-9" id="customer-order">
@@ -78,8 +77,6 @@ s<%@ include file="header.jsp"%>
 													property="productName">
 													<c:forEach items="${sessionScope.productList}"
 														var="product">
-														<%-- 						<html:text styleClass="form-control" styleId="productName"
-														property="productName"  /> --%>
 														<html:option value="${product.productId}">${product.productName}</html:option>
 													</c:forEach>
 												</html:select>
@@ -187,7 +184,7 @@ s<%@ include file="header.jsp"%>
 														<!-- /.text -->
 
 														<div class="ribbon gift">
-															<!--                                   <div class="theribbon">GIFT</div>  -->
+
 															<div class="ribbon-background"></div>
 														</div>
 														<!-- /.ribbon -->

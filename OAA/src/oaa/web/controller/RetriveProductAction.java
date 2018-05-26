@@ -1,5 +1,6 @@
 package oaa.web.controller;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +16,7 @@ import oaa.web.entities.Product;
 import oaa.web.model.BidingBean;
 import oaa.web.model.ProductBean;
 
-public class RetriveProductAction extends Action {
+public class RetriveProductAction extends Action implements Serializable {
 
 	private static final String SUCCESS = "success";
 
