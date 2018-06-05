@@ -9,8 +9,8 @@ public class Auction implements Serializable {
 	private int auctionId;
 	private int productId;
 	private int userId;
-	private Date startDate;
-	private Date endDate;
+	private String startDate;
+	private String endDate;
 	private int minBidPrice;
 	private String productName;
 	private String description;
@@ -18,7 +18,7 @@ public class Auction implements Serializable {
 	private Boolean status;
 	private Date curDate;
 
-	public Auction(int auctionId, int productId, int userId, Date startDate, Date endDate, int minBidPrice,
+	public Auction(int auctionId, int productId, int userId, String startDate, String endDate, int minBidPrice,
 			String productName, Blob photo, String description) {
 
 		this.auctionId = auctionId;
@@ -49,19 +49,19 @@ public class Auction implements Serializable {
 		this.productId = productId;
 	}
 
-	public Date getStartDate() {
+	public String getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(Date startDate) {
+	public void setStartDate(String startDate) {
 		this.startDate = startDate;
 	}
 
-	public Date getEndDate() {
+	public String getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(Date endDate) {
+	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
 

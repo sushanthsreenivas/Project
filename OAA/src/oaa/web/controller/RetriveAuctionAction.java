@@ -27,6 +27,7 @@ public class RetriveAuctionAction extends Action implements Serializable {
 
 			AuctionBean auction = (AuctionBean) form;
 			HttpSession session = request.getSession(false);
+
 			Collection<Auction> auctionList = auction.getListAuction();
 			session.setAttribute("AuctionList", auctionList);
 			Collection<Auction> completedAuctionList = auction.getListCompletedAuction();

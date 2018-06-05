@@ -236,7 +236,6 @@ public class ProductBean extends ActionForm {
 	}
 
 	public List<Product> getListProducts(int user_id) {
-
 		List<Product> productList = new ArrayList<Product>();
 		try {
 

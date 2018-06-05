@@ -119,9 +119,7 @@ public class AuctionBean extends ActionForm {
 
 			Auction auction = null;
 
-			String sql = "SELECT m.auction_id,m.product_id,m.user_id,m.start_date,m.end_date,p.min_bid_price,p.product_name,"
-					+ "p.photo,p.description"
-					+ " FROM auction_master m join product p on m.product_id=p.product_id  where  m.status=? and p.status=?  and date_format(end_date,'%Y-%m-%d') > date_format(now(), '%Y-%m-%d') and date_format(start_date,'%Y-%m-%d') < date_format(now(), '%Y-%m-%d')order by m.auction_id ";
+			String sql = "SELECT m.auction_id,m.product_id,m.user_id,m.start_date,m.end_date,p.min_bid_price,p.product_name,p.photo,p.description FROM auction_master m join product p on m.product_id=p.product_id  where  m.status=? and p.status=?  and date_format(end_date,'%Y-%m-%d') >= date_format(now(), '%Y-%m-%d') and date_format(start_date,'%Y-%m-%d') >= date_format(now(), '%Y-%m-%d')order by m.auction_id ";
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setString(1, "E");
 			ps.setString(2, "E");
@@ -129,7 +127,7 @@ public class AuctionBean extends ActionForm {
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
-				auction = new Auction(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getDate(4), rs.getDate(5),
+				auction = new Auction(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getString(4), rs.getString(5),
 						rs.getInt(6), rs.getString(7), rs.getBlob(8), rs.getString(9));
 				auctionList.add(auction);
 
@@ -154,7 +152,7 @@ public class AuctionBean extends ActionForm {
 
 			while (rs.next()) {
 
-				auction = new Auction(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getDate(4), rs.getDate(5),
+				auction = new Auction(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getString(4), rs.getString(5),
 						rs.getInt(6), rs.getString(7), rs.getBlob(8), rs.getString(9));
 
 				auctionList.add(auction);

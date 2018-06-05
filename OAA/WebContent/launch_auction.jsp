@@ -32,21 +32,14 @@
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="product_name">Product Name</label>
-												<%-- <select
+												<label for="product_name">Product Name</label> <select
 													class="form-control" id="productName" name="productName">
 													<c:forEach items="${sessionScope.productList}"
 														var="product">
 														<option value="${product.productId}">${product.productName}</option>
 													</c:forEach>
-												</select> --%>
-												<select class="form-control" id="ProductName"
-													name="ProductName">
-													<c:forEach items="${sessionScope.productList}"
-														var="product">
-														<option value="${product.productId }">${product.productName }</option>
-													</c:forEach>
 												</select>
+
 
 											</div>
 										</div>
@@ -62,10 +55,17 @@
 											<div class="form-group">
 												<label for="start date">Start Date</label>
 												<%
+													Calendar calendar = Calendar.getInstance();
+
+													// get a date to represent "today"
+													java.util.Date start_date = calendar.getTime();
+													calendar.add(Calendar.DAY_OF_YEAR, 1);
+
+													// now get "tomorrow"
+													java.util.Date end_date = calendar.getTime();
 													java.text.DateFormat df = new java.text.SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 												%><input class="form-control" id="datepicker" type="text"
-													value="<%=df.format(new java.util.Date())%>"
-													name="startDate" required>
+													value="<%=df.format(start_date)%>" name="startDate" required>
 											</div>
 
 										</div>
@@ -74,7 +74,7 @@
 											<div class="form-group">
 												<label for="end date">End Date</label> <input type="text"
 													class="form-control" id="datepicker" name="endDate"
-													value="<%=df.format(new java.util.Date())%>" required>
+													value="<%=df.format(end_date)%>" required>
 
 											</div>
 										</div>

@@ -49,7 +49,7 @@
 
 		<action path="/createauction" name="CAB"
 			type="oaa.web.controller.LaunchAuctionAction" input="/launch_auction.jsp">
-			<forward name="success" path="/auction.jsp" />
+			<forward name="success" path="/farmer.jsp" />
 			<forward name="failure" path="/launch_auction.jsp" />
 
 		</action>

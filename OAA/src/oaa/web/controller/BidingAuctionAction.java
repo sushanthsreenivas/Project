@@ -1,4 +1,4 @@
-/*package oaa.web.controller;
+package oaa.web.controller;
 
 import java.util.Collection;
 
@@ -28,11 +28,8 @@ public class BidingAuctionAction extends Action {
 			BidingBean auction = (BidingBean) form;
 
 			HttpSession session = request.getSession(false);
-			String userid = (String) session.getAttribute("user_id");
-			int user_id = Integer.parseInt(userid);
-
-			Collection<Auction> auctionList = auction.getListAuction();
-			session.setAttribute("AuctionList", auctionList);
+			//Collection<Auction> auctionList = auction.getListAuction();
+			//session.setAttribute("AuctionList", auctionList);
 
 		}
 		return mapping.findForward(SUCCESS);
@@ -40,4 +37,3 @@ public class BidingAuctionAction extends Action {
 	}
 
 }
-*/

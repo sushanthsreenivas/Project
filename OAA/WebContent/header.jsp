@@ -25,7 +25,6 @@
 <link href="css/animate.min.css" rel="stylesheet">
 <link href="css/owl.carousel.css" rel="stylesheet">
 <link href="css/owl.theme.css" rel="stylesheet">
-
 <link href="css/style.default.css" rel="stylesheet"
 	id="theme-stylesheet">
 
