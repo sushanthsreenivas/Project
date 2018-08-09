@@ -16,7 +16,7 @@ public class ConnectionManager  {
 
 		try {
 			context = new InitialContext();
-			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/oaadb");
+			DataSource ds = (DataSource) context.lookup("java:comp/env/jdbc/TeamDB");
 			con = ds.getConnection();
 		} catch (NamingException e) {
 

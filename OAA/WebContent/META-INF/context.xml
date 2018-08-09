@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context>
+
+  <Resource name="jdbc/TeamDB"
+            auth="Container"
+            type="javax.sql.DataSource"
+            username="bharath"
+            password="bart123"
+            driverClassName="oracle.jdbc.driver.OracleDriver"
+            url="jdbc:oracle:thin:@desktop-m03s522:1522:teamdb"
+            maxTotal="8"
+            maxIdle="4"/>
+</Context>
