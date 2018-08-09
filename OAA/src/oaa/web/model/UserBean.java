@@ -48,8 +48,7 @@ public class UserBean implements Serializable {
 
 		try {
 
-			ps = connection.prepareStatement(
-					"select firstname,lastname,user_id,role from users where email_id=? and passwd=?");
+			ps = connection.prepareStatement("select firstname,lastname,user_id,role from users where email_id=? and passwd=?");
 
 			ps.setString(1, email_id);
 			ps.setString(2, passwd);

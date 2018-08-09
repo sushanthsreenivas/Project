@@ -1,6 +1,3 @@
-/**
- * 
- */
 package oaa.web.model;
 
 import java.sql.Connection;
@@ -11,6 +8,7 @@ import java.sql.SQLException;
 import javax.naming.Context;
 import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
+import javax.sound.midi.Sequence;
 
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
@@ -157,10 +155,11 @@ public class UserRegBean extends ActionForm {
 		Connection connection = new ConnectionManager().connection();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
+		
 
 		try {
 
-			ps = connection.prepareStatement("insert into users values(21,?,?,?,?,?,?,'E',?,?,?,?)");
+			ps = connection.prepareStatement("insert into users values(98,?,?,?,?,?,?,'E',?,?,?,?)");
 
 			ps.setString(1, getEmail_id());
 			ps.setString(2, getFirstname());

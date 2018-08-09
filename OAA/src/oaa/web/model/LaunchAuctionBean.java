@@ -74,6 +74,7 @@ public class LaunchAuctionBean extends ActionForm {
 	}
 
 	public void setStartDate(String startDate) {
+		
 		this.startDate = startDate;
 	}
 
