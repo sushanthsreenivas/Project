@@ -23,7 +23,7 @@
     </servlet-mapping>
             <resource-ref>
   <res-ref-name>
-   jdbc/oaadb
+   jdbc/TeamDB
   </res-ref-name>
   <res-type>
     javax.sql.DataSource

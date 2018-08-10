@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%>
+<%-- <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html"%> --%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <%@ include file="header.jsp"%>
 
@@ -43,7 +44,8 @@
 										type="radio" id="role" name="role" value="farmer" required>
 									Farmer <span style="margin-left: 90px"></span><input
 										type="radio" id="role" name="role" value="buyer">Buyer
-									<html:errors property="roleerrmsg" />
+<%-- 									<html:errors property="roleerrmsg" /> --%>
+									<form:errors path="roleerrmsg" cssClass="error"/>
 								</div>
 							</div>
 						</div>
@@ -53,7 +55,8 @@
 									<label for="name">First name</label> <input type="text"
 										class="form-control" id="fname" required name="firstname"
 										value="kavya">
-									<html:errors property="firstnameerrmsg" />
+									<%-- <html:errors property="" />--%>
+									<form:errors path="firstnameerrmsg" cssClass="error"/>
 								</div>
 							</div>
 						</div>
@@ -63,7 +66,8 @@
 									<label for="name">Last name</label> <input type="text"
 										class="form-control" id="lname" required name="lastname"
 										value="kavya">
-									<html:errors property="lastnameerrmsg" />
+<%-- 									<html:errors property="lastnameerrmsg" /> --%>
+									<form:errors path="lastnameerrmsg" cssClass="error"/>
 								</div>
 							</div>
 						</div>
@@ -73,7 +77,8 @@
 									<label for="email">Email</label> <input type="email"
 										class="form-control" id="email" name="email_id" required
 										value="kavya@gmail.com">
-									<html:errors property="emailiderrmsg" />
+<%-- 									<html:errors property="emailiderrmsg" /> --%>
+									<form:errors path="emailiderrmsg" cssClass="error"/>
 								</div>
 							</div>
 						</div>
@@ -83,7 +88,8 @@
 									<label for="password">Password</label> <input type="password"
 										class="form-control" id="password" name="passwd" required
 										value="kavyapatil">
-									<html:errors property="passwderrmsg" />
+<%-- 									<html:errors property="passwderrmsg" /> --%>
+										<form:errors path="passwderrmsg" cssClass="error"/>
 								</div>
 							</div>
 						</div>
@@ -104,7 +110,8 @@
 										class="form-control" size="10" pattern="^\d{10}$" id="Mno"
 										name="mobileno" placeholder="10-digits" required
 										value="9876543211">
-									<html:errors property="mobilenoerrmsg" />
+<%-- 									<html:errors property="mobilenoerrmsg" /> --%>
+									<form:errors path="mobilenoerrmsg" cssClass="error"/>
 								</div>
 							</div>
 
@@ -117,7 +124,8 @@
 									<label for="name">Address</label> <input type="text"
 										class="form-control" id="Address" required name="address"
 										value="bangalore">
-									<html:errors property="addresserrmsg" />
+<%-- 									<html:errors property="addresserrmsg" /> --%>
+									<form:errors path="addresserrmsg" cssClass="error"/>
 								</div>
 							</div>
 
@@ -128,7 +136,8 @@
 									<label for="name">City</label> <input type="text"
 										class="form-control" id="city" required name="city"
 										value="bangalore">
-									<html:errors property="cityerrmsg" />
+<%-- 									<html:errors property="cityerrmsg" /> --%>
+									<form:errors path="cityerrmsg" cssClass="error"/>
 								</div>
 							</div>
 						</div>
@@ -187,7 +196,8 @@
 									<label for="name">Pin Code</label> <input type="text"
 										class="form-control" id="pin" required name="pincode"
 										value="876545">
-									<html:errors property="pincodeerrmsg" />
+<%-- 									<html:errors property="pincodeerrmsg" /> --%>
+									<form:errors path="pincodeerrmsg" cssClass="error"/>
 								</div>
 							</div>
 						</div>

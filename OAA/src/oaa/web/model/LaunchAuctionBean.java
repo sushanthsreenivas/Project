@@ -16,6 +16,15 @@ public class LaunchAuctionBean extends ActionForm {
 	private int auctionId;
 	private int userId;
 	private String productName;
+	private int productId;
+	public int getProductId() {
+		return productId;
+	}
+
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+
 	private int bidPrice;
 	private int bidPriceIncrement;
 	private String startDate;
@@ -74,7 +83,6 @@ public class LaunchAuctionBean extends ActionForm {
 	}
 
 	public void setStartDate(String startDate) {
-		
 		this.startDate = startDate;
 	}
 
@@ -98,8 +106,8 @@ public class LaunchAuctionBean extends ActionForm {
 
 		try {
 
-			ps = connection.prepareStatement("insert into auction_master values(null,?,?,?,?,?,?,'E',?) ");
-			ps.setString(1, getProductName());
+			ps = connection.prepareStatement("insert into auction_master values(auction_id.NEXTVAL,?,?,?,?,?,?,'E',?) ");
+			ps.setInt(1, getProductId());
 			ps.setInt(2, user_id);
 			ps.setString(3, getStartDate());
 			ps.setString(4, getEndDate());
