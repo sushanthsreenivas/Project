@@ -3,6 +3,7 @@ package oaa.web.model;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -91,20 +92,19 @@ public class ProductBean extends ActionForm {
 			fileData = image.getFileData();
 			fileBA = new ByteArrayInputStream(fileData);
 
-			ps = connection.prepareStatement("insert into product values(product_id.NEXTVAL,?,?,?,?,?,'E',?,now())");
+			ps = connection.prepareStatement("insert into product values(product_id.NEXTVAL,?,?,?,?,?,'E',?,?)");
 
-			ps.setString(1, getProductName());
+			ps.setString(2	, getProductName());
 
 			ps.setString(3, getCategory());
-			ps.setInt(2, user_id);
+			ps.setInt(1, user_id);
 
 			ps.setString(4, getDescription());
 			ps.setInt(5, getMinBidPrice());
-			ps.setBinaryStream(6, fileBA);
-			/*
-			 * Date sqlDate = new Date(new java.util.Date().getTime());
-			 * ps.setDate(7, sqlDate);
-			 */
+			ps.setBinaryStream(7, fileBA);
+			Date sqlDate = new Date(new java.util.Date().getTime());
+			  ps.setDate(6, sqlDate);
+			 
 
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
