@@ -3,11 +3,11 @@ package oaa.web.model;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.sql.Date;
 import java.util.List;
 
 import javax.naming.Context;
@@ -94,17 +94,17 @@ public class ProductBean extends ActionForm {
 
 			ps = connection.prepareStatement("insert into product values(product_id.NEXTVAL,?,?,?,?,?,'E',?,?)");
 
-			ps.setString(2	, getProductName());
+			ps.setString(1, getProductName());
 
 			ps.setString(3, getCategory());
-			ps.setInt(1, user_id);
+			ps.setInt(2, user_id);
 
 			ps.setString(4, getDescription());
 			ps.setInt(5, getMinBidPrice());
 			ps.setBinaryStream(6, fileBA);
+
 			Date sqlDate = new Date(new java.util.Date().getTime());
-			  ps.setDate(7, sqlDate);
-			 
+			ps.setDate(7, sqlDate);
 
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
@@ -161,8 +161,7 @@ public class ProductBean extends ActionForm {
 			ps.setBinaryStream(4, fileBA);
 			ps.setString(5, getProductName());
 			ps.setInt(6, user_id);
-
-
+			System.out.println(ps);
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
 
@@ -240,7 +239,7 @@ public class ProductBean extends ActionForm {
 		try {
 
 			Product product = null;
-			String sql = "SELECT product_id,product_name,category_id,description,min_bid_price,photo,auction_date FROM product where user_id=? and status=?";
+			String sql = "SELECT product_id,product_name,category_id,description,min_bid_price,photo,product_date FROM product where user_id=? and status=?";
 
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setInt(1, user_id);
