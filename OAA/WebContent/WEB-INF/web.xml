@@ -17,6 +17,17 @@
         </init-param>
         <load-on-startup>2</load-on-startup>
         </servlet>
+<servlet>
+  <servlet-name>ECWeb</servlet-name>
+  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  <load-on-startup>2</load-on-startup>
+ 
+    </servlet>
+    
+ <servlet-mapping>
+  <servlet-name>ECWeb</servlet-name>
+  <url-pattern>/</url-pattern>
+ </servlet-mapping>
     <servlet-mapping>
         <servlet-name>action</servlet-name>
         <url-pattern>*.do</url-pattern>

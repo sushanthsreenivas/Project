@@ -16,7 +16,7 @@
 				<ul class="breadcrumb">
 					<li><a href="#">Home</a></li>
 					<li>New account / Sign in</li>
-				</ul>
+				</ul> 
 
 			</div>
 
