@@ -101,9 +101,9 @@ public class ProductBean extends ActionForm {
 
 			ps.setString(4, getDescription());
 			ps.setInt(5, getMinBidPrice());
-			ps.setBinaryStream(7, fileBA);
+			ps.setBinaryStream(6, fileBA);
 			Date sqlDate = new Date(new java.util.Date().getTime());
-			  ps.setDate(6, sqlDate);
+			  ps.setDate(7, sqlDate);
 			 
 
 			int rowsEffected = ps.executeUpdate();
@@ -153,7 +153,7 @@ public class ProductBean extends ActionForm {
 			fileBA = new ByteArrayInputStream(fileData);
 
 			ps = connection.prepareStatement(
-					"UPDATE product SET min_bid_price=?, category_id=?,description=?,photo=?,Date=now()  WHERE product_id=?  and user_id=?");
+					"UPDATE product SET min_bid_price=?, category_id=?,description=?,photo=?  WHERE product_id=?  and user_id=?");
 
 			ps.setInt(1, getMinBidPrice());
 			ps.setString(2, getCategory());
@@ -161,6 +161,7 @@ public class ProductBean extends ActionForm {
 			ps.setBinaryStream(4, fileBA);
 			ps.setString(5, getProductName());
 			ps.setInt(6, user_id);
+
 
 			int rowsEffected = ps.executeUpdate();
 			if (rowsEffected > 0) {
@@ -239,7 +240,7 @@ public class ProductBean extends ActionForm {
 		try {
 
 			Product product = null;
-			String sql = "SELECT product_id,product_name,category_id,description,min_bid_price,photo,Date FROM product where user_id=? and status=?";
+			String sql = "SELECT product_id,product_name,category_id,description,min_bid_price,photo,auction_date FROM product where user_id=? and status=?";
 
 			PreparedStatement ps = connection.prepareStatement(sql);
 			ps.setInt(1, user_id);
